@@ -225,10 +225,10 @@ public class login_res extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Login Berhasil!");
                         this.setVisible(false);
                         new landing_page().setVisible(true);
-                    } else if (res.getString("pengguna").equals("admin")) {
+                    } else if (res.getString("jenis_user").equals("admin")) {
                         JOptionPane.showMessageDialog(null, "Anda Login Sebagai ADMIN");
                         this.dispose();
-                        
+                        new admin1_2().setVisible(true);
                     }
                 }
             }

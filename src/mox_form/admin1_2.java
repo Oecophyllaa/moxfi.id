@@ -20,6 +20,8 @@ public class admin1_2 extends javax.swing.JFrame {
      */
     public admin1_2() {
         initComponents();
+        setTitle("Dashboard Admin");
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
