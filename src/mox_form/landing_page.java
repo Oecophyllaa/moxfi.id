@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mox_form;
 
 import db.database;
@@ -23,17 +18,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-//import 
-/**
- *
- * @author fatkh
- */
 public class landing_page extends javax.swing.JFrame {
 
-    /**
-     * Creates new form landing_page
-     */
-    
     public landing_page() {
         initComponents();
         setTitle("MOXFI.ID");
@@ -69,8 +55,8 @@ public class landing_page extends javax.swing.JFrame {
             Statement stat = conn.createStatement();
             ResultSet res = stat.executeQuery(sql);
             
-            ArrayList<String> posters = new ArrayList<String>();
-            ArrayList<String> titles = new ArrayList<String>();
+            ArrayList<String> posters = new ArrayList<>();
+            ArrayList<String> titles = new ArrayList<>();
             
             while(res.next()) {
                 posters.add(res.getString("poster"));
@@ -110,8 +96,8 @@ public class landing_page extends javax.swing.JFrame {
             Statement stat = conn.createStatement();
             ResultSet res = stat.executeQuery(sql);
             
-            ArrayList<String> posters = new ArrayList<String>();
-            ArrayList<String> titles = new ArrayList<String>();
+            ArrayList<String> posters = new ArrayList<>();
+            ArrayList<String> titles = new ArrayList<>();
             
             while(res.next()) {
                 posters.add(res.getString("poster"));
