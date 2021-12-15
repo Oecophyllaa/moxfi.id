@@ -99,8 +99,7 @@ public class landing_page extends javax.swing.JFrame {
             lt_title4.setText(titleArr[3]);
             lt_title5.setText(titleArr[4]);
             
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         }
     }
     
