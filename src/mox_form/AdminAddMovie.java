@@ -664,6 +664,8 @@ public class AdminAddMovie extends javax.swing.JFrame {
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Berhasil Menambahkan!");
+            this.setVisible(false);
+            new AdminDashboard().setVisible(true);
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Data Gagal Ditambahkan " + e.getMessage());
         }
