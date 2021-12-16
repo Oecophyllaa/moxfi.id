@@ -45,10 +45,10 @@ public class landing_page extends javax.swing.JFrame {
     
     public void load_latest_movie() {
         try {
-            String sql = "SELECT movie.judul_movie, movie.poster "
+            String sql = "SELECT movie.title, movie.poster "
                        + "FROM movie "
                        + "INNER JOIN movie_status "
-                       + "ON movie.movie_status = movie_status.id_movie_status "
+                       + "ON movie.status = movie_status.id_movie_status "
                        + "WHERE movie_status.status = 'Aired' "
                        + "ORDER BY date DESC";
             Connection conn = (Connection) database.getConn();
@@ -60,7 +60,7 @@ public class landing_page extends javax.swing.JFrame {
             
             while(res.next()) {
                 posters.add(res.getString("poster"));
-                titles.add(res.getString("judul_movie"));
+                titles.add(res.getString("title"));
             }
             
             // Poster Latest Movie
@@ -91,7 +91,7 @@ public class landing_page extends javax.swing.JFrame {
     
     public void load_top_movies() {
         try {
-            String sql = "SELECT * FROM movie ORDER BY global_rating DESC";
+            String sql = "SELECT * FROM movie ORDER BY rating DESC";
             Connection conn = (Connection) database.getConn();
             Statement stat = conn.createStatement();
             ResultSet res = stat.executeQuery(sql);
@@ -101,7 +101,7 @@ public class landing_page extends javax.swing.JFrame {
             
             while(res.next()) {
                 posters.add(res.getString("poster"));
-                titles.add(res.getString("judul_movie"));
+                titles.add(res.getString("title"));
             }
             
             // Poster Top Movie
@@ -132,10 +132,10 @@ public class landing_page extends javax.swing.JFrame {
     
     public void load_coming_soon_movie() {
         try {
-            String sql = "SELECT movie.judul_movie, movie.poster "
+            String sql = "SELECT movie.title, movie.poster "
                        + "FROM movie "
                        + "INNER JOIN movie_status "
-                       + "ON movie.movie_status = movie_status.id_movie_status "
+                       + "ON movie.status = movie_status.id_movie_status "
                        + "WHERE movie_status.status = 'Coming Soon'";
             Connection conn = (Connection) database.getConn();
             Statement stat = conn.createStatement();
@@ -146,7 +146,7 @@ public class landing_page extends javax.swing.JFrame {
             
             while(res.next()) {
                 posters.add(res.getString("poster"));
-                titles.add(res.getString("judul_movie"));
+                titles.add(res.getString("title"));
             }
             
             // Poster Coming Soon Movie

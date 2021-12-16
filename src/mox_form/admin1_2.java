@@ -4,24 +4,80 @@
  * and open the template in the editor.
  */
 package mox_form;
+import db.database;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author fatkh
  */
 public class admin1_2 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form admin1_2
-     */
     public admin1_2() {
         initComponents();
         setTitle("Dashboard Admin");
         setExtendedState(MAXIMIZED_BOTH);
+        load_table();
+    }
+    
+    public void load_table() {
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("ID Movie");
+        model.addColumn("Title");
+        model.addColumn("Date");
+        model.addColumn("Time");
+        model.addColumn("Genre");
+        model.addColumn("Director");
+        model.addColumn("Plot");
+        model.addColumn("Poster");
+        model.addColumn("Rating");
+        model.addColumn("Status");
+        model.addColumn("Admin");
+        
+        try {
+            String MovSql = "SELECT movie.title, movie.date, movie.time, master_genre.genre_movie, "
+                          + "director.nama_director, movie.plot, movie.poster, movie.rating, movie_status.status, "
+                          + "user.username "
+                          + "FROM ((((movie "
+                          + "INNER JOIN master_genre ON movie.genre = master_genre.id_master_genre) "
+                          + "INNER JOIN director ON movie.director = director.id_director) "
+                          + "INNER JOIN movie_status ON movie.status = movie_status.id_movie_status) "
+                          + "INNER JOIN user ON movie.id_user = user.id_user); ";
+            //System.out.println(MovSql);
+            Connection conn = (Connection) database.getConn();
+            Statement stat = conn.createStatement();
+            ResultSet res = stat.executeQuery(MovSql);
+            
+            int no = 1;
+            while (res.next()) {                
+                model.addRow(new Object[] {
+                    no++,
+                    res.getString("title"),
+                    res.getString("date"),
+                    res.getString("time"),
+                    res.getString("genre_movie"),
+                    res.getString("nama_director"),
+                    res.getString("plot"),
+                    res.getString("poster"),
+                    res.getString("rating"),
+                    res.getString("status"),
+                    res.getString("username")
+                });
+            }
+            
+            datatable.setModel(model);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
 
     /**
@@ -40,7 +96,7 @@ public class admin1_2 extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        datatable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -117,18 +173,26 @@ public class admin1_2 extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(216, 227, 231));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        datatable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Movies ID", "Genre", "Title", "Description", "Date", "Time", "Type", "Poster", "Schedule ID", "User ID"
+                "No", "Title", "Date", "Time", "Genre", "Director", "Plot", "Poster", "Rating", "Jenis", "Status", "Admin"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, true, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(datatable);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Movie Table");
@@ -539,6 +603,7 @@ public class admin1_2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bookmarkPane;
+    private javax.swing.JTable datatable;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
     private javax.swing.JButton jButton1;
@@ -560,7 +625,6 @@ public class admin1_2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel loginPane;
     private javax.swing.JPanel sidebarIcon;
