@@ -17,7 +17,7 @@ public class AdminAddMovie extends javax.swing.JFrame {
 
     public AdminAddMovie() {
         initComponents();
-        setTitle("Admin MOXFI.ID");
+        setTitle("Form Add Movie");
         setExtendedState(MAXIMIZED_BOTH);
     }
     
@@ -95,7 +95,6 @@ public class AdminAddMovie extends javax.swing.JFrame {
         tf_rating = new javax.swing.JTextField();
         tf_type = new javax.swing.JTextField();
         btn_add = new javax.swing.JButton();
-        btn_insert = new javax.swing.JButton();
         cbxGenre = new javax.swing.JComboBox<>();
         cbxDirector = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -360,7 +359,7 @@ public class AdminAddMovie extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(216, 227, 231));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Add or Update Movies");
+        jLabel1.setText("Add Movies");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Movies Title");
@@ -422,15 +421,6 @@ public class AdminAddMovie extends javax.swing.JFrame {
             }
         });
 
-        btn_insert.setBackground(new java.awt.Color(245, 169, 98));
-        btn_insert.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_insert.setText("Update");
-        btn_insert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_insertActionPerformed(evt);
-            }
-        });
-
         cbxGenre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cbxGenre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Action", "Comedy", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Thriller", "Western", "Adventure" }));
         cbxGenre.addActionListener(new java.awt.event.ActionListener() {
@@ -461,9 +451,7 @@ public class AdminAddMovie extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_insert, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -484,7 +472,7 @@ public class AdminAddMovie extends javax.swing.JFrame {
                                     .addComponent(tf_title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cbxGenre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cbxDirector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 408, Short.MAX_VALUE)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel16)
                                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -541,11 +529,9 @@ public class AdminAddMovie extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(cbxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_insert, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
 
         getContentPane().add(jPanel5, java.awt.BorderLayout.CENTER);
@@ -651,10 +637,6 @@ public class AdminAddMovie extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxGenreActionPerformed
 
-    private void btn_insertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insertActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_insertActionPerformed
-
     private void tf_dateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_dateMouseClicked
         // Mouse Clicked
         tf_date.setText("");
@@ -726,7 +708,6 @@ public class AdminAddMovie extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bookmarkPane;
     private javax.swing.JButton btn_add;
-    private javax.swing.JButton btn_insert;
     private javax.swing.JComboBox<String> cbxDirector;
     private javax.swing.JComboBox<String> cbxGenre;
     private javax.swing.JComboBox<String> cbxStatus;
