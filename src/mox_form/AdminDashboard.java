@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -101,9 +102,9 @@ public class AdminDashboard extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         datatable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tf_search = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_delete = new javax.swing.JButton();
         btn_edit = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         sidebarIcon = new javax.swing.JPanel();
@@ -205,21 +206,31 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Movie Table");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Search ");
-        jTextField1.setPreferredSize(new java.awt.Dimension(200, 35));
+        tf_search.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tf_search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tf_search.setText("Search");
+        tf_search.setPreferredSize(new java.awt.Dimension(200, 35));
+        tf_search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tf_searchMouseClicked(evt);
+            }
+        });
+        tf_search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_searchKeyPressed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel6.setText("Find Movie Data   : ");
 
-        jButton1.setBackground(new java.awt.Color(242, 145, 145));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jButton1.setText("Delete");
-        jButton1.setPreferredSize(new java.awt.Dimension(77, 35));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_delete.setBackground(new java.awt.Color(242, 145, 145));
+        btn_delete.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        btn_delete.setText("Delete");
+        btn_delete.setPreferredSize(new java.awt.Dimension(77, 35));
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_deleteActionPerformed(evt);
             }
         });
 
@@ -244,11 +255,11 @@ public class AdminDashboard extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(34, 34, 34)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(525, 525, 525)
                         .addComponent(btn_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1186, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jSeparator1)
@@ -265,9 +276,9 @@ public class AdminDashboard extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addComponent(jLabel6))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
@@ -560,7 +571,7 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
-        login_res logout = new login_res();
+        AppLogin logout = new AppLogin();
         logout.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel15MouseClicked
@@ -575,9 +586,28 @@ public class AdminDashboard extends javax.swing.JFrame {
         changeColor(jPanel4, new Color(81, 196, 211));
     }//GEN-LAST:event_jLabel15MouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+        // Delete Data:
+        String id_movie = datatable.getModel().getValueAt(datatable.getSelectedRow(), 0).toString();
+        int confirm = JOptionPane.showConfirmDialog(null, "Delete Permanently?");
+        
+        if (confirm == 0) {
+            try {
+                String sql = "DELETE FROM movie WHERE id_movie = '"+id_movie+"'; ";
+                Connection conn = (Connection) database.getConn();
+                PreparedStatement pst = conn.prepareStatement(sql);
+                pst.execute();
+                JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
+                load_table();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Data Gagal Dihapus " + e.getMessage());
+            }
+        } else if (confirm == 1) {
+            JOptionPane.showMessageDialog(null, "Data Gagal Dihapus");
+        } else {
+            JOptionPane.showMessageDialog(null, "Action Canceled");
+        }
+    }//GEN-LAST:event_btn_deleteActionPerformed
 
     private void datatableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datatableMouseClicked
         // get selected data:
@@ -596,6 +626,69 @@ public class AdminDashboard extends javax.swing.JFrame {
         this.setVisible(false);
         new AdminUpdateMovie(val).setVisible(true);
     }//GEN-LAST:event_btn_editActionPerformed
+
+    private void tf_searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_searchMouseClicked
+        // Clear Form
+        tf_search.setText("");
+    }//GEN-LAST:event_tf_searchMouseClicked
+
+    private void tf_searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_searchKeyPressed
+        // Fitur Search
+        String title = tf_search.getText();
+        
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("ID Movie");
+        model.addColumn("Title");
+        model.addColumn("Date");
+        model.addColumn("Time");
+        model.addColumn("Genre");
+        model.addColumn("Director");
+        model.addColumn("Plot");
+        model.addColumn("Poster");
+        model.addColumn("Rating");
+        model.addColumn("Type");
+        model.addColumn("Status");
+        model.addColumn("Admin");
+        
+        try {
+            String MovSql = "SELECT movie.id_movie, movie.title, movie.date, movie.time, master_genre.genre_movie, "
+                          + "director.nama_director, movie.plot, movie.poster, movie.rating, movie.jenis, "
+                          + "movie_status.status, user.username "
+                          + "FROM ((((movie "
+                          + "INNER JOIN master_genre ON movie.genre = master_genre.id_master_genre) "
+                          + "INNER JOIN director ON movie.director = director.id_director) "
+                          + "INNER JOIN movie_status ON movie.status = movie_status.id_movie_status) "
+                          + "INNER JOIN user ON movie.id_user = user.id_user) "
+                          + "WHERE movie.title LIKE '%"+title+"%' "
+                          + "ORDER BY movie.id_movie ASC";
+            //System.out.println(MovSql);
+            Connection conn = (Connection) database.getConn();
+            Statement stat = conn.createStatement();
+            ResultSet res = stat.executeQuery(MovSql);
+            
+            //int no = 1;
+            while (res.next()) {                
+                model.addRow(new Object[] {
+                    res.getString("id_movie"),
+                    res.getString("title"),
+                    res.getString("date"),
+                    res.getString("time"),
+                    res.getString("genre_movie"),
+                    res.getString("nama_director"),
+                    res.getString("plot"),
+                    res.getString("poster"),
+                    res.getString("rating"),
+                    res.getString("jenis"),
+                    res.getString("status"),
+                    res.getString("username")
+                });
+            }
+            
+            datatable.setModel(model);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_tf_searchKeyPressed
 
     /**
      * @param args the command line arguments
@@ -635,11 +728,11 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bookmarkPane;
+    private javax.swing.JButton btn_delete;
     private javax.swing.JButton btn_edit;
     private javax.swing.JTable datatable;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -657,9 +750,9 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel loginPane;
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JPanel streamPane;
+    private javax.swing.JTextField tf_search;
     // End of variables declaration//GEN-END:variables
 }
