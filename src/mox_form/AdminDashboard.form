@@ -132,7 +132,7 @@
                               <EmptySpace min="34" pref="34" max="-2" attributes="0"/>
                               <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="525" pref="525" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" pref="129" max="-2" attributes="0"/>
+                              <Component id="btn_edit" min="-2" pref="129" max="-2" attributes="0"/>
                               <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
                               <Component id="jButton1" min="-2" pref="129" max="-2" attributes="0"/>
                           </Group>
@@ -157,7 +157,7 @@
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_edit" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
@@ -179,7 +179,7 @@
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="12" rowCount="4">
-                        <Column editable="false" title="No" type="java.lang.Object"/>
+                        <Column editable="false" title="ID Movie" type="java.lang.Object"/>
                         <Column editable="false" title="Title" type="java.lang.Object"/>
                         <Column editable="false" title="Date" type="java.lang.Object"/>
                         <Column editable="false" title="Time" type="java.lang.Object"/>
@@ -261,6 +261,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="datatableMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -309,7 +312,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="btn_edit">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="62" green="a9" red="f5" type="rgb"/>
@@ -322,6 +325,9 @@
                   <Dimension value="[59, 35]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_editActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
             </Component>

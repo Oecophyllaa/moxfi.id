@@ -20,9 +20,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author fatkh
  */
-public class admin1_2 extends javax.swing.JFrame {
+public class AdminDashboard extends javax.swing.JFrame {
 
-    public admin1_2() {
+    public AdminDashboard() {
         initComponents();
         setTitle("Dashboard Admin");
         setExtendedState(MAXIMIZED_BOTH);
@@ -44,23 +44,24 @@ public class admin1_2 extends javax.swing.JFrame {
         model.addColumn("Admin");
         
         try {
-            String MovSql = "SELECT movie.title, movie.date, movie.time, master_genre.genre_movie, "
+            String MovSql = "SELECT movie.id_movie, movie.title, movie.date, movie.time, master_genre.genre_movie, "
                           + "director.nama_director, movie.plot, movie.poster, movie.rating, movie_status.status, "
                           + "user.username "
                           + "FROM ((((movie "
                           + "INNER JOIN master_genre ON movie.genre = master_genre.id_master_genre) "
                           + "INNER JOIN director ON movie.director = director.id_director) "
                           + "INNER JOIN movie_status ON movie.status = movie_status.id_movie_status) "
-                          + "INNER JOIN user ON movie.id_user = user.id_user); ";
+                          + "INNER JOIN user ON movie.id_user = user.id_user) "
+                          + "ORDER BY movie.id_movie ASC";
             //System.out.println(MovSql);
             Connection conn = (Connection) database.getConn();
             Statement stat = conn.createStatement();
             ResultSet res = stat.executeQuery(MovSql);
             
-            int no = 1;
+            //int no = 1;
             while (res.next()) {                
                 model.addRow(new Object[] {
-                    no++,
+                    res.getString("id_movie"),
                     res.getString("title"),
                     res.getString("date"),
                     res.getString("time"),
@@ -101,7 +102,7 @@ public class admin1_2 extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_edit = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         sidebarIcon = new javax.swing.JPanel();
         bookmarkPane = new javax.swing.JPanel();
@@ -181,7 +182,7 @@ public class admin1_2 extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "No", "Title", "Date", "Time", "Genre", "Director", "Plot", "Poster", "Rating", "Jenis", "Status", "Admin"
+                "ID Movie", "Title", "Date", "Time", "Genre", "Director", "Plot", "Poster", "Rating", "Jenis", "Status", "Admin"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -190,6 +191,11 @@ public class admin1_2 extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        datatable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                datatableMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(datatable);
@@ -215,10 +221,15 @@ public class admin1_2 extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(245, 169, 98));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jButton2.setText("Edit");
-        jButton2.setPreferredSize(new java.awt.Dimension(59, 35));
+        btn_edit.setBackground(new java.awt.Color(245, 169, 98));
+        btn_edit.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        btn_edit.setText("Edit");
+        btn_edit.setPreferredSize(new java.awt.Dimension(59, 35));
+        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -233,7 +244,7 @@ public class admin1_2 extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(525, 525, 525)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1186, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -253,7 +264,7 @@ public class admin1_2 extends javax.swing.JFrame {
                         .addGap(7, 7, 7)
                         .addComponent(jLabel6))
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -513,7 +524,7 @@ public class admin1_2 extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
-        admin1_2 refresh = new admin1_2();
+        AdminDashboard refresh = new AdminDashboard();
         refresh.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
@@ -530,7 +541,7 @@ public class admin1_2 extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        admin1_3 addorupdate = new admin1_3();
+        AdminAddMovie addorupdate = new AdminAddMovie();
         addorupdate.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked
@@ -566,6 +577,22 @@ public class admin1_2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void datatableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datatableMouseClicked
+        // get selected data:
+        int row = datatable.getSelectedRow();
+        int col = 0; // untuk mengambil ID
+        String val = datatable.getModel().getValueAt(row, col).toString();
+        //System.out.println(val);
+    }//GEN-LAST:event_datatableMouseClicked
+
+    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
+        // EDIT DATA
+        int col = 0;
+        int row = datatable.getSelectedRow();
+        String val = datatable.getModel().getValueAt(row, col).toString();
+        System.out.println(val);
+    }//GEN-LAST:event_btn_editActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -583,31 +610,32 @@ public class admin1_2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(admin1_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(admin1_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(admin1_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(admin1_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new admin1_2().setVisible(true);
+                new AdminDashboard().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bookmarkPane;
+    private javax.swing.JButton btn_edit;
     private javax.swing.JTable datatable;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

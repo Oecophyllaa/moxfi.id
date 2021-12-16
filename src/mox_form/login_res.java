@@ -228,7 +228,7 @@ public class login_res extends javax.swing.JFrame {
                     } else if (res.getString("jenis_user").equals("admin")) {
                         JOptionPane.showMessageDialog(null, "Anda Login Sebagai ADMIN");
                         this.dispose();
-                        new admin1_2().setVisible(true);
+                        new AdminDashboard().setVisible(true);
                     }
                 }
             }

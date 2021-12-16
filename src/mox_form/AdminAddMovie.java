@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mox_form;
+
 import db.database;
 import javax.swing.JLabel;
 import java.awt.Color;
@@ -15,13 +11,11 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-/**
- *
- * @author fatkh
- */
-public class admin1_3 extends javax.swing.JFrame {
 
-    public admin1_3() {
+public class AdminAddMovie extends javax.swing.JFrame {
+    public String IdMovie;
+
+    public AdminAddMovie() {
         initComponents();
         setTitle("Admin MOXFI.ID");
         setExtendedState(MAXIMIZED_BOTH);
@@ -604,7 +598,7 @@ public class admin1_3 extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
-        admin1_2 refresh = new admin1_2();
+        AdminDashboard refresh = new AdminDashboard();
         refresh.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
@@ -621,7 +615,7 @@ public class admin1_3 extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        admin1_3 refresh = new admin1_3();
+        AdminAddMovie refresh = new AdminAddMovie();
         refresh.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked
@@ -710,20 +704,21 @@ public class admin1_3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(admin1_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAddMovie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(admin1_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAddMovie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(admin1_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAddMovie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(admin1_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAddMovie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new admin1_3().setVisible(true);
+                new AdminAddMovie().setVisible(true);
             }
         });
     }
