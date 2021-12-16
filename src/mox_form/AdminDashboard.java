@@ -40,13 +40,14 @@ public class AdminDashboard extends javax.swing.JFrame {
         model.addColumn("Plot");
         model.addColumn("Poster");
         model.addColumn("Rating");
+        model.addColumn("Type");
         model.addColumn("Status");
         model.addColumn("Admin");
         
         try {
             String MovSql = "SELECT movie.id_movie, movie.title, movie.date, movie.time, master_genre.genre_movie, "
-                          + "director.nama_director, movie.plot, movie.poster, movie.rating, movie_status.status, "
-                          + "user.username "
+                          + "director.nama_director, movie.plot, movie.poster, movie.rating, movie.jenis, "
+                          + "movie_status.status, user.username "
                           + "FROM ((((movie "
                           + "INNER JOIN master_genre ON movie.genre = master_genre.id_master_genre) "
                           + "INNER JOIN director ON movie.director = director.id_director) "
@@ -70,6 +71,7 @@ public class AdminDashboard extends javax.swing.JFrame {
                     res.getString("plot"),
                     res.getString("poster"),
                     res.getString("rating"),
+                    res.getString("jenis"),
                     res.getString("status"),
                     res.getString("username")
                 });
@@ -590,7 +592,9 @@ public class AdminDashboard extends javax.swing.JFrame {
         int col = 0;
         int row = datatable.getSelectedRow();
         String val = datatable.getModel().getValueAt(row, col).toString();
-        System.out.println(val);
+        //System.out.println(val);
+        this.setVisible(false);
+        new AdminUpdateMovie(val).setVisible(true);
     }//GEN-LAST:event_btn_editActionPerformed
 
     /**
