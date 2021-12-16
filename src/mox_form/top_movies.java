@@ -924,7 +924,7 @@ public class top_movies extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
-        landing_page refresh = new landing_page();
+        UserDashboard refresh = new UserDashboard();
         refresh.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked

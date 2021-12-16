@@ -224,7 +224,7 @@ public class AppLogin extends javax.swing.JFrame {
                     if(res.getString("jenis_user").equals("pengguna")) {
                         JOptionPane.showMessageDialog(null, "Login Berhasil!");
                         this.setVisible(false);
-                        new landing_page().setVisible(true);
+                        new UserDashboard().setVisible(true);
                     } else if (res.getString("jenis_user").equals("admin")) {
                         JOptionPane.showMessageDialog(null, "Anda Login Sebagai ADMIN");
                         this.dispose();
@@ -249,7 +249,7 @@ public class AppLogin extends javax.swing.JFrame {
 
     private void createIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createIconMouseClicked
         // BUTTON CREATE ANJAY CLICKED
-        register_res bikinAkun = new register_res();
+        UserRegister bikinAkun = new UserRegister();
         bikinAkun.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_createIconMouseClicked

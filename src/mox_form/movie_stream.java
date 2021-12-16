@@ -695,7 +695,7 @@ public class movie_stream extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        landing_page refresh = new landing_page();
+        UserDashboard refresh = new UserDashboard();
         refresh.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked
@@ -764,7 +764,7 @@ public class movie_stream extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // redirect to home
         this.dispose();
-        new landing_page().setVisible(true);
+        new UserDashboard().setVisible(true);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
