@@ -404,7 +404,13 @@ public class AdminAddMovie extends javax.swing.JFrame {
         tf_title.setPreferredSize(new java.awt.Dimension(300, 40));
 
         tf_poster.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tf_poster.setText("Image URL");
         tf_poster.setPreferredSize(new java.awt.Dimension(300, 40));
+        tf_poster.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tf_posterMouseClicked(evt);
+            }
+        });
 
         tf_rating.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_rating.setPreferredSize(new java.awt.Dimension(300, 40));
@@ -670,6 +676,11 @@ public class AdminAddMovie extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Data Gagal Ditambahkan " + e.getMessage());
         }
     }//GEN-LAST:event_btn_addActionPerformed
+
+    private void tf_posterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_posterMouseClicked
+        // Clear Form
+        tf_poster.setText("");
+    }//GEN-LAST:event_tf_posterMouseClicked
 
     /**
      * @param args the command line arguments
