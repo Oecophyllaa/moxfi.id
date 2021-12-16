@@ -993,7 +993,7 @@ public class latest_movies extends javax.swing.JFrame {
 
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
         // TODO add your handling code here:
-        login_res backlogin = new login_res();
+        AppLogin backlogin = new AppLogin();
         backlogin.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel17MouseClicked

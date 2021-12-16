@@ -514,7 +514,7 @@ public class landingpage_afterlogin extends javax.swing.JFrame {
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
-        login_res loginPage = new login_res();
+        AppLogin loginPage = new AppLogin();
         loginPage.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel15MouseClicked
