@@ -665,7 +665,7 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
-        login_res logout = new login_res();
+        AppLogin logout = new AppLogin();
         logout.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel15MouseClicked
