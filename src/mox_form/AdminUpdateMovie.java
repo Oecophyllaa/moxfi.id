@@ -21,6 +21,8 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
         setTitle("Form Add Movie");
         setExtendedState(MAXIMIZED_BOTH);
         load_data(IdMovie);
+        tf_idMovie.setVisible(false);
+        tf_idMovie.setText(IdMovie);
     }
     
     public void load_data(String id) {
@@ -137,6 +139,7 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
         ta_plot = new javax.swing.JTextArea();
         jLabel19 = new javax.swing.JLabel();
         cbxStatus = new javax.swing.JComboBox<>();
+        tf_idMovie = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -478,6 +481,14 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
         cbxStatus.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cbxStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aired", "Coming Soon" }));
 
+        tf_idMovie.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tf_idMovie.setText("Hidden");
+        tf_idMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_idMovieActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -503,11 +514,13 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
                                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(67, 67, 67)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tf_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tf_time, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tf_title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbxGenre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbxDirector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(tf_idMovie)
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tf_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tf_time, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tf_title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cbxGenre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cbxDirector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 408, Short.MAX_VALUE)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel16)
@@ -564,8 +577,9 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(cbxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                    .addComponent(cbxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_idMovie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50))
         );
@@ -676,7 +690,8 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_dateMouseClicked
 
     private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
-        // Insert To Table Movie
+        // Update
+        String id_movie = tf_idMovie.getText();
         String title = tf_title.getText();
         String date = tf_date.getText();
         String time = tf_time.getText();
@@ -689,18 +704,33 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
         int status = getValueId(cbxStatus.getSelectedItem().toString());
         
         try {
-            String sql = "INSERT INTO movie VALUES "
-                       + "(default,'"+title+"','"+date+"','"+time+"','"+IdGenre+"','"+IdDirector+"',"
-                       + "'"+plot+"','"+poster+"','"+rating+"','"+jenis+"','"+status+"','1')";
+            String sql = "UPDATE movie SET "
+                       + "title = '"+title+"', "
+                       + "date = '"+date+"', "
+                       + "time = '"+time+"', "
+                       + "genre = '"+IdGenre+"', "
+                       + "director = '"+IdDirector+"', "
+                       + "plot = '"+plot+"', "
+                       + "poster = '"+poster+"', "
+                       + "rating = '"+rating+"', "
+                       + "jenis = '"+jenis+"', "
+                       + "status = '"+status+"' "
+                       + "WHERE id_movie = '"+id_movie+"'; ";
             //System.out.println(sql);
             Connection conn = (Connection) database.getConn();
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
-            JOptionPane.showMessageDialog(null, "Berhasil Menambahkan!");
-        } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Data Gagal Ditambahkan " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Data Berhasil Diupdate!");
+            this.setVisible(false);
+            new AdminDashboard().setVisible(true);
+        } catch (Exception e) {
+            //JOptionPane.showMessageDialog(null, "Data Gagal Ditambahkan " + e.getMessage());
         }
     }//GEN-LAST:event_btn_updateActionPerformed
+
+    private void tf_idMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_idMovieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_idMovieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -778,6 +808,7 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
     private javax.swing.JPanel streamPane;
     private javax.swing.JTextArea ta_plot;
     private javax.swing.JTextField tf_date;
+    private javax.swing.JTextField tf_idMovie;
     private javax.swing.JTextField tf_poster;
     private javax.swing.JTextField tf_rating;
     private javax.swing.JTextField tf_time;
