@@ -21,6 +21,7 @@ public class TopMovies extends javax.swing.JFrame {
 
     public TopMovies() {
         initComponents();
+        setTitle("Top Movies");
         setExtendedState(MAXIMIZED_BOTH);
         load_topmovies();
     }
