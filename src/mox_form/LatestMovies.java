@@ -944,8 +944,7 @@ public class LatestMovies extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
-        UserDashboard refresh = new UserDashboard("");
-        refresh.setVisible(true);
+        new UserDashboard(tf_username.getText()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
 
