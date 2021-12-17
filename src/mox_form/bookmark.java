@@ -961,9 +961,8 @@ public class bookmark extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        movie_stream stream = new movie_stream();
-        stream.setVisible(true);
-        this.dispose();
+        
+        //this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered

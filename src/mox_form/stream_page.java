@@ -681,9 +681,7 @@ public class stream_page extends javax.swing.JFrame {
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
-        movie_stream stream = new movie_stream();
-        stream.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void jLabel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseEntered
