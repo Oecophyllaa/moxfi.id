@@ -1675,16 +1675,16 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_poster1MouseExited
 
     private void poster1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster1MouseClicked
-        // TODO add your handling code here:
-        movie_stream stream = new movie_stream();
-        stream.setVisible(true);
+        // Redirect ke Detail Movie
+        String title = lt_title1.getText();
+        new DetailMovie(title).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_poster1MouseClicked
 
     private void lt_title1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_title1MouseClicked
         // TODO add your handling code here:
-        movie_stream stream = new movie_stream();
-        stream.setVisible(true);
+        String title = lt_title1.getText();
+        new DetailMovie(title).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lt_title1MouseClicked
 
