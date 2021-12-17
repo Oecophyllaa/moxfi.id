@@ -19,11 +19,12 @@ import javax.swing.SwingUtilities;
 
 public class TopMovies extends javax.swing.JFrame {
 
-    public TopMovies() {
+    public TopMovies(String username) {
         initComponents();
         setTitle("Top Movies");
         setExtendedState(MAXIMIZED_BOTH);
         load_topmovies();
+        tf_username.setText(username);
     }
     
     public void getDetailMovie(String title) {
@@ -105,35 +106,35 @@ public class TopMovies extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        NavPane = new javax.swing.JPanel();
+        navbar = new javax.swing.JLabel();
         hidePane = new javax.swing.JPanel();
         hide = new javax.swing.JLabel();
         coomingPane = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        la_soonmov = new javax.swing.JLabel();
         latestPane = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        la_latestmov = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        searchForm = new javax.swing.JTextField();
         sidebarIcon = new javax.swing.JPanel();
-        bookmarkPane = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        loginPane = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        streamPane = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        loginPane1 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jPanel21 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        homePane = new javax.swing.JPanel();
+        iconHome = new javax.swing.JLabel();
+        streampane = new javax.swing.JPanel();
+        iconStream = new javax.swing.JLabel();
+        BmarkPane = new javax.swing.JPanel();
+        iconBookmark = new javax.swing.JLabel();
+        hHomePane = new javax.swing.JPanel();
+        hHomeLabel = new javax.swing.JLabel();
+        hBmarkPane = new javax.swing.JPanel();
+        hBookLabel = new javax.swing.JLabel();
+        hStreamPane = new javax.swing.JPanel();
+        hStreamLabel = new javax.swing.JLabel();
+        logoutPane = new javax.swing.JPanel();
+        iconLogout = new javax.swing.JLabel();
+        hLogoutPane = new javax.swing.JPanel();
+        hLogoutLabel = new javax.swing.JLabel();
+        DasborPane = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -166,13 +167,15 @@ public class TopMovies extends javax.swing.JFrame {
         title3 = new javax.swing.JLabel();
         title2 = new javax.swing.JLabel();
         title1 = new javax.swing.JLabel();
+        tf_username = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(81, 196, 211));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 60));
+        NavPane.setBackground(new java.awt.Color(81, 196, 211));
+        NavPane.setPreferredSize(new java.awt.Dimension(1366, 60));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/nav-branding.png"))); // NOI18N
+        navbar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/nav-branding.png"))); // NOI18N
 
         hidePane.setBackground(new java.awt.Color(81, 196, 211));
 
@@ -203,17 +206,17 @@ public class TopMovies extends javax.swing.JFrame {
 
         coomingPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Coming Soon");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        la_soonmov.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        la_soonmov.setText("Coming Soon");
+        la_soonmov.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                la_soonmovMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel6MouseEntered(evt);
+                la_soonmovMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel6MouseExited(evt);
+                la_soonmovMouseExited(evt);
             }
         });
 
@@ -223,30 +226,30 @@ public class TopMovies extends javax.swing.JFrame {
             coomingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(coomingPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addComponent(la_soonmov)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         coomingPaneLayout.setVerticalGroup(
             coomingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(coomingPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(la_soonmov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         latestPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setText("Latest Movies");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        la_latestmov.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        la_latestmov.setText("Latest Movies");
+        la_latestmov.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                la_latestmovMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel8MouseEntered(evt);
+                la_latestmovMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel8MouseExited(evt);
+                la_latestmovMouseExited(evt);
             }
         });
 
@@ -256,14 +259,14 @@ public class TopMovies extends javax.swing.JFrame {
             latestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(latestPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8)
+                .addComponent(la_latestmov)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         latestPaneLayout.setVerticalGroup(
             latestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, latestPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(la_latestmov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -297,20 +300,20 @@ public class TopMovies extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setText("Search here");
-        jTextField1.setPreferredSize(new java.awt.Dimension(69, 30));
+        searchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        searchForm.setText("Search here");
+        searchForm.setPreferredSize(new java.awt.Dimension(69, 30));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout NavPaneLayout = new javax.swing.GroupLayout(NavPane);
+        NavPane.setLayout(NavPaneLayout);
+        NavPaneLayout.setHorizontalGroup(
+            NavPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NavPaneLayout.createSequentialGroup()
                 .addComponent(hidePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addComponent(navbar)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchForm, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -319,227 +322,227 @@ public class TopMovies extends javax.swing.JFrame {
                 .addComponent(coomingPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        NavPaneLayout.setVerticalGroup(
+            NavPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(hidePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(coomingPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(latestPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(NavPaneLayout.createSequentialGroup()
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(NavPaneLayout.createSequentialGroup()
+                .addGroup(NavPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(NavPaneLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(searchForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(NavPane, java.awt.BorderLayout.PAGE_START);
 
         sidebarIcon.setBackground(new java.awt.Color(81, 196, 211));
         sidebarIcon.setPreferredSize(new java.awt.Dimension(60, 708));
 
-        bookmarkPane.setBackground(new java.awt.Color(81, 196, 211));
+        homePane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/home page (1).png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        iconHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/home page (1).png"))); // NOI18N
+        iconHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
+                iconHomeMouseEntered(evt);
             }
         });
 
-        javax.swing.GroupLayout bookmarkPaneLayout = new javax.swing.GroupLayout(bookmarkPane);
-        bookmarkPane.setLayout(bookmarkPaneLayout);
-        bookmarkPaneLayout.setHorizontalGroup(
-            bookmarkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+        javax.swing.GroupLayout homePaneLayout = new javax.swing.GroupLayout(homePane);
+        homePane.setLayout(homePaneLayout);
+        homePaneLayout.setHorizontalGroup(
+            homePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(iconHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
-        bookmarkPaneLayout.setVerticalGroup(
-            bookmarkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bookmarkPaneLayout.createSequentialGroup()
+        homePaneLayout.setVerticalGroup(
+            homePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                .addComponent(iconHome, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        loginPane.setBackground(new java.awt.Color(81, 196, 211));
+        streampane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/Group 2.png"))); // NOI18N
+        iconStream.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconStream.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/Group 2.png"))); // NOI18N
 
-        javax.swing.GroupLayout loginPaneLayout = new javax.swing.GroupLayout(loginPane);
-        loginPane.setLayout(loginPaneLayout);
-        loginPaneLayout.setHorizontalGroup(
-            loginPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+        javax.swing.GroupLayout streampaneLayout = new javax.swing.GroupLayout(streampane);
+        streampane.setLayout(streampaneLayout);
+        streampaneLayout.setHorizontalGroup(
+            streampaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(iconStream, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
-        loginPaneLayout.setVerticalGroup(
-            loginPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPaneLayout.createSequentialGroup()
+        streampaneLayout.setVerticalGroup(
+            streampaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(streampaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                .addComponent(iconStream, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        streamPane.setBackground(new java.awt.Color(81, 196, 211));
+        BmarkPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/Group 1.png"))); // NOI18N
+        iconBookmark.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconBookmark.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/Group 1.png"))); // NOI18N
 
-        javax.swing.GroupLayout streamPaneLayout = new javax.swing.GroupLayout(streamPane);
-        streamPane.setLayout(streamPaneLayout);
-        streamPaneLayout.setHorizontalGroup(
-            streamPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+        javax.swing.GroupLayout BmarkPaneLayout = new javax.swing.GroupLayout(BmarkPane);
+        BmarkPane.setLayout(BmarkPaneLayout);
+        BmarkPaneLayout.setHorizontalGroup(
+            BmarkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(iconBookmark, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
-        streamPaneLayout.setVerticalGroup(
-            streamPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, streamPaneLayout.createSequentialGroup()
+        BmarkPaneLayout.setVerticalGroup(
+            BmarkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BmarkPaneLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addComponent(iconBookmark)
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(81, 196, 211));
+        hHomePane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel13.setText("Home");
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+        hHomeLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        hHomeLabel.setForeground(new java.awt.Color(102, 102, 102));
+        hHomeLabel.setText("Home");
+        hHomeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel13MouseClicked(evt);
+                hHomeLabelMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel13MouseEntered(evt);
+                hHomeLabelMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel13MouseExited(evt);
+                hHomeLabelMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+        javax.swing.GroupLayout hHomePaneLayout = new javax.swing.GroupLayout(hHomePane);
+        hHomePane.setLayout(hHomePaneLayout);
+        hHomePaneLayout.setHorizontalGroup(
+            hHomePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hHomePaneLayout.createSequentialGroup()
+                .addComponent(hHomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        hHomePaneLayout.setVerticalGroup(
+            hHomePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(hHomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel3.setBackground(new java.awt.Color(81, 196, 211));
+        hBmarkPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel14.setText("Bookmark");
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+        hBookLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        hBookLabel.setForeground(new java.awt.Color(102, 102, 102));
+        hBookLabel.setText("Bookmark");
+        hBookLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel14MouseClicked(evt);
+                hBookLabelMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel14MouseEntered(evt);
+                hBookLabelMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel14MouseExited(evt);
+                hBookLabelMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout hBmarkPaneLayout = new javax.swing.GroupLayout(hBmarkPane);
+        hBmarkPane.setLayout(hBmarkPaneLayout);
+        hBmarkPaneLayout.setHorizontalGroup(
+            hBmarkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hBmarkPaneLayout.createSequentialGroup()
+                .addComponent(hBookLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        hBmarkPaneLayout.setVerticalGroup(
+            hBmarkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(hBookLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel4.setBackground(new java.awt.Color(81, 196, 211));
+        hStreamPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel15.setText("Stream");
-        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+        hStreamLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        hStreamLabel.setForeground(new java.awt.Color(102, 102, 102));
+        hStreamLabel.setText("Stream");
+        hStreamLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel15MouseClicked(evt);
+                hStreamLabelMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel15MouseEntered(evt);
+                hStreamLabelMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel15MouseExited(evt);
+                hStreamLabelMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+        javax.swing.GroupLayout hStreamPaneLayout = new javax.swing.GroupLayout(hStreamPane);
+        hStreamPane.setLayout(hStreamPaneLayout);
+        hStreamPaneLayout.setHorizontalGroup(
+            hStreamPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hStreamPaneLayout.createSequentialGroup()
+                .addComponent(hStreamLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        hStreamPaneLayout.setVerticalGroup(
+            hStreamPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(hStreamLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        loginPane1.setBackground(new java.awt.Color(81, 196, 211));
+        logoutPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/log out.png"))); // NOI18N
+        iconLogout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/log out.png"))); // NOI18N
 
-        javax.swing.GroupLayout loginPane1Layout = new javax.swing.GroupLayout(loginPane1);
-        loginPane1.setLayout(loginPane1Layout);
-        loginPane1Layout.setHorizontalGroup(
-            loginPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+        javax.swing.GroupLayout logoutPaneLayout = new javax.swing.GroupLayout(logoutPane);
+        logoutPane.setLayout(logoutPaneLayout);
+        logoutPaneLayout.setHorizontalGroup(
+            logoutPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(iconLogout, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
-        loginPane1Layout.setVerticalGroup(
-            loginPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPane1Layout.createSequentialGroup()
+        logoutPaneLayout.setVerticalGroup(
+            logoutPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logoutPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(iconLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel21.setBackground(new java.awt.Color(81, 196, 211));
+        hLogoutPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel17.setText("Log Out");
-        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+        hLogoutLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        hLogoutLabel.setForeground(new java.awt.Color(102, 102, 102));
+        hLogoutLabel.setText("Log Out");
+        hLogoutLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel17MouseClicked(evt);
+                hLogoutLabelMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel17MouseEntered(evt);
+                hLogoutLabelMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel17MouseExited(evt);
+                hLogoutLabelMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
-        jPanel21.setLayout(jPanel21Layout);
-        jPanel21Layout.setHorizontalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+        javax.swing.GroupLayout hLogoutPaneLayout = new javax.swing.GroupLayout(hLogoutPane);
+        hLogoutPane.setLayout(hLogoutPaneLayout);
+        hLogoutPaneLayout.setHorizontalGroup(
+            hLogoutPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hLogoutPaneLayout.createSequentialGroup()
+                .addComponent(hLogoutLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel21Layout.setVerticalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        hLogoutPaneLayout.setVerticalGroup(
+            hLogoutPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(hLogoutLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout sidebarIconLayout = new javax.swing.GroupLayout(sidebarIcon);
@@ -548,52 +551,52 @@ public class TopMovies extends javax.swing.JFrame {
             sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarIconLayout.createSequentialGroup()
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bookmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(streamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(homePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(hBmarkPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hHomePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(sidebarIconLayout.createSequentialGroup()
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sidebarIconLayout.createSequentialGroup()
-                        .addComponent(loginPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(streampane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(hStreamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(sidebarIconLayout.createSequentialGroup()
-                        .addComponent(loginPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(logoutPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(hLogoutPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sidebarIconLayout.setVerticalGroup(
             sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarIconLayout.createSequentialGroup()
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bookmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(homePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(sidebarIconLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(hHomePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(7, 7, 7)
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(streamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarIconLayout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(hBmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)))
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sidebarIconLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(loginPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(streampane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(sidebarIconLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(hStreamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loginPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logoutPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(sidebarIconLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(hLogoutPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(1270, Short.MAX_VALUE))
         );
 
@@ -836,9 +839,17 @@ public class TopMovies extends javax.swing.JFrame {
         });
         jPanel5.add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 200, 30));
 
-        jScrollPane1.setViewportView(jPanel5);
+        tf_username.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        tf_username.setText("username");
+        jPanel5.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 90, 30));
 
-        getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel18.setText("Login As:");
+        jPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 10, -1, 30));
+
+        DasborPane.setViewportView(jPanel5);
+
+        getContentPane().add(DasborPane, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -882,39 +893,38 @@ public class TopMovies extends javax.swing.JFrame {
         changeColor(hidePane, new Color(81, 196, 211));
     }//GEN-LAST:event_hideMouseExited
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void la_soonmovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_soonmovMouseClicked
         // BUTTON COMING SOON ACTION ANJAY
         SoonMovies comingsoon = new SoonMovies();
         comingsoon.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_la_soonmovMouseClicked
 
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
+    private void la_soonmovMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_soonmovMouseEntered
         // BUTTON COMING SOON
         changeColor(coomingPane, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel6MouseEntered
+    }//GEN-LAST:event_la_soonmovMouseEntered
 
-    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
+    private void la_soonmovMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_soonmovMouseExited
         // BUTTON COMING SOON
         changeColor(coomingPane, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel6MouseExited
+    }//GEN-LAST:event_la_soonmovMouseExited
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void la_latestmovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_latestmovMouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        TopMovies latest = new TopMovies();
-        latest.setVisible(true);
+        new LatestMovies().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_la_latestmovMouseClicked
 
-    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+    private void la_latestmovMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_latestmovMouseEntered
         // BUTTON LATEST
         changeColor(latestPane, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel8MouseEntered
+    }//GEN-LAST:event_la_latestmovMouseEntered
 
-    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+    private void la_latestmovMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_latestmovMouseExited
         // BUTTON LATEST
         changeColor(latestPane, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel8MouseExited
+    }//GEN-LAST:event_la_latestmovMouseExited
 
     private void jComboBox1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseEntered
         // BUTTON COMBO BOX
@@ -924,77 +934,75 @@ public class TopMovies extends javax.swing.JFrame {
         // BUTTON COMBO BOX
     }//GEN-LAST:event_jComboBox1MouseExited
 
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+    private void iconHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconHomeMouseEntered
 
-    }//GEN-LAST:event_jLabel3MouseEntered
+    }//GEN-LAST:event_iconHomeMouseEntered
 
-    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        // TODO add your handling code here:
-        UserDashboard refresh = new UserDashboard("");
-        refresh.setVisible(true);
+    private void hHomeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hHomeLabelMouseClicked
+        // btn ke Home
+        new UserDashboard(tf_username.getText()).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel13MouseClicked
+    }//GEN-LAST:event_hHomeLabelMouseClicked
 
-    private void jLabel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseEntered
+    private void hHomeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hHomeLabelMouseEntered
         // BUTTON BOOKMARK NEW
-        changeColor(jPanel2, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel13MouseEntered
+        changeColor(hHomePane, new Color(216, 227, 231));
+    }//GEN-LAST:event_hHomeLabelMouseEntered
 
-    private void jLabel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseExited
+    private void hHomeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hHomeLabelMouseExited
         // BUTTON BOOKMARK NEW
-        changeColor(jPanel2, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel13MouseExited
+        changeColor(hHomePane, new Color(81, 196, 211));
+    }//GEN-LAST:event_hHomeLabelMouseExited
 
-    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        // TODO add your handling code here:
-        UserBookmark list = new UserBookmark("");
-        list.setVisible(true);
+    private void hBookLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hBookLabelMouseClicked
+        // btn ke bookmark
+        new UserBookmark(tf_username.getText()).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel14MouseClicked
+    }//GEN-LAST:event_hBookLabelMouseClicked
 
-    private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered
+    private void hBookLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hBookLabelMouseEntered
         // TODO add your handling code here:
-        changeColor(jPanel3, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel14MouseEntered
+        changeColor(hBmarkPane, new Color(216, 227, 231));
+    }//GEN-LAST:event_hBookLabelMouseEntered
 
-    private void jLabel14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseExited
+    private void hBookLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hBookLabelMouseExited
         // TODO add your handling code here:
-        changeColor(jPanel3, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel14MouseExited
+        changeColor(hBmarkPane, new Color(81, 196, 211));
+    }//GEN-LAST:event_hBookLabelMouseExited
 
-    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
-        // TODO add your handling code here:
+    private void hStreamLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamLabelMouseClicked
+        // btn ke stream
         stream_page stream = new stream_page();
         stream.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel15MouseClicked
+    }//GEN-LAST:event_hStreamLabelMouseClicked
 
-    private void jLabel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseEntered
+    private void hStreamLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamLabelMouseEntered
         // BUTTON LOGIN NEW
-        changeColor(jPanel4, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel15MouseEntered
+        changeColor(hStreamPane, new Color(216, 227, 231));
+    }//GEN-LAST:event_hStreamLabelMouseEntered
 
-    private void jLabel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseExited
+    private void hStreamLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamLabelMouseExited
         // TODO add your handling code here:
-        changeColor(jPanel4, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel15MouseExited
+        changeColor(hStreamPane, new Color(81, 196, 211));
+    }//GEN-LAST:event_hStreamLabelMouseExited
 
-    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
-        // TODO add your handling code here:
+    private void hLogoutLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hLogoutLabelMouseClicked
+        // btn logout
         AppLogin backlogin = new AppLogin();
         backlogin.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel17MouseClicked
+    }//GEN-LAST:event_hLogoutLabelMouseClicked
 
-    private void jLabel17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseEntered
+    private void hLogoutLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hLogoutLabelMouseEntered
         // TODO add your handling code here:
-        changeColor(jPanel21, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel17MouseEntered
+        changeColor(hLogoutPane, new Color(216, 227, 231));
+    }//GEN-LAST:event_hLogoutLabelMouseEntered
 
-    private void jLabel17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseExited
+    private void hLogoutLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hLogoutLabelMouseExited
         // TODO add your handling code here:
-        changeColor(jPanel21, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel17MouseExited
+        changeColor(hLogoutPane, new Color(81, 196, 211));
+    }//GEN-LAST:event_hLogoutLabelMouseExited
 
     private void poster1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster1MouseClicked
         // poster1
@@ -1079,51 +1087,51 @@ public class TopMovies extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TopMovies().setVisible(true);
+                new AppLogin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bookmarkPane;
+    private javax.swing.JPanel BmarkPane;
+    private javax.swing.JScrollPane DasborPane;
+    private javax.swing.JPanel NavPane;
     private javax.swing.JPanel coomingPane;
     private javax.swing.JPanel genrePane;
+    private javax.swing.JPanel hBmarkPane;
+    private javax.swing.JLabel hBookLabel;
+    private javax.swing.JLabel hHomeLabel;
+    private javax.swing.JPanel hHomePane;
+    private javax.swing.JLabel hLogoutLabel;
+    private javax.swing.JPanel hLogoutPane;
+    private javax.swing.JLabel hStreamLabel;
+    private javax.swing.JPanel hStreamPane;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
+    private javax.swing.JPanel homePane;
+    private javax.swing.JLabel iconBookmark;
+    private javax.swing.JLabel iconHome;
+    private javax.swing.JLabel iconLogout;
+    private javax.swing.JLabel iconStream;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel la_latestmov;
+    private javax.swing.JLabel la_soonmov;
     private javax.swing.JPanel latestPane;
-    private javax.swing.JPanel loginPane;
-    private javax.swing.JPanel loginPane1;
+    private javax.swing.JPanel logoutPane;
+    private javax.swing.JLabel navbar;
     private javax.swing.JLabel poster1;
     private javax.swing.JLabel poster10;
     private javax.swing.JLabel poster2;
@@ -1134,8 +1142,10 @@ public class TopMovies extends javax.swing.JFrame {
     private javax.swing.JLabel poster7;
     private javax.swing.JLabel poster8;
     private javax.swing.JLabel poster9;
+    private javax.swing.JTextField searchForm;
     private javax.swing.JPanel sidebarIcon;
-    private javax.swing.JPanel streamPane;
+    private javax.swing.JPanel streampane;
+    private javax.swing.JLabel tf_username;
     private javax.swing.JLabel title1;
     private javax.swing.JLabel title10;
     private javax.swing.JLabel title2;
