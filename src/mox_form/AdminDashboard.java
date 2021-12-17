@@ -46,19 +46,19 @@ public class AdminDashboard extends javax.swing.JFrame {
         model.addColumn("Admin");
         
         try {
-            String MovSql = "SELECT movie.id_movie, movie.title, movie.date, movie.time, master_genre.genre_movie, "
-                          + "director.nama_director, movie.plot, movie.poster, movie.rating, movie.jenis, "
-                          + "movie_status.status, user.username "
-                          + "FROM ((((movie "
-                          + "INNER JOIN master_genre ON movie.genre = master_genre.id_master_genre) "
-                          + "INNER JOIN director ON movie.director = director.id_director) "
-                          + "INNER JOIN movie_status ON movie.status = movie_status.id_movie_status) "
-                          + "INNER JOIN user ON movie.id_user = user.id_user) "
-                          + "ORDER BY movie.id_movie ASC";
+            String sql = "SELECT movie.id_movie, movie.title, movie.date, movie.time, master_genre.genre_movie, "
+                       + "director.nama_director, movie.plot, movie.poster, movie.rating, movie.jenis, "
+                       + "movie_status.status, user.username "
+                       + "FROM ((((movie "
+                       + "INNER JOIN master_genre ON movie.genre = master_genre.id_master_genre) "
+                       + "INNER JOIN director ON movie.director = director.id_director) "
+                       + "INNER JOIN movie_status ON movie.status = movie_status.id_movie_status) "
+                       + "INNER JOIN user ON movie.id_user = user.id_user) "
+                       + "ORDER BY movie.id_movie ASC";
             //System.out.println(MovSql);
             Connection conn = (Connection) database.getConn();
             Statement stat = conn.createStatement();
-            ResultSet res = stat.executeQuery(MovSql);
+            ResultSet res = stat.executeQuery(sql);
             
             //int no = 1;
             while (res.next()) {                
@@ -569,8 +569,7 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     private void sbar_scheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sbar_scheduleMouseClicked
         // TODO add your handling code here:
-        AdminAddMovie addorupdate = new AdminAddMovie();
-        addorupdate.setVisible(true);
+        new ScheduleDatatable().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_sbar_scheduleMouseClicked
 
