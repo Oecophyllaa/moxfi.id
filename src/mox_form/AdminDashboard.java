@@ -117,8 +117,8 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         sbar_movie = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        sbar_schedule = new javax.swing.JLabel();
+        AdminsPanel = new javax.swing.JPanel();
+        Admins = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         sbar_logout = new javax.swing.JLabel();
 
@@ -398,34 +398,34 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addComponent(sbar_movie, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel3.setBackground(new java.awt.Color(81, 196, 211));
+        AdminsPanel.setBackground(new java.awt.Color(81, 196, 211));
 
-        sbar_schedule.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        sbar_schedule.setForeground(new java.awt.Color(102, 102, 102));
-        sbar_schedule.setText("Schedule");
-        sbar_schedule.addMouseListener(new java.awt.event.MouseAdapter() {
+        Admins.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Admins.setForeground(new java.awt.Color(102, 102, 102));
+        Admins.setText("Add Admin");
+        Admins.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sbar_scheduleMouseClicked(evt);
+                AdminsMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                sbar_scheduleMouseEntered(evt);
+                AdminsMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                sbar_scheduleMouseExited(evt);
+                AdminsMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(sbar_schedule, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout AdminsPanelLayout = new javax.swing.GroupLayout(AdminsPanel);
+        AdminsPanel.setLayout(AdminsPanelLayout);
+        AdminsPanelLayout.setHorizontalGroup(
+            AdminsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdminsPanelLayout.createSequentialGroup()
+                .addComponent(Admins, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sbar_schedule, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        AdminsPanelLayout.setVerticalGroup(
+            AdminsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Admins, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel4.setBackground(new java.awt.Color(81, 196, 211));
@@ -468,7 +468,7 @@ public class AdminDashboard extends javax.swing.JFrame {
                     .addComponent(schedulePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AdminsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(sidebarIconLayout.createSequentialGroup()
@@ -489,7 +489,7 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(schedulePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarIconLayout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AdminsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)))
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sidebarIconLayout.createSequentialGroup()
@@ -567,21 +567,21 @@ public class AdminDashboard extends javax.swing.JFrame {
         changeColor(jPanel2, new Color(81, 196, 211));
     }//GEN-LAST:event_sbar_movieMouseExited
 
-    private void sbar_scheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sbar_scheduleMouseClicked
+    private void AdminsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminsMouseClicked
         // TODO add your handling code here:
-        new ScheduleDatatable().setVisible(true);
+        new AdminRegister().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_sbar_scheduleMouseClicked
+    }//GEN-LAST:event_AdminsMouseClicked
 
-    private void sbar_scheduleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sbar_scheduleMouseEntered
+    private void AdminsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminsMouseEntered
         // TODO add your handling code here:
-        changeColor(jPanel3, new Color(216, 227, 231));
-    }//GEN-LAST:event_sbar_scheduleMouseEntered
+        changeColor(AdminsPanel, new Color(216, 227, 231));
+    }//GEN-LAST:event_AdminsMouseEntered
 
-    private void sbar_scheduleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sbar_scheduleMouseExited
+    private void AdminsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminsMouseExited
         // TODO add your handling code here:
-        changeColor(jPanel3, new Color(81, 196, 211));
-    }//GEN-LAST:event_sbar_scheduleMouseExited
+        changeColor(AdminsPanel, new Color(81, 196, 211));
+    }//GEN-LAST:event_AdminsMouseExited
 
     private void sbar_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sbar_logoutMouseClicked
         // TODO add your handling code here:
@@ -746,6 +746,8 @@ public class AdminDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Admins;
+    private javax.swing.JPanel AdminsPanel;
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_delete;
     private javax.swing.JButton btn_edit;
@@ -760,7 +762,6 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
@@ -770,7 +771,6 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel movieTablePane;
     private javax.swing.JLabel sbar_logout;
     private javax.swing.JLabel sbar_movie;
-    private javax.swing.JLabel sbar_schedule;
     private javax.swing.JPanel schedulePane;
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JTextField tf_search;
