@@ -20,7 +20,7 @@ import javax.swing.SwingUtilities;
 
 public class UserDashboard extends javax.swing.JFrame {
 
-    public UserDashboard() {
+    public UserDashboard(String username) {
         initComponents();
         setTitle("MOXFI.ID");
         setExtendedState(MAXIMIZED_BOTH);
@@ -273,6 +273,7 @@ public class UserDashboard extends javax.swing.JFrame {
         soon3 = new javax.swing.JLabel();
         soon2 = new javax.swing.JLabel();
         soon1 = new javax.swing.JLabel();
+        tf_username = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1450,6 +1451,9 @@ public class UserDashboard extends javax.swing.JFrame {
         });
         jPanel8.add(soon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1200, 200, 30));
 
+        tf_username.setText("login as");
+        jPanel8.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1148, 10, 130, 30));
+
         jScrollPane1.setViewportView(jPanel8);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -1664,7 +1668,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
-        UserDashboard refresh = new UserDashboard();
+        UserDashboard refresh = new UserDashboard("");
         refresh.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
@@ -2106,7 +2110,7 @@ public class UserDashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserDashboard().setVisible(true);
+                new UserDashboard("").setVisible(true);
             }
         });
     }
@@ -2186,6 +2190,7 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel soonPoster4;
     private javax.swing.JLabel soonPoster5;
     private javax.swing.JPanel streamPane;
+    private javax.swing.JLabel tf_username;
     private javax.swing.JLabel topPoster1;
     private javax.swing.JLabel topPoster2;
     private javax.swing.JLabel topPoster3;
