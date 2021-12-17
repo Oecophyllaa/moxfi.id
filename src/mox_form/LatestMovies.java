@@ -80,7 +80,16 @@ public class LatestMovies extends javax.swing.JFrame {
             String[] titleArr = new String[titles.size()];
             titleArr = titles.toArray(titleArr);
             
-            
+            title1.setText(titleArr[0]);
+            title2.setText(titleArr[1]);
+            title3.setText(titleArr[2]);
+            title4.setText(titleArr[3]);
+            title5.setText(titleArr[4]);
+            title6.setText(titleArr[5]);
+            title7.setText(titleArr[6]);
+            title8.setText(titleArr[7]);
+            title9.setText(titleArr[8]);
+            title10.setText(titleArr[9]);
             
         } catch (SQLException e) {
         }
@@ -146,6 +155,16 @@ public class LatestMovies extends javax.swing.JFrame {
         poster10 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         poster1 = new javax.swing.JLabel();
+        title10 = new javax.swing.JLabel();
+        title9 = new javax.swing.JLabel();
+        title8 = new javax.swing.JLabel();
+        title7 = new javax.swing.JLabel();
+        title6 = new javax.swing.JLabel();
+        title5 = new javax.swing.JLabel();
+        title4 = new javax.swing.JLabel();
+        title3 = new javax.swing.JLabel();
+        title2 = new javax.swing.JLabel();
+        title1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -745,6 +764,16 @@ public class LatestMovies extends javax.swing.JFrame {
         );
 
         jPanel5.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        jPanel5.add(title10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 740, 200, 30));
+        jPanel5.add(title9, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 740, 200, 30));
+        jPanel5.add(title8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 740, 200, 30));
+        jPanel5.add(title7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 740, 200, 30));
+        jPanel5.add(title6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 740, 200, 30));
+        jPanel5.add(title5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 360, 200, 30));
+        jPanel5.add(title4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 360, 200, 30));
+        jPanel5.add(title3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 200, 30));
+        jPanel5.add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 200, 30));
+        jPanel5.add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 200, 30));
 
         jScrollPane1.setViewportView(jPanel5);
 
@@ -994,5 +1023,15 @@ public class LatestMovies extends javax.swing.JFrame {
     private javax.swing.JLabel poster9;
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JPanel streamPane;
+    private javax.swing.JLabel title1;
+    private javax.swing.JLabel title10;
+    private javax.swing.JLabel title2;
+    private javax.swing.JLabel title3;
+    private javax.swing.JLabel title4;
+    private javax.swing.JLabel title5;
+    private javax.swing.JLabel title6;
+    private javax.swing.JLabel title7;
+    private javax.swing.JLabel title8;
+    private javax.swing.JLabel title9;
     // End of variables declaration//GEN-END:variables
 }
