@@ -190,17 +190,17 @@ public class UserDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        Navbar = new javax.swing.JPanel();
+        navTitle = new javax.swing.JLabel();
         hidePane = new javax.swing.JPanel();
         hide = new javax.swing.JLabel();
-        coomingPane = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        soonPane = new javax.swing.JPanel();
+        la_soonMov = new javax.swing.JLabel();
         latestPane = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        la_latestMov = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        cbx_genre = new javax.swing.JComboBox<>();
+        searchForm = new javax.swing.JTextField();
         sidebarIcon = new javax.swing.JPanel();
         bookmarkPane = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -218,7 +218,7 @@ public class UserDashboard extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        Dasbor = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -254,11 +254,11 @@ public class UserDashboard extends javax.swing.JFrame {
         soonPoster4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         morePane = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        moreSoonMov = new javax.swing.JLabel();
         morePane1 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
+        moreLatest = new javax.swing.JLabel();
         morePane2 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
+        moreTopMov = new javax.swing.JLabel();
         lt_title1 = new javax.swing.JLabel();
         lt_title2 = new javax.swing.JLabel();
         lt_title3 = new javax.swing.JLabel();
@@ -279,10 +279,10 @@ public class UserDashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(81, 196, 211));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 60));
+        Navbar.setBackground(new java.awt.Color(81, 196, 211));
+        Navbar.setPreferredSize(new java.awt.Dimension(1366, 60));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/nav-branding.png"))); // NOI18N
+        navTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mox_img/nav-branding.png"))); // NOI18N
 
         hidePane.setBackground(new java.awt.Color(81, 196, 211));
 
@@ -311,52 +311,52 @@ public class UserDashboard extends javax.swing.JFrame {
             .addComponent(hide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        coomingPane.setBackground(new java.awt.Color(81, 196, 211));
+        soonPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Coming Soon");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        la_soonMov.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        la_soonMov.setText("Coming Soon");
+        la_soonMov.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                la_soonMovMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel6MouseEntered(evt);
+                la_soonMovMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel6MouseExited(evt);
+                la_soonMovMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout coomingPaneLayout = new javax.swing.GroupLayout(coomingPane);
-        coomingPane.setLayout(coomingPaneLayout);
-        coomingPaneLayout.setHorizontalGroup(
-            coomingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coomingPaneLayout.createSequentialGroup()
+        javax.swing.GroupLayout soonPaneLayout = new javax.swing.GroupLayout(soonPane);
+        soonPane.setLayout(soonPaneLayout);
+        soonPaneLayout.setHorizontalGroup(
+            soonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(soonPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addComponent(la_soonMov)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        coomingPaneLayout.setVerticalGroup(
-            coomingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coomingPaneLayout.createSequentialGroup()
+        soonPaneLayout.setVerticalGroup(
+            soonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(soonPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(la_soonMov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         latestPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setText("Latest Movies");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        la_latestMov.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        la_latestMov.setText("Latest Movies");
+        la_latestMov.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                la_latestMovMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel8MouseEntered(evt);
+                la_latestMovMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel8MouseExited(evt);
+                la_latestMovMouseExited(evt);
             }
         });
 
@@ -366,27 +366,27 @@ public class UserDashboard extends javax.swing.JFrame {
             latestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(latestPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8)
+                .addComponent(la_latestMov)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         latestPaneLayout.setVerticalGroup(
             latestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, latestPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(la_latestMov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         genrePane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Horror", "Romance", "Thriller" }));
-        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
+        cbx_genre.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cbx_genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Horror", "Romance", "Thriller" }));
+        cbx_genre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jComboBox1MouseEntered(evt);
+                cbx_genreMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jComboBox1MouseExited(evt);
+                cbx_genreMouseExited(evt);
             }
         });
 
@@ -396,57 +396,57 @@ public class UserDashboard extends javax.swing.JFrame {
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(genrePaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbx_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         genrePaneLayout.setVerticalGroup(
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, genrePaneLayout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbx_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setText("Search here");
-        jTextField1.setPreferredSize(new java.awt.Dimension(69, 30));
+        searchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        searchForm.setText("Search here");
+        searchForm.setPreferredSize(new java.awt.Dimension(69, 30));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout NavbarLayout = new javax.swing.GroupLayout(Navbar);
+        Navbar.setLayout(NavbarLayout);
+        NavbarLayout.setHorizontalGroup(
+            NavbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NavbarLayout.createSequentialGroup()
                 .addComponent(hidePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addComponent(navTitle)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchForm, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(latestPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
-                .addComponent(coomingPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(soonPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        NavbarLayout.setVerticalGroup(
+            NavbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(hidePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(coomingPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(soonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(latestPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(NavbarLayout.createSequentialGroup()
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(NavbarLayout.createSequentialGroup()
+                .addGroup(NavbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(navTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(NavbarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(searchForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(Navbar, java.awt.BorderLayout.PAGE_START);
 
         sidebarIcon.setBackground(new java.awt.Color(81, 196, 211));
         sidebarIcon.setPreferredSize(new java.awt.Dimension(60, 708));
@@ -1163,21 +1163,21 @@ public class UserDashboard extends javax.swing.JFrame {
 
         jPanel8.add(morePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 430, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(18, 110, 130));
-        jLabel10.setText("More...");
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+        moreSoonMov.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        moreSoonMov.setForeground(new java.awt.Color(18, 110, 130));
+        moreSoonMov.setText("More...");
+        moreSoonMov.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+                moreSoonMovMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel10MouseEntered(evt);
+                moreSoonMovMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel10MouseExited(evt);
+                moreSoonMovMouseExited(evt);
             }
         });
-        jPanel8.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 1240, -1, 20));
+        jPanel8.add(moreSoonMov, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 1240, -1, 20));
 
         morePane1.setBackground(new java.awt.Color(18, 110, 130));
         morePane1.setPreferredSize(new java.awt.Dimension(60, 2));
@@ -1195,21 +1195,21 @@ public class UserDashboard extends javax.swing.JFrame {
 
         jPanel8.add(morePane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 850, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(18, 110, 130));
-        jLabel11.setText("More...");
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        moreLatest.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        moreLatest.setForeground(new java.awt.Color(18, 110, 130));
+        moreLatest.setText("More...");
+        moreLatest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
+                moreLatestMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel11MouseEntered(evt);
+                moreLatestMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel11MouseExited(evt);
+                moreLatestMouseExited(evt);
             }
         });
-        jPanel8.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 410, -1, 20));
+        jPanel8.add(moreLatest, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 410, -1, 20));
 
         morePane2.setBackground(new java.awt.Color(18, 110, 130));
         morePane2.setPreferredSize(new java.awt.Dimension(60, 2));
@@ -1227,21 +1227,21 @@ public class UserDashboard extends javax.swing.JFrame {
 
         jPanel8.add(morePane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 1260, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(18, 110, 130));
-        jLabel12.setText("More...");
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+        moreTopMov.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        moreTopMov.setForeground(new java.awt.Color(18, 110, 130));
+        moreTopMov.setText("More...");
+        moreTopMov.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
+                moreTopMovMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel12MouseEntered(evt);
+                moreTopMovMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel12MouseExited(evt);
+                moreTopMovMouseExited(evt);
             }
         });
-        jPanel8.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 830, -1, 20));
+        jPanel8.add(moreTopMov, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 830, -1, 20));
 
         lt_title1.setText("Latest1");
         lt_title1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1461,9 +1461,9 @@ public class UserDashboard extends javax.swing.JFrame {
         jLabel14.setText("Login As:");
         jPanel8.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, -1, 30));
 
-        jScrollPane1.setViewportView(jPanel8);
+        Dasbor.setViewportView(jPanel8);
 
-        getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(Dasbor, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1513,79 +1513,79 @@ public class UserDashboard extends javax.swing.JFrame {
 
     }//GEN-LAST:event_hideMouseExited
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void la_soonMovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_soonMovMouseClicked
         // BUTTON COMING SOON ACTION ANJAY
         SoonMovies comingsoon = new SoonMovies();
         comingsoon.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_la_soonMovMouseClicked
 
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
+    private void la_soonMovMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_soonMovMouseEntered
         // BUTTON COMING SOON
-        changeColor(coomingPane, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel6MouseEntered
+        changeColor(soonPane, new Color(216, 227, 231));
+    }//GEN-LAST:event_la_soonMovMouseEntered
 
-    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
+    private void la_soonMovMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_soonMovMouseExited
         // BUTTON COMING SOON
-        changeColor(coomingPane, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel6MouseExited
+        changeColor(soonPane, new Color(81, 196, 211));
+    }//GEN-LAST:event_la_soonMovMouseExited
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void la_latestMovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_latestMovMouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
         LatestMovies latest = new LatestMovies();
         latest.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_la_latestMovMouseClicked
 
-    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+    private void la_latestMovMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_latestMovMouseEntered
         // BUTTON LATEST
         changeColor(latestPane, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel8MouseEntered
+    }//GEN-LAST:event_la_latestMovMouseEntered
 
-    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+    private void la_latestMovMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_latestMovMouseExited
         // BUTTON LATEST
         changeColor(latestPane, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel8MouseExited
+    }//GEN-LAST:event_la_latestMovMouseExited
 
-    private void jComboBox1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseExited
+    private void cbx_genreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_genreMouseExited
         // BUTTON COMBO BOX
 
-    }//GEN-LAST:event_jComboBox1MouseExited
+    }//GEN-LAST:event_cbx_genreMouseExited
 
-    private void jComboBox1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseEntered
+    private void cbx_genreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_genreMouseEntered
         // BUTTON COMBO BOX
 
-    }//GEN-LAST:event_jComboBox1MouseEntered
+    }//GEN-LAST:event_cbx_genreMouseEntered
 
-    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
+    private void moreSoonMovMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreSoonMovMouseEntered
         // BUTTON MORE
         changeColor(morePane2, new Color(18, 110, 130));
-    }//GEN-LAST:event_jLabel10MouseEntered
+    }//GEN-LAST:event_moreSoonMovMouseEntered
 
-    private void jLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseExited
+    private void moreSoonMovMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreSoonMovMouseExited
         // BUTTON MORE
         changeColor(morePane2,new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel10MouseExited
+    }//GEN-LAST:event_moreSoonMovMouseExited
 
-    private void jLabel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseEntered
+    private void moreLatestMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreLatestMouseEntered
         // TODO add your handling code here:
         changeColor(morePane, new Color(18, 110, 130));
-    }//GEN-LAST:event_jLabel11MouseEntered
+    }//GEN-LAST:event_moreLatestMouseEntered
 
-    private void jLabel11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseExited
+    private void moreLatestMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreLatestMouseExited
         // TODO add your handling code here:
         changeColor(morePane, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel11MouseExited
+    }//GEN-LAST:event_moreLatestMouseExited
 
-    private void jLabel12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseEntered
+    private void moreTopMovMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreTopMovMouseEntered
         // TODO add your handling code here:
         changeColor(morePane1, new Color(18, 110, 130));
-    }//GEN-LAST:event_jLabel12MouseEntered
+    }//GEN-LAST:event_moreTopMovMouseEntered
 
-    private void jLabel12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseExited
+    private void moreTopMovMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreTopMovMouseExited
         // TODO add your handling code here:
         changeColor(morePane1, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel12MouseExited
+    }//GEN-LAST:event_moreTopMovMouseExited
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
 
@@ -1618,26 +1618,25 @@ public class UserDashboard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel15MouseClicked
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void moreLatestMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreLatestMouseClicked
         // TODO add your handling code here:
         LatestMovies latest = new LatestMovies();
         latest.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_moreLatestMouseClicked
 
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+    private void moreTopMovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreTopMovMouseClicked
         // TODO add your handling code here:
-        TopMovies topmovies = new TopMovies();
-        topmovies.setVisible(true);
+        new TopMovies(tf_username.getText()).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel12MouseClicked
+    }//GEN-LAST:event_moreTopMovMouseClicked
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+    private void moreSoonMovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreSoonMovMouseClicked
         // TODO add your handling code here:
         SoonMovies comingsoon = new SoonMovies();
         comingsoon.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel10MouseClicked
+    }//GEN-LAST:event_moreSoonMovMouseClicked
 
     private void la_bookmarkMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_bookmarkMouseEntered
         // TODO add your handling code here:
@@ -2123,31 +2122,25 @@ public class UserDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane Dasbor;
+    private javax.swing.JPanel Navbar;
     private javax.swing.JPanel bookmarkPane;
-    private javax.swing.JPanel coomingPane;
+    private javax.swing.JComboBox<String> cbx_genre;
     private javax.swing.JPanel genrePane;
     private javax.swing.JPanel hiddenPane2;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -2167,9 +2160,9 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel la_bookmark;
+    private javax.swing.JLabel la_latestMov;
+    private javax.swing.JLabel la_soonMov;
     private javax.swing.JPanel latestPane;
     private javax.swing.JPanel loginPane;
     private javax.swing.JPanel loginPane1;
@@ -2178,20 +2171,26 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lt_title3;
     private javax.swing.JLabel lt_title4;
     private javax.swing.JLabel lt_title5;
+    private javax.swing.JLabel moreLatest;
     private javax.swing.JPanel morePane;
     private javax.swing.JPanel morePane1;
     private javax.swing.JPanel morePane2;
+    private javax.swing.JLabel moreSoonMov;
+    private javax.swing.JLabel moreTopMov;
+    private javax.swing.JLabel navTitle;
     private javax.swing.JLabel poster1;
     private javax.swing.JLabel poster2;
     private javax.swing.JLabel poster3;
     private javax.swing.JLabel poster4;
     private javax.swing.JLabel poster5;
+    private javax.swing.JTextField searchForm;
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JLabel soon1;
     private javax.swing.JLabel soon2;
     private javax.swing.JLabel soon3;
     private javax.swing.JLabel soon4;
     private javax.swing.JLabel soon5;
+    private javax.swing.JPanel soonPane;
     private javax.swing.JLabel soonPoster1;
     private javax.swing.JLabel soonPoster2;
     private javax.swing.JLabel soonPoster3;
