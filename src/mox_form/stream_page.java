@@ -211,7 +211,7 @@ public class stream_page extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(latestPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,7 +226,7 @@ public class stream_page extends javax.swing.JFrame {
             .addComponent(latestPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 3, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -494,7 +494,7 @@ public class stream_page extends javax.swing.JFrame {
                     .addGroup(sidebarIconLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1140, Short.MAX_VALUE))
+                .addContainerGap(561, Short.MAX_VALUE))
         );
 
         getContentPane().add(sidebarIcon, java.awt.BorderLayout.LINE_START);
@@ -601,9 +601,8 @@ public class stream_page extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // BUTTON COMING SOON ACTION ANJAY
-        SoonMovies comingsoon = new SoonMovies();
-        comingsoon.setVisible(true);
-        this.dispose();
+        
+        //this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
@@ -618,9 +617,7 @@ public class stream_page extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        LatestMovies latest = new LatestMovies();
-        latest.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered

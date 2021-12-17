@@ -27,7 +27,8 @@ public class LatestMovies extends javax.swing.JFrame {
     }
     
     public void getDetailMovie(String title) {
-        new DetailMovie(title).setVisible(true);
+        String username = tf_username.getText();
+        new DetailMovie(title, username).setVisible(true);
         this.setVisible(false);
     }
     
@@ -899,8 +900,7 @@ public class LatestMovies extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // BUTTON COMING SOON ACTION ANJAY
-        SoonMovies comingsoon = new SoonMovies();
-        comingsoon.setVisible(true);
+        new SoonMovies(tf_username.getText()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 

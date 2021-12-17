@@ -28,7 +28,8 @@ public class TopMovies extends javax.swing.JFrame {
     }
     
     public void getDetailMovie(String title) {
-        new DetailMovie(title).setVisible(true);
+        String username = tf_username.getText();
+        new DetailMovie(title, username).setVisible(true);
         this.setVisible(false);
     }
     
@@ -894,9 +895,8 @@ public class TopMovies extends javax.swing.JFrame {
     }//GEN-LAST:event_hideMouseExited
 
     private void la_soonmovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_soonmovMouseClicked
-        // BUTTON COMING SOON ACTION ANJAY
-        SoonMovies comingsoon = new SoonMovies();
-        comingsoon.setVisible(true);
+        // btn soon mov navbar
+        new SoonMovies(tf_username.getText()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_la_soonmovMouseClicked
 
@@ -906,13 +906,13 @@ public class TopMovies extends javax.swing.JFrame {
     }//GEN-LAST:event_la_soonmovMouseEntered
 
     private void la_soonmovMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_soonmovMouseExited
-        // BUTTON COMING SOON
+        // btn soon mov navbar
         changeColor(coomingPane, new Color(81, 196, 211));
     }//GEN-LAST:event_la_soonmovMouseExited
 
     private void la_latestmovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_latestmovMouseClicked
-        // BUTTON LATEST ACTION CLICK ANJAY
-        new LatestMovies().setVisible(true);
+        // btn latest mov navbar
+        new LatestMovies(tf_username.getText()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_la_latestmovMouseClicked
 

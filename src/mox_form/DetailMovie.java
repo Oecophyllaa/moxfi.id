@@ -21,10 +21,11 @@ import javax.swing.SwingUtilities;
 
 public class DetailMovie extends javax.swing.JFrame {
 
-    public DetailMovie(String title) {
+    public DetailMovie(String title, String username) {
         initComponents();
         setTitle("Detail Movie");
         setExtendedState(MAXIMIZED_BOTH);
+        tf_username.setText(username);
         load_detail(title);
     }
     
@@ -84,13 +85,14 @@ public class DetailMovie extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         hidePane = new javax.swing.JPanel();
         hide = new javax.swing.JLabel();
-        coomingPane = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        latestPane = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        soonPaneNav = new javax.swing.JPanel();
+        soonNavbar = new javax.swing.JLabel();
+        latestPaneNav = new javax.swing.JPanel();
+        latestNavbar = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        cbxGenre = new javax.swing.JComboBox<>();
+        searchForm = new javax.swing.JTextField();
+        tf_username = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         VControlPanel = new javax.swing.JPanel();
         PosterPanel = new javax.swing.JPanel();
@@ -160,82 +162,82 @@ public class DetailMovie extends javax.swing.JFrame {
             .addComponent(hide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        coomingPane.setBackground(new java.awt.Color(81, 196, 211));
+        soonPaneNav.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Coming Soon");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        soonNavbar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        soonNavbar.setText("Coming Soon");
+        soonNavbar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                soonNavbarMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel6MouseEntered(evt);
+                soonNavbarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel6MouseExited(evt);
+                soonNavbarMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout coomingPaneLayout = new javax.swing.GroupLayout(coomingPane);
-        coomingPane.setLayout(coomingPaneLayout);
-        coomingPaneLayout.setHorizontalGroup(
-            coomingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coomingPaneLayout.createSequentialGroup()
+        javax.swing.GroupLayout soonPaneNavLayout = new javax.swing.GroupLayout(soonPaneNav);
+        soonPaneNav.setLayout(soonPaneNavLayout);
+        soonPaneNavLayout.setHorizontalGroup(
+            soonPaneNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(soonPaneNavLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addComponent(soonNavbar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        coomingPaneLayout.setVerticalGroup(
-            coomingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coomingPaneLayout.createSequentialGroup()
+        soonPaneNavLayout.setVerticalGroup(
+            soonPaneNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, soonPaneNavLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(soonNavbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        latestPane.setBackground(new java.awt.Color(81, 196, 211));
+        latestPaneNav.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setText("Latest Movies");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        latestNavbar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        latestNavbar.setText("Latest Movies");
+        latestNavbar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                latestNavbarMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel8MouseEntered(evt);
+                latestNavbarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel8MouseExited(evt);
+                latestNavbarMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout latestPaneLayout = new javax.swing.GroupLayout(latestPane);
-        latestPane.setLayout(latestPaneLayout);
-        latestPaneLayout.setHorizontalGroup(
-            latestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(latestPaneLayout.createSequentialGroup()
+        javax.swing.GroupLayout latestPaneNavLayout = new javax.swing.GroupLayout(latestPaneNav);
+        latestPaneNav.setLayout(latestPaneNavLayout);
+        latestPaneNavLayout.setHorizontalGroup(
+            latestPaneNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(latestPaneNavLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8)
+                .addComponent(latestNavbar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        latestPaneLayout.setVerticalGroup(
-            latestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, latestPaneLayout.createSequentialGroup()
+        latestPaneNavLayout.setVerticalGroup(
+            latestPaneNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, latestPaneNavLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(latestNavbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         genrePane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Horror", "Romance", "Thriller" }));
-        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
+        cbxGenre.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cbxGenre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Horror", "Romance", "Thriller" }));
+        cbxGenre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jComboBox1MouseEntered(evt);
+                cbxGenreMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jComboBox1MouseExited(evt);
+                cbxGenreMouseExited(evt);
             }
         });
 
@@ -245,20 +247,23 @@ public class DetailMovie extends javax.swing.JFrame {
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(genrePaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbxGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         genrePaneLayout.setVerticalGroup(
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, genrePaneLayout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbxGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setText("Search here");
-        jTextField1.setPreferredSize(new java.awt.Dimension(69, 30));
+        searchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        searchForm.setText("Search here");
+        searchForm.setPreferredSize(new java.awt.Dimension(69, 30));
+
+        tf_username.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        tf_username.setText("Username");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -269,30 +274,36 @@ public class DetailMovie extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
+                .addComponent(searchForm, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(latestPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(coomingPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73))
+                .addComponent(latestPaneNav, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(soonPaneNav, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(213, 213, 213)
+                .addComponent(tf_username)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(hidePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(coomingPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(latestPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(soonPaneNav, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(latestPaneNav, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 3, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(searchForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(tf_username)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
@@ -375,16 +386,16 @@ public class DetailMovie extends javax.swing.JFrame {
                 .addComponent(la_title)
                 .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(VControlPanelLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(la_genre)
                             .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(VControlPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel11)))
-                .addGap(83, 83, 83)
+                .addGap(18, 18, 18)
                 .addComponent(la_director, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(la_time, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -701,47 +712,45 @@ public class DetailMovie extends javax.swing.JFrame {
        changeColor(hidePane, new Color(81, 196, 211));
     }//GEN-LAST:event_hideMouseExited
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void soonNavbarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonNavbarMouseClicked
         // BUTTON COMING SOON ACTION ANJAY
-        SoonMovies comingsoon = new SoonMovies();
-        comingsoon.setVisible(true);
+        new SoonMovies(tf_username.getText()).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_soonNavbarMouseClicked
 
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
+    private void soonNavbarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonNavbarMouseEntered
         // BUTTON COMING SOON
-        changeColor(coomingPane, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel6MouseEntered
+        changeColor(soonPaneNav, new Color(216, 227, 231));
+    }//GEN-LAST:event_soonNavbarMouseEntered
 
-    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
+    private void soonNavbarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonNavbarMouseExited
         // BUTTON COMING SOON
-       changeColor(coomingPane, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel6MouseExited
+       changeColor(soonPaneNav, new Color(81, 196, 211));
+    }//GEN-LAST:event_soonNavbarMouseExited
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void latestNavbarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_latestNavbarMouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        LatestMovies latest = new LatestMovies();
-        latest.setVisible(true);
+        new LatestMovies(tf_username.getText()).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_latestNavbarMouseClicked
 
-    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+    private void latestNavbarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_latestNavbarMouseEntered
         // BUTTON LATEST
-       changeColor(latestPane, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel8MouseEntered
+       changeColor(latestPaneNav, new Color(216, 227, 231));
+    }//GEN-LAST:event_latestNavbarMouseEntered
 
-    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+    private void latestNavbarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_latestNavbarMouseExited
         // BUTTON LATEST
-       changeColor(latestPane, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel8MouseExited
+       changeColor(latestPaneNav, new Color(81, 196, 211));
+    }//GEN-LAST:event_latestNavbarMouseExited
 
-    private void jComboBox1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseEntered
+    private void cbxGenreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxGenreMouseEntered
         // BUTTON COMBO BOX
-    }//GEN-LAST:event_jComboBox1MouseEntered
+    }//GEN-LAST:event_cbxGenreMouseEntered
 
-    private void jComboBox1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseExited
+    private void cbxGenreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxGenreMouseExited
         // BUTTON COMBO BOX
-    }//GEN-LAST:event_jComboBox1MouseExited
+    }//GEN-LAST:event_cbxGenreMouseExited
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
 
@@ -852,7 +861,7 @@ public class DetailMovie extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserDashboard("").setVisible(true);
+                new AppLogin().setVisible(true);
             }
         });
     }
@@ -861,11 +870,10 @@ public class DetailMovie extends javax.swing.JFrame {
     private javax.swing.JPanel PosterPanel;
     private javax.swing.JPanel VControlPanel;
     private javax.swing.JPanel bookmarkPane;
-    private javax.swing.JPanel coomingPane;
+    private javax.swing.JComboBox<String> cbxGenre;
     private javax.swing.JPanel genrePane;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
@@ -877,8 +885,6 @@ public class DetailMovie extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
@@ -886,17 +892,21 @@ public class DetailMovie extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel la_director;
     private javax.swing.JLabel la_genre;
     private javax.swing.JLabel la_poster;
     private javax.swing.JLabel la_time;
     private javax.swing.JLabel la_title;
-    private javax.swing.JPanel latestPane;
+    private javax.swing.JLabel latestNavbar;
+    private javax.swing.JPanel latestPaneNav;
     private javax.swing.JPanel loginPane;
     private javax.swing.JPanel loginPane1;
+    private javax.swing.JTextField searchForm;
     private javax.swing.JPanel sidebarIcon;
+    private javax.swing.JLabel soonNavbar;
+    private javax.swing.JPanel soonPaneNav;
     private javax.swing.JPanel streamPane;
     private javax.swing.JTextArea ta_plot;
+    private javax.swing.JLabel tf_username;
     // End of variables declaration//GEN-END:variables
 }

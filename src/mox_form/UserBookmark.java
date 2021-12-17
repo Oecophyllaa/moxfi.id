@@ -23,6 +23,7 @@ public class UserBookmark extends javax.swing.JFrame {
         initComponents();
         setTitle("My Movies Bookmarks");
         setExtendedState(MAXIMIZED_BOTH);
+        tf_username.setText(username);
     }
 
     /**
@@ -75,6 +76,8 @@ public class UserBookmark extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
+        tf_username = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -677,6 +680,14 @@ public class UserBookmark extends javax.swing.JFrame {
 
         jPanel6.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
+        tf_username.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        tf_username.setText("username");
+        jPanel6.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 90, 30));
+
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel18.setText("Login As:");
+        jPanel6.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 10, -1, 30));
+
         jScrollPane1.setViewportView(jPanel6);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -725,8 +736,7 @@ public class UserBookmark extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // BUTTON COMING SOON ACTION ANJAY
-        SoonMovies comingsoon = new SoonMovies();
-        comingsoon.setVisible(true);
+        new SoonMovies(tf_username.getText()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
@@ -742,8 +752,7 @@ public class UserBookmark extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        LatestMovies latest = new LatestMovies();
-        latest.setVisible(true);
+        new LatestMovies(tf_username.getText()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
 
@@ -885,6 +894,7 @@ public class UserBookmark extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -914,5 +924,6 @@ public class UserBookmark extends javax.swing.JFrame {
     private javax.swing.JPanel loginPane1;
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JPanel streamPane;
+    private javax.swing.JLabel tf_username;
     // End of variables declaration//GEN-END:variables
 }

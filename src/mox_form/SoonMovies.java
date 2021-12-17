@@ -28,10 +28,11 @@ public class SoonMovies extends javax.swing.JFrame {
      * Creates new form soon_movies
      */
     boolean a;
-    public SoonMovies() {
+    public SoonMovies(String username) {
         initComponents();
         setTitle("Coming Soon Movies");
         setExtendedState(MAXIMIZED_BOTH);
+        tf_username.setText(username);
         load_data();
     }
     
@@ -50,7 +51,8 @@ public class SoonMovies extends javax.swing.JFrame {
     }
     
     public void getDetailMovie(String title) {
-        new DetailMovie(title).setVisible(true);
+        String username = tf_username.getText();
+        new DetailMovie(title, username).setVisible(true);
         this.setVisible(false);
     }
     
@@ -152,6 +154,8 @@ public class SoonMovies extends javax.swing.JFrame {
         title3 = new javax.swing.JLabel();
         title2 = new javax.swing.JLabel();
         title1 = new javax.swing.JLabel();
+        tf_username = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         sidebarIcon = new javax.swing.JPanel();
         bookmarkPane = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -519,6 +523,14 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel2.add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 200, 30));
         jPanel2.add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 200, 30));
 
+        tf_username.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        tf_username.setText("username");
+        jPanel2.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 90, 30));
+
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel18.setText("Login As:");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 10, -1, 30));
+
         jScrollPane1.setViewportView(jPanel2);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -811,8 +823,7 @@ public class SoonMovies extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        LatestMovies latest = new LatestMovies();
-        latest.setVisible(true);
+        new LatestMovies(tf_username.getText()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
 
@@ -964,7 +975,7 @@ public class SoonMovies extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SoonMovies().setVisible(true);
+                new AppLogin().setVisible(true);
             }
         });
     }
@@ -982,6 +993,7 @@ public class SoonMovies extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1021,6 +1033,7 @@ public class SoonMovies extends javax.swing.JFrame {
     private javax.swing.JLabel poster9;
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JPanel streamPane;
+    private javax.swing.JLabel tf_username;
     private javax.swing.JLabel title1;
     private javax.swing.JLabel title10;
     private javax.swing.JLabel title2;
