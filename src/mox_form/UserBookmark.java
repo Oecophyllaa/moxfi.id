@@ -21,6 +21,8 @@ public class UserBookmark extends javax.swing.JFrame {
      */
     public UserBookmark() {
         initComponents();
+        setTitle("My Movies Bookmarks");
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -72,18 +74,7 @@ public class UserBookmark extends javax.swing.JFrame {
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
-        jPanel18 = new javax.swing.JPanel();
-        jPanel19 = new javax.swing.JPanel();
-        jPanel20 = new javax.swing.JPanel();
-        jPanel22 = new javax.swing.JPanel();
-        jPanel23 = new javax.swing.JPanel();
-        jPanel24 = new javax.swing.JPanel();
-        jPanel25 = new javax.swing.JPanel();
-        jPanel26 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -670,22 +661,6 @@ public class UserBookmark extends javax.swing.JFrame {
 
         jPanel6.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 450, -1, -1));
 
-        jPanel15.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel15.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 1210, -1, -1));
-
         jPanel16.setBackground(new java.awt.Color(204, 204, 204));
         jPanel16.setPreferredSize(new java.awt.Dimension(200, 283));
 
@@ -701,153 +676,6 @@ public class UserBookmark extends javax.swing.JFrame {
         );
 
         jPanel6.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
-
-        jPanel17.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel17.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 830, -1, -1));
-
-        jPanel18.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel18.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 830, -1, -1));
-
-        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel19.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 830, -1, -1));
-
-        jPanel20.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel20.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 830, -1, -1));
-
-        jPanel22.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel22.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 830, -1, -1));
-
-        jPanel23.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel23.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 1210, -1, -1));
-
-        jPanel24.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel24.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1210, -1, -1));
-
-        jPanel25.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel25.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
-        jPanel25.setLayout(jPanel25Layout);
-        jPanel25Layout.setHorizontalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel25Layout.setVerticalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1210, -1, -1));
-
-        jPanel26.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel26.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
-        jPanel26.setLayout(jPanel26Layout);
-        jPanel26Layout.setHorizontalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel26Layout.setVerticalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 1210, -1, -1));
-
-        jLabel7.setText("-");
-        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 1580, 20, -1));
 
         jScrollPane1.setViewportView(jPanel6);
 
@@ -1062,7 +890,6 @@ public class UserBookmark extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -1070,19 +897,9 @@ public class UserBookmark extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
