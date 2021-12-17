@@ -720,7 +720,7 @@ public class DetailMovie extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        latest_movies latest = new latest_movies();
+        LatestMovies latest = new LatestMovies();
         latest.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
