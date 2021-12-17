@@ -601,7 +601,7 @@ public class stream_page extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // BUTTON COMING SOON ACTION ANJAY
-        soon_movies comingsoon = new soon_movies();
+        SoonMovies comingsoon = new SoonMovies();
         comingsoon.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
@@ -618,7 +618,7 @@ public class stream_page extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        latest_movies latest = new latest_movies();
+        LatestMovies latest = new LatestMovies();
         latest.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
@@ -664,7 +664,7 @@ public class stream_page extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        bookmark list = new bookmark();
+        UserBookmark list = new UserBookmark();
         list.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked

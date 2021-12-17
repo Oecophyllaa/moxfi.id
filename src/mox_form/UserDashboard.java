@@ -1504,7 +1504,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // BUTTON COMING SOON ACTION ANJAY
-        soon_movies comingsoon = new soon_movies();
+        SoonMovies comingsoon = new SoonMovies();
         comingsoon.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
@@ -1623,7 +1623,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        soon_movies comingsoon = new soon_movies();
+        SoonMovies comingsoon = new SoonMovies();
         comingsoon.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
@@ -1640,7 +1640,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        bookmark list = new bookmark();
+        UserBookmark list = new UserBookmark();
         list.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked

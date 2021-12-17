@@ -458,7 +458,7 @@ public class landingpage_afterlogin extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // BUTTON COMING SOON ACTION ANJAY
-        soon_movies comingsoon = new soon_movies();
+        SoonMovies comingsoon = new SoonMovies();
         comingsoon.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
@@ -475,7 +475,7 @@ public class landingpage_afterlogin extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        latest_movies latest = new latest_movies();
+        LatestMovies latest = new LatestMovies();
         latest.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked

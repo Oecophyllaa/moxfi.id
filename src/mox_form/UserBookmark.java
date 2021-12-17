@@ -14,14 +14,13 @@ import javax.swing.SwingUtilities;
  *
  * @author fatkh
  */
-public class latest_movies extends javax.swing.JFrame {
+public class UserBookmark extends javax.swing.JFrame {
 
     /**
-     * Creates new form latest_movies
+     * Creates new form bookmark
      */
-    public latest_movies() {
+    public UserBookmark() {
         initComponents();
-        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -62,9 +61,9 @@ public class latest_movies extends javax.swing.JFrame {
         jPanel21 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -513,33 +512,35 @@ public class latest_movies extends javax.swing.JFrame {
                     .addGroup(sidebarIconLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1270, Short.MAX_VALUE))
+                .addContainerGap(1268, Short.MAX_VALUE))
         );
 
         getContentPane().add(sidebarIcon, java.awt.BorderLayout.LINE_START);
 
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(1260, 1493));
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Latest Movies");
-        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        jLabel1.setText("My List");
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setPreferredSize(new java.awt.Dimension(200, 283));
+        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setPreferredSize(new java.awt.Dimension(200, 283));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 200, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 70, -1, -1));
+        jPanel6.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 70, -1, -1));
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
         jPanel7.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -555,7 +556,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
+        jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -571,7 +572,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
+        jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
         jPanel9.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -587,7 +588,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, -1, -1));
+        jPanel6.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, -1, -1));
 
         jPanel10.setBackground(new java.awt.Color(204, 204, 204));
         jPanel10.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -603,7 +604,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
+        jPanel6.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
 
         jPanel11.setBackground(new java.awt.Color(204, 204, 204));
         jPanel11.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -619,7 +620,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, -1, -1));
+        jPanel6.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, -1, -1));
 
         jPanel12.setBackground(new java.awt.Color(204, 204, 204));
         jPanel12.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -635,7 +636,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
+        jPanel6.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
         jPanel13.setBackground(new java.awt.Color(204, 204, 204));
         jPanel13.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -651,7 +652,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 450, -1, -1));
+        jPanel6.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 450, -1, -1));
 
         jPanel14.setBackground(new java.awt.Color(204, 204, 204));
         jPanel14.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -667,7 +668,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 450, -1, -1));
+        jPanel6.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 450, -1, -1));
 
         jPanel15.setBackground(new java.awt.Color(204, 204, 204));
         jPanel15.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -683,7 +684,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 1210, -1, -1));
+        jPanel6.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 1210, -1, -1));
 
         jPanel16.setBackground(new java.awt.Color(204, 204, 204));
         jPanel16.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -699,7 +700,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        jPanel6.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         jPanel17.setBackground(new java.awt.Color(204, 204, 204));
         jPanel17.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -715,7 +716,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 830, -1, -1));
+        jPanel6.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 830, -1, -1));
 
         jPanel18.setBackground(new java.awt.Color(204, 204, 204));
         jPanel18.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -731,7 +732,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 830, -1, -1));
+        jPanel6.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 830, -1, -1));
 
         jPanel19.setBackground(new java.awt.Color(204, 204, 204));
         jPanel19.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -747,7 +748,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 830, -1, -1));
+        jPanel6.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 830, -1, -1));
 
         jPanel20.setBackground(new java.awt.Color(204, 204, 204));
         jPanel20.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -763,7 +764,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 830, -1, -1));
+        jPanel6.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 830, -1, -1));
 
         jPanel22.setBackground(new java.awt.Color(204, 204, 204));
         jPanel22.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -779,7 +780,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 830, -1, -1));
+        jPanel6.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 830, -1, -1));
 
         jPanel23.setBackground(new java.awt.Color(204, 204, 204));
         jPanel23.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -795,7 +796,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 1210, -1, -1));
+        jPanel6.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 1210, -1, -1));
 
         jPanel24.setBackground(new java.awt.Color(204, 204, 204));
         jPanel24.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -811,7 +812,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1210, -1, -1));
+        jPanel6.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1210, -1, -1));
 
         jPanel25.setBackground(new java.awt.Color(204, 204, 204));
         jPanel25.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -827,7 +828,7 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1210, -1, -1));
+        jPanel6.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1210, -1, -1));
 
         jPanel26.setBackground(new java.awt.Color(204, 204, 204));
         jPanel26.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -843,24 +844,24 @@ public class latest_movies extends javax.swing.JFrame {
             .addGap(0, 283, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 1210, -1, -1));
+        jPanel6.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 1210, -1, -1));
 
         jLabel7.setText("-");
-        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 1580, 20, -1));
+        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 1580, 20, -1));
 
-        jScrollPane1.setViewportView(jPanel5);
+        jScrollPane1.setViewportView(jPanel6);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    // fungsi hover
+    // fungsi ganti warna panel
     public void changeColor(JPanel hover, Color rand){
         hover.setBackground(rand);
     }
     
-    // hide and show sidebar
+    // fungsi sidebar hideshow
     public void hideshow(JPanel menuhideandshow, boolean sidebarOn){
         if (sidebarOn == true){
             menuhideandshow.setPreferredSize(new Dimension(60, menuhideandshow.getHeight()));
@@ -896,7 +897,7 @@ public class latest_movies extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // BUTTON COMING SOON ACTION ANJAY
-        soon_movies comingsoon = new soon_movies();
+        SoonMovies comingsoon = new SoonMovies();
         comingsoon.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
@@ -913,7 +914,7 @@ public class latest_movies extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        latest_movies latest = new latest_movies();
+        LatestMovies latest = new LatestMovies();
         latest.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
@@ -959,9 +960,8 @@ public class latest_movies extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        bookmark list = new bookmark();
-        list.setVisible(true);
-        this.dispose();
+        
+        //this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered
@@ -1025,20 +1025,21 @@ public class latest_movies extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(latest_movies.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserBookmark.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(latest_movies.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserBookmark.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(latest_movies.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserBookmark.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(latest_movies.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserBookmark.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new latest_movies().setVisible(true);
+                new UserBookmark().setVisible(true);
             }
         });
     }
