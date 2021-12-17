@@ -1616,7 +1616,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-        top_movies topmovies = new top_movies();
+        TopMovies topmovies = new TopMovies();
         topmovies.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel12MouseClicked
