@@ -19,9 +19,10 @@ import javax.swing.SwingUtilities;
 
 public class LatestMovies extends javax.swing.JFrame {
 
-    public LatestMovies() {
+    public LatestMovies(String username) {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        tf_username.setText(username);
         load_latest();
     }
     
@@ -116,7 +117,7 @@ public class LatestMovies extends javax.swing.JFrame {
         coomingPane = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         latestPane = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        NavLatestMov = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
@@ -170,6 +171,8 @@ public class LatestMovies extends javax.swing.JFrame {
         title3 = new javax.swing.JLabel();
         title2 = new javax.swing.JLabel();
         title1 = new javax.swing.JLabel();
+        tf_username = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -240,17 +243,17 @@ public class LatestMovies extends javax.swing.JFrame {
 
         latestPane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setText("Latest Movies");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        NavLatestMov.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        NavLatestMov.setText("Latest Movies");
+        NavLatestMov.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                NavLatestMovMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel8MouseEntered(evt);
+                NavLatestMovMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel8MouseExited(evt);
+                NavLatestMovMouseExited(evt);
             }
         });
 
@@ -260,14 +263,14 @@ public class LatestMovies extends javax.swing.JFrame {
             latestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(latestPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8)
+                .addComponent(NavLatestMov)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         latestPaneLayout.setVerticalGroup(
             latestPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, latestPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(NavLatestMov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -840,6 +843,14 @@ public class LatestMovies extends javax.swing.JFrame {
         });
         jPanel5.add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 200, 30));
 
+        tf_username.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        tf_username.setText("username");
+        jPanel5.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 90, 30));
+
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel18.setText("Login As:");
+        jPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 10, -1, 30));
+
         jScrollPane1.setViewportView(jPanel5);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -903,22 +914,21 @@ public class LatestMovies extends javax.swing.JFrame {
         changeColor(coomingPane, new Color(81, 196, 211));
     }//GEN-LAST:event_jLabel6MouseExited
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // BUTTON LATEST ACTION CLICK ANJAY
-        LatestMovies latest = new LatestMovies();
-        latest.setVisible(true);
+    private void NavLatestMovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavLatestMovMouseClicked
+        // btn latest mov navbar
+        new LatestMovies(tf_username.getText()).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_NavLatestMovMouseClicked
 
-    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+    private void NavLatestMovMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavLatestMovMouseEntered
         // BUTTON LATEST
         changeColor(latestPane, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel8MouseEntered
+    }//GEN-LAST:event_NavLatestMovMouseEntered
 
-    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+    private void NavLatestMovMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavLatestMovMouseExited
         // BUTTON LATEST
         changeColor(latestPane, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel8MouseExited
+    }//GEN-LAST:event_NavLatestMovMouseExited
 
     private void jComboBox1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseEntered
         // BUTTON COMBO BOX
@@ -1081,12 +1091,13 @@ public class LatestMovies extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LatestMovies().setVisible(true);
+                new AppLogin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel NavLatestMov;
     private javax.swing.JPanel bookmarkPane;
     private javax.swing.JPanel coomingPane;
     private javax.swing.JPanel genrePane;
@@ -1099,12 +1110,12 @@ public class LatestMovies extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1138,6 +1149,7 @@ public class LatestMovies extends javax.swing.JFrame {
     private javax.swing.JLabel poster9;
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JPanel streamPane;
+    private javax.swing.JLabel tf_username;
     private javax.swing.JLabel title1;
     private javax.swing.JLabel title10;
     private javax.swing.JLabel title2;
