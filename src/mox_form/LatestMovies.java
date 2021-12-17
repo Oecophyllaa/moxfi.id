@@ -25,6 +25,11 @@ public class LatestMovies extends javax.swing.JFrame {
         load_latest();
     }
     
+    public void getDetailMovie(String title) {
+        new DetailMovie(title).setVisible(true);
+        this.setVisible(false);
+    }
+    
     public ImageIcon getPoster(String url) {
         ImageIcon resizedImg = null;
         try {
@@ -608,6 +613,12 @@ public class LatestMovies extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setPreferredSize(new java.awt.Dimension(200, 283));
 
+        poster5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster5MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -623,6 +634,12 @@ public class LatestMovies extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
         jPanel7.setPreferredSize(new java.awt.Dimension(200, 283));
+
+        poster2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -640,6 +657,12 @@ public class LatestMovies extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setPreferredSize(new java.awt.Dimension(200, 283));
 
+        poster3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -655,6 +678,12 @@ public class LatestMovies extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
         jPanel9.setPreferredSize(new java.awt.Dimension(200, 283));
+
+        poster4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -752,6 +781,12 @@ public class LatestMovies extends javax.swing.JFrame {
         jPanel16.setBackground(new java.awt.Color(204, 204, 204));
         jPanel16.setPreferredSize(new java.awt.Dimension(200, 283));
 
+        poster1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
@@ -769,10 +804,40 @@ public class LatestMovies extends javax.swing.JFrame {
         jPanel5.add(title8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 740, 200, 30));
         jPanel5.add(title7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 740, 200, 30));
         jPanel5.add(title6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 740, 200, 30));
+
+        title5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title5MouseClicked(evt);
+            }
+        });
         jPanel5.add(title5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 360, 200, 30));
+
+        title4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title4MouseClicked(evt);
+            }
+        });
         jPanel5.add(title4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 360, 200, 30));
+
+        title3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title3MouseClicked(evt);
+            }
+        });
         jPanel5.add(title3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 200, 30));
+
+        title2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title2MouseClicked(evt);
+            }
+        });
         jPanel5.add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 200, 30));
+
+        title1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title1MouseClicked(evt);
+            }
+        });
         jPanel5.add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 200, 30));
 
         jScrollPane1.setViewportView(jPanel5);
@@ -934,6 +999,56 @@ public class LatestMovies extends javax.swing.JFrame {
         // TODO add your handling code here:
         changeColor(jPanel21, new Color(81, 196, 211));
     }//GEN-LAST:event_jLabel17MouseExited
+
+    private void poster1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster1MouseClicked
+        // poster1
+        getDetailMovie(title1.getText());
+    }//GEN-LAST:event_poster1MouseClicked
+
+    private void title1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title1MouseClicked
+        // title1
+        getDetailMovie(title1.getText());
+    }//GEN-LAST:event_title1MouseClicked
+
+    private void poster2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster2MouseClicked
+        // TODO add your handling code here:
+        getDetailMovie(title2.getText());
+    }//GEN-LAST:event_poster2MouseClicked
+
+    private void title2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title2MouseClicked
+        // TODO add your handling code here:
+        getDetailMovie(title2.getText());
+    }//GEN-LAST:event_title2MouseClicked
+
+    private void poster3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster3MouseClicked
+        // TODO add your handling code here:
+        getDetailMovie(title3.getText());
+    }//GEN-LAST:event_poster3MouseClicked
+
+    private void title3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title3MouseClicked
+        // TODO add your handling code here:
+        getDetailMovie(title3.getText());
+    }//GEN-LAST:event_title3MouseClicked
+
+    private void poster4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster4MouseClicked
+        // TODO add your handling code here:
+        getDetailMovie(title4.getText());
+    }//GEN-LAST:event_poster4MouseClicked
+
+    private void title4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title4MouseClicked
+        // TODO add your handling code here:
+        getDetailMovie(title4.getText());
+    }//GEN-LAST:event_title4MouseClicked
+
+    private void poster5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster5MouseClicked
+        // TODO add your handling code here:
+        getDetailMovie(title5.getText());
+    }//GEN-LAST:event_poster5MouseClicked
+
+    private void title5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title5MouseClicked
+        // TODO add your handling code here:
+        getDetailMovie(title5.getText());
+    }//GEN-LAST:event_title5MouseClicked
 
     /**
      * @param args the command line arguments
