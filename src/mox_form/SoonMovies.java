@@ -4,8 +4,18 @@
  * and open the template in the editor.
  */
 package mox_form;
+import db.database;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 /**
@@ -20,7 +30,73 @@ public class SoonMovies extends javax.swing.JFrame {
     boolean a;
     public SoonMovies() {
         initComponents();
+        setTitle("Coming Soon Movies");
         setExtendedState(MAXIMIZED_BOTH);
+        load_data();
+    }
+    
+    public ImageIcon getPoster(String url) {
+        ImageIcon resizedImg = null;
+        try {
+            URL imgUrl = new URL(url);
+            ImageIcon icon = new ImageIcon(imgUrl);
+            Image img = icon.getImage();
+            Image newImg = img.getScaledInstance(200, 283, java.awt.Image.SCALE_SMOOTH);
+            resizedImg = new ImageIcon(newImg);
+        } catch (MalformedURLException e) {
+        }
+        
+        return resizedImg;
+    }
+    
+    public void getDetailMovie(String title) {
+        new DetailMovie(title).setVisible(true);
+        this.setVisible(false);
+    }
+    
+    public void load_data() {
+        try {
+            String sql = "SELECT movie.title, movie.poster "
+                       + "FROM movie "
+                       + "INNER JOIN movie_status "
+                       + "ON movie.status = movie_status.id_movie_status "
+                       + "WHERE movie_status.status = 'Coming Soon'";
+            Connection conn = (Connection) database.getConn();
+            Statement stat = conn.createStatement();
+            ResultSet res = stat.executeQuery(sql);
+            
+            ArrayList<String> posters = new ArrayList<>();
+            ArrayList<String> titles = new ArrayList<>();
+            
+            while(res.next()) {
+                posters.add(res.getString("poster"));
+                titles.add(res.getString("title"));
+            }
+            
+            // Poster Coming Soon Movie
+            
+            String[] posterArr = new String[posters.size()];
+            posterArr = posters.toArray(posterArr);
+            
+            poster1.setIcon(getPoster(posterArr[0]));
+            poster2.setIcon(getPoster(posterArr[1]));
+            poster3.setIcon(getPoster(posterArr[2]));
+            poster4.setIcon(getPoster(posterArr[3]));
+            poster5.setIcon(getPoster(posterArr[4]));
+            
+            // Title Coming Soon Movie
+            
+            String[] titleArr = new String[titles.size()];
+            titleArr = titles.toArray(titleArr);
+            
+            title1.setText(titleArr[0]);
+            title2.setText(titleArr[1]);
+            title3.setText(titleArr[2]);
+            title4.setText(titleArr[3]);
+            title5.setText(titleArr[4]);
+            
+        } catch (SQLException e) {
+        }
     }
 
     /**
@@ -47,26 +123,35 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        poster5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        poster2 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        poster3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
+        poster4 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
+        poster6 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
+        poster7 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
+        poster8 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
+        poster9 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
+        poster10 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
-        jPanel16 = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
-        jPanel18 = new javax.swing.JPanel();
-        jPanel19 = new javax.swing.JPanel();
-        jPanel20 = new javax.swing.JPanel();
-        jPanel21 = new javax.swing.JPanel();
-        jPanel22 = new javax.swing.JPanel();
-        jPanel23 = new javax.swing.JPanel();
-        jPanel24 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        poster1 = new javax.swing.JLabel();
+        title10 = new javax.swing.JLabel();
+        title9 = new javax.swing.JLabel();
+        title8 = new javax.swing.JLabel();
+        title7 = new javax.swing.JLabel();
+        title6 = new javax.swing.JLabel();
+        title5 = new javax.swing.JLabel();
+        title4 = new javax.swing.JLabel();
+        title3 = new javax.swing.JLabel();
+        title2 = new javax.swing.JLabel();
+        title1 = new javax.swing.JLabel();
         sidebarIcon = new javax.swing.JPanel();
         bookmarkPane = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -271,11 +356,11 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster5, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 70, -1, -1));
@@ -287,11 +372,11 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster2, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
@@ -303,11 +388,11 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster3, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
@@ -319,11 +404,11 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster4, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, -1, -1));
@@ -335,11 +420,11 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster6, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
@@ -351,11 +436,11 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster7, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, -1, -1));
@@ -367,11 +452,11 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster8, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
@@ -383,11 +468,11 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster9, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 450, -1, -1));
@@ -399,30 +484,14 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster10, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 450, -1, -1));
-
-        jPanel14.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel14.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 1210, -1, -1));
 
         jPanel15.setBackground(new java.awt.Color(204, 204, 204));
         jPanel15.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -431,161 +500,24 @@ public class SoonMovies extends javax.swing.JFrame {
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(poster1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addComponent(poster1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
-
-        jPanel16.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel16.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 830, -1, -1));
-
-        jPanel17.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel17.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 830, -1, -1));
-
-        jPanel18.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel18.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 830, -1, -1));
-
-        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel19.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 830, -1, -1));
-
-        jPanel20.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel20.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 830, -1, -1));
-
-        jPanel21.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel21.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
-        jPanel21.setLayout(jPanel21Layout);
-        jPanel21Layout.setHorizontalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel21Layout.setVerticalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 1210, -1, -1));
-
-        jPanel22.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel22.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1210, -1, -1));
-
-        jPanel23.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel23.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1210, -1, -1));
-
-        jPanel24.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel24.setPreferredSize(new java.awt.Dimension(200, 283));
-
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 1210, -1, -1));
-
-        jLabel7.setText("-");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 1590, 20, -1));
+        jPanel2.add(title10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 730, 200, 30));
+        jPanel2.add(title9, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 730, 200, 30));
+        jPanel2.add(title8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 730, 200, 30));
+        jPanel2.add(title7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 730, 200, 30));
+        jPanel2.add(title6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 730, 200, 30));
+        jPanel2.add(title5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 350, 200, 30));
+        jPanel2.add(title4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 350, 200, 30));
+        jPanel2.add(title3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 200, 30));
+        jPanel2.add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 200, 30));
+        jPanel2.add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 200, 30));
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -952,7 +884,7 @@ public class SoonMovies extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        bookmark list = new bookmark();
+        UserBookmark list = new UserBookmark();
         list.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked
@@ -1055,25 +987,14 @@ public class SoonMovies extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel3;
@@ -1088,7 +1009,27 @@ public class SoonMovies extends javax.swing.JFrame {
     private javax.swing.JPanel latestPane;
     private javax.swing.JPanel loginPane;
     private javax.swing.JPanel loginPane1;
+    private javax.swing.JLabel poster1;
+    private javax.swing.JLabel poster10;
+    private javax.swing.JLabel poster2;
+    private javax.swing.JLabel poster3;
+    private javax.swing.JLabel poster4;
+    private javax.swing.JLabel poster5;
+    private javax.swing.JLabel poster6;
+    private javax.swing.JLabel poster7;
+    private javax.swing.JLabel poster8;
+    private javax.swing.JLabel poster9;
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JPanel streamPane;
+    private javax.swing.JLabel title1;
+    private javax.swing.JLabel title10;
+    private javax.swing.JLabel title2;
+    private javax.swing.JLabel title3;
+    private javax.swing.JLabel title4;
+    private javax.swing.JLabel title5;
+    private javax.swing.JLabel title6;
+    private javax.swing.JLabel title7;
+    private javax.swing.JLabel title8;
+    private javax.swing.JLabel title9;
     // End of variables declaration//GEN-END:variables
 }
