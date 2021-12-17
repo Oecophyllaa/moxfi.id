@@ -43,6 +43,11 @@ public class UserDashboard extends javax.swing.JFrame {
         return resizedImg;
     }
     
+    public void getDetailMovie(String title) {
+        new DetailMovie(title).setVisible(true);
+        this.setVisible(false);
+    }
+    
     public void load_latest_movie() {
         try {
             String sql = "SELECT movie.title, movie.poster "
@@ -1249,7 +1254,7 @@ public class UserDashboard extends javax.swing.JFrame {
         });
         jPanel8.add(lt_title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 200, 30));
 
-        lt_title2.setText("Latest1");
+        lt_title2.setText("Latest2");
         lt_title2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lt_title2MouseClicked(evt);
@@ -1291,7 +1296,7 @@ public class UserDashboard extends javax.swing.JFrame {
         });
         jPanel8.add(lt_title4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 360, 200, 30));
 
-        lt_title5.setText("Latest1");
+        lt_title5.setText("Latest5");
         lt_title5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lt_title5MouseClicked(evt);
@@ -1516,7 +1521,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
-        latest_movies latest = new latest_movies();
+        LatestMovies latest = new LatestMovies();
         latest.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
@@ -1604,7 +1609,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
-        latest_movies latest = new latest_movies();
+        LatestMovies latest = new LatestMovies();
         latest.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel11MouseClicked
@@ -1700,6 +1705,8 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void poster2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster2MouseClicked
         // TODO add your handling code here:
+        new DetailMovie(lt_title2.getText()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_poster2MouseClicked
 
     private void poster2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster2MouseEntered
@@ -1711,7 +1718,9 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_poster2MouseExited
 
     private void poster3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster3MouseClicked
-        // TODO add your handling code here:
+        // Latest Poster3
+        new DetailMovie(lt_title3.getText()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_poster3MouseClicked
 
     private void poster3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster3MouseEntered
@@ -1723,7 +1732,9 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_poster3MouseExited
 
     private void poster4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster4MouseClicked
-        // TODO add your handling code here:
+        // Poster 4 Latest
+        new DetailMovie(lt_title4.getText()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_poster4MouseClicked
 
     private void poster4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster4MouseEntered
@@ -1735,7 +1746,9 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_poster4MouseExited
 
     private void poster5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster5MouseClicked
-        // TODO add your handling code here:
+        // Poster Latest 5
+        new DetailMovie(lt_title5.getText()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_poster5MouseClicked
 
     private void poster5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster5MouseEntered
@@ -1747,7 +1760,9 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_poster5MouseExited
 
     private void lt_title2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_title2MouseClicked
-        // TODO add your handling code here:
+        // Latest2 Title
+        new DetailMovie(lt_title2.getText()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_lt_title2MouseClicked
 
     private void lt_title2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_title2MouseEntered
@@ -1759,7 +1774,9 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lt_title2MouseExited
 
     private void lt_title3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_title3MouseClicked
-        // TODO add your handling code here:
+        // Latest Title 3
+        new DetailMovie(lt_title3.getText()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_lt_title3MouseClicked
 
     private void lt_title3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_title3MouseEntered
@@ -1771,7 +1788,9 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lt_title3MouseExited
 
     private void lt_title4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_title4MouseClicked
-        // TODO add your handling code here:
+        // Title Latest 4
+        new DetailMovie(lt_title4.getText()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_lt_title4MouseClicked
 
     private void lt_title4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_title4MouseEntered
@@ -1783,7 +1802,9 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lt_title4MouseExited
 
     private void lt_title5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_title5MouseClicked
-        // TODO add your handling code here:
+        // Latest Title 5
+        new DetailMovie(lt_title5.getText()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_lt_title5MouseClicked
 
     private void lt_title5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_title5MouseEntered
@@ -1795,7 +1816,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lt_title5MouseExited
 
     private void topPoster1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster1MouseClicked
-        // TODO add your handling code here:
+        // TopMov1
+        getDetailMovie(topTitle1.getText());
     }//GEN-LAST:event_topPoster1MouseClicked
 
     private void topPoster1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster1MouseEntered
@@ -1807,7 +1829,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topPoster1MouseExited
 
     private void topPoster2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster2MouseClicked
-        // TODO add your handling code here:
+        // TopPoster2
+        getDetailMovie(topTitle2.getText());
     }//GEN-LAST:event_topPoster2MouseClicked
 
     private void topPoster2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster2MouseEntered
@@ -1819,7 +1842,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topPoster2MouseExited
 
     private void topPoster3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster3MouseClicked
-        // TODO add your handling code here:
+        // TopPoster3
+        getDetailMovie(topTitle3.getText());
     }//GEN-LAST:event_topPoster3MouseClicked
 
     private void topPoster3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster3MouseEntered
@@ -1831,7 +1855,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topPoster3MouseExited
 
     private void topPoster4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster4MouseClicked
-        // TODO add your handling code here:
+        // TopPoster4
+        getDetailMovie(topTitle4.getText());
     }//GEN-LAST:event_topPoster4MouseClicked
 
     private void topPoster4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster4MouseEntered
@@ -1843,7 +1868,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topPoster4MouseExited
 
     private void topPoster5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster5MouseClicked
-        // TODO add your handling code here:
+        // TopPoster5
+        getDetailMovie(topTitle5.getText());
     }//GEN-LAST:event_topPoster5MouseClicked
 
     private void topPoster5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topPoster5MouseEntered
@@ -1855,7 +1881,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topPoster5MouseExited
 
     private void topTitle1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle1MouseClicked
-        // TODO add your handling code here:
+        // topmov1
+        getDetailMovie(topTitle1.getText());
     }//GEN-LAST:event_topTitle1MouseClicked
 
     private void topTitle1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle1MouseEntered
@@ -1867,7 +1894,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topTitle1MouseExited
 
     private void topTitle2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle2MouseClicked
-        // TODO add your handling code here:
+        // TopTitle2
+        getDetailMovie(topTitle2.getText());
     }//GEN-LAST:event_topTitle2MouseClicked
 
     private void topTitle2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle2MouseEntered
@@ -1879,7 +1907,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topTitle2MouseExited
 
     private void topTitle3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle3MouseClicked
-        // TODO add your handling code here:
+        // TopTitle3
+        getDetailMovie(topTitle3.getText());
     }//GEN-LAST:event_topTitle3MouseClicked
 
     private void topTitle3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle3MouseEntered
@@ -1891,7 +1920,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topTitle3MouseExited
 
     private void topTitle4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle4MouseClicked
-        // TODO add your handling code here:
+        // TopTitle4
+        getDetailMovie(topTitle4.getText());
     }//GEN-LAST:event_topTitle4MouseClicked
 
     private void topTitle4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle4MouseEntered
@@ -1903,7 +1933,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topTitle4MouseExited
 
     private void topTitle5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle5MouseClicked
-        // TODO add your handling code here:
+        // TopTItle5
+        getDetailMovie(topTitle5.getText());
     }//GEN-LAST:event_topTitle5MouseClicked
 
     private void topTitle5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topTitle5MouseEntered
@@ -1915,7 +1946,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_topTitle5MouseExited
 
     private void soon1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon1MouseClicked
-        // TODO add your handling code here:
+        // SoonTitle11
+        getDetailMovie(soon1.getText());
     }//GEN-LAST:event_soon1MouseClicked
 
     private void soon1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon1MouseEntered
@@ -1927,7 +1959,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soon1MouseExited
 
     private void soon2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon2MouseClicked
-        // TODO add your handling code here:
+        // SoonTitle2
+        getDetailMovie(soon2.getText());
     }//GEN-LAST:event_soon2MouseClicked
 
     private void soon2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon2MouseEntered
@@ -1939,7 +1972,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soon2MouseExited
 
     private void soon3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon3MouseClicked
-        // TODO add your handling code here:
+        // SoonTitle3
+        getDetailMovie(soon3.getText());
     }//GEN-LAST:event_soon3MouseClicked
 
     private void soon3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon3MouseEntered
@@ -1951,7 +1985,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soon3MouseExited
 
     private void soon4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon4MouseClicked
-        // TODO add your handling code here:
+        // SoonTitle4
+        getDetailMovie(soon4.getText());
     }//GEN-LAST:event_soon4MouseClicked
 
     private void soon4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon4MouseEntered
@@ -1963,7 +1998,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soon4MouseExited
 
     private void soon5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon5MouseClicked
-        // TODO add your handling code here:
+        // SoonTitle5
+        getDetailMovie(soon5.getText());
     }//GEN-LAST:event_soon5MouseClicked
 
     private void soon5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soon5MouseEntered
@@ -1975,7 +2011,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soon5MouseExited
 
     private void soonPoster1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster1MouseClicked
-        // TODO add your handling code here:
+        // SoonPoster1
+        getDetailMovie(soon1.getText());
     }//GEN-LAST:event_soonPoster1MouseClicked
 
     private void soonPoster1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster1MouseEntered
@@ -1987,7 +2024,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soonPoster1MouseExited
 
     private void soonPoster2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster2MouseClicked
-        // TODO add your handling code here:
+        // SoonPoster2
+        getDetailMovie(soon2.getText());
     }//GEN-LAST:event_soonPoster2MouseClicked
 
     private void soonPoster2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster2MouseEntered
@@ -1999,7 +2037,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soonPoster2MouseExited
 
     private void soonPoster3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster3MouseClicked
-        // TODO add your handling code here:
+        // SoonPoster3
+        getDetailMovie(soon3.getText());
     }//GEN-LAST:event_soonPoster3MouseClicked
 
     private void soonPoster3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster3MouseEntered
@@ -2011,7 +2050,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soonPoster3MouseExited
 
     private void soonPoster4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster4MouseClicked
-        // TODO add your handling code here:
+        // SoonPoster4
+        getDetailMovie(soon4.getText());
     }//GEN-LAST:event_soonPoster4MouseClicked
 
     private void soonPoster4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster4MouseEntered
@@ -2023,7 +2063,8 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soonPoster4MouseExited
 
     private void soonPoster5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster5MouseClicked
-        // TODO add your handling code here:
+        // SoonPoster5
+        getDetailMovie(soon5.getText());
     }//GEN-LAST:event_soonPoster5MouseClicked
 
     private void soonPoster5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster5MouseEntered

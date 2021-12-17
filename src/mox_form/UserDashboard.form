@@ -1455,7 +1455,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lt_title2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Latest1"/>
+                <Property name="text" type="java.lang.String" value="Latest2"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lt_title2MouseClicked"/>
@@ -1500,7 +1500,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lt_title5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Latest1"/>
+                <Property name="text" type="java.lang.String" value="Latest5"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lt_title5MouseClicked"/>
