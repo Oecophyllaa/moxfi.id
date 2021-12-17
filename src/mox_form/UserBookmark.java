@@ -19,7 +19,7 @@ public class UserBookmark extends javax.swing.JFrame {
     /**
      * Creates new form bookmark
      */
-    public UserBookmark() {
+    public UserBookmark(String username) {
         initComponents();
         setTitle("My Movies Bookmarks");
         setExtendedState(MAXIMIZED_BOTH);
@@ -867,7 +867,7 @@ public class UserBookmark extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserBookmark().setVisible(true);
+                new UserBookmark("").setVisible(true);
             }
         });
     }

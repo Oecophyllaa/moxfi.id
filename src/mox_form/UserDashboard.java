@@ -27,6 +27,7 @@ public class UserDashboard extends javax.swing.JFrame {
         load_latest_movie();
         load_top_movies();
         load_coming_soon_movie();
+        tf_username.setText(username);
     }
     
     public ImageIcon getPoster(String url) {
@@ -209,8 +210,8 @@ public class UserDashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
+        hiddenPane2 = new javax.swing.JPanel();
+        la_bookmark = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         loginPane1 = new javax.swing.JPanel();
@@ -274,6 +275,7 @@ public class UserDashboard extends javax.swing.JFrame {
         soon2 = new javax.swing.JLabel();
         soon1 = new javax.swing.JLabel();
         tf_username = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -541,34 +543,34 @@ public class UserDashboard extends javax.swing.JFrame {
             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel3.setBackground(new java.awt.Color(81, 196, 211));
+        hiddenPane2.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel14.setText("Bookmark");
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+        la_bookmark.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        la_bookmark.setForeground(new java.awt.Color(102, 102, 102));
+        la_bookmark.setText("Bookmark");
+        la_bookmark.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel14MouseClicked(evt);
+                la_bookmarkMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel14MouseEntered(evt);
+                la_bookmarkMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel14MouseExited(evt);
+                la_bookmarkMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout hiddenPane2Layout = new javax.swing.GroupLayout(hiddenPane2);
+        hiddenPane2.setLayout(hiddenPane2Layout);
+        hiddenPane2Layout.setHorizontalGroup(
+            hiddenPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hiddenPane2Layout.createSequentialGroup()
+                .addComponent(la_bookmark, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        hiddenPane2Layout.setVerticalGroup(
+            hiddenPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(la_bookmark, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel4.setBackground(new java.awt.Color(81, 196, 211));
@@ -660,7 +662,7 @@ public class UserDashboard extends javax.swing.JFrame {
                     .addComponent(streamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hiddenPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(sidebarIconLayout.createSequentialGroup()
@@ -687,7 +689,7 @@ public class UserDashboard extends javax.swing.JFrame {
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(streamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarIconLayout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(hiddenPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)))
                 .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sidebarIconLayout.createSequentialGroup()
@@ -702,7 +704,7 @@ public class UserDashboard extends javax.swing.JFrame {
                     .addGroup(sidebarIconLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(989, Short.MAX_VALUE))
+                .addContainerGap(1046, Short.MAX_VALUE))
         );
 
         getContentPane().add(sidebarIcon, java.awt.BorderLayout.LINE_START);
@@ -1451,8 +1453,13 @@ public class UserDashboard extends javax.swing.JFrame {
         });
         jPanel8.add(soon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1200, 200, 30));
 
-        tf_username.setText("login as");
-        jPanel8.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1148, 10, 130, 30));
+        tf_username.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        tf_username.setText("username");
+        jPanel8.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, 90, 30));
+
+        jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel14.setText("Login As:");
+        jPanel8.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, -1, 30));
 
         jScrollPane1.setViewportView(jPanel8);
 
@@ -1632,22 +1639,22 @@ public class UserDashboard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered
+    private void la_bookmarkMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_bookmarkMouseEntered
         // TODO add your handling code here:
-        changeColor(jPanel3, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel14MouseEntered
+        changeColor(hiddenPane2, new Color(216, 227, 231));
+    }//GEN-LAST:event_la_bookmarkMouseEntered
 
-    private void jLabel14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseExited
+    private void la_bookmarkMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_bookmarkMouseExited
         // TODO add your handling code here:
-        changeColor(jPanel3, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel14MouseExited
+        changeColor(hiddenPane2, new Color(81, 196, 211));
+    }//GEN-LAST:event_la_bookmarkMouseExited
 
-    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        // TODO add your handling code here:
-        UserBookmark list = new UserBookmark();
-        list.setVisible(true);
+    private void la_bookmarkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_la_bookmarkMouseClicked
+        // User Bookmark List
+        String username = tf_username.getText();
+        new UserBookmark(username).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel14MouseClicked
+    }//GEN-LAST:event_la_bookmarkMouseClicked
 
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
         // TODO add your handling code here:
@@ -2110,7 +2117,7 @@ public class UserDashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserDashboard("").setVisible(true);
+                new AppLogin().setVisible(true);
             }
         });
     }
@@ -2119,6 +2126,7 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel bookmarkPane;
     private javax.swing.JPanel coomingPane;
     private javax.swing.JPanel genrePane;
+    private javax.swing.JPanel hiddenPane2;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -2153,7 +2161,6 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -2162,6 +2169,7 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel la_bookmark;
     private javax.swing.JPanel latestPane;
     private javax.swing.JPanel loginPane;
     private javax.swing.JPanel loginPane1;

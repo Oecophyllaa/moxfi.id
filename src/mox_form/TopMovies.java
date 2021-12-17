@@ -947,7 +947,7 @@ public class TopMovies extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        UserBookmark list = new UserBookmark();
+        UserBookmark list = new UserBookmark("");
         list.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked

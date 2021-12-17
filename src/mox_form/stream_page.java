@@ -647,7 +647,7 @@ public class stream_page extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
-        UserDashboard refresh = new UserDashboard();
+        UserDashboard refresh = new UserDashboard("");
         refresh.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
@@ -664,7 +664,7 @@ public class stream_page extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        UserBookmark list = new UserBookmark();
+        UserBookmark list = new UserBookmark("");
         list.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked

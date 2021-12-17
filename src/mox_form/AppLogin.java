@@ -224,7 +224,7 @@ public class AppLogin extends javax.swing.JFrame {
                     if(res.getString("jenis_user").equals("pengguna")) {
                         JOptionPane.showMessageDialog(null, "Login Berhasil!");
                         this.setVisible(false);
-                        new UserDashboard().setVisible(true);
+                        new UserDashboard(res.getString("username")).setVisible(true);
                     } else if (res.getString("jenis_user").equals("admin")) {
                         JOptionPane.showMessageDialog(null, "Anda Login Sebagai ADMIN");
                         this.dispose();
