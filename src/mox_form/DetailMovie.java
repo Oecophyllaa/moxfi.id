@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -897,10 +898,74 @@ public class DetailMovie extends javax.swing.JFrame {
 
     private void ToggleBmarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToggleBmarkActionPerformed
         // btn bookmark
-        if(ToggleBmark.isSelected()) {
-            ToggleBmark.setText("Bookmarked");
-        } else {
-            ToggleBmark.setText("Bookmark");
+        String id_movie = la_idMovie.getText();
+        String username = tf_username.getText();
+        String query = "insert";
+        String id_bookmark = "";
+        //System.out.println(ToggleBmark.isSelected());
+        
+        // INSERT / UPDATE bookmark
+        if (ToggleBmark.isSelected()) {
+            try {
+                String sql = "SELECT * FROM user_bookmark "
+                           + "WHERE id_movie = '"+id_movie+"' "
+                           + "AND user_username = '"+username+"' "
+                           + "AND status = 'None' ";
+                Connection conn = (Connection) database.getConn();
+                Statement stat = conn.createStatement();
+                ResultSet res = stat.executeQuery(sql);
+                
+                if(res.next()) {
+                    id_bookmark = res.getString("id_bookmark");
+                    query = "update";
+                }
+            } catch (Exception e) {
+                
+            }
+            
+            if(query.equals("update")) {
+                try {
+                    String sql = "UPDATE user_bookmark SET "
+                               + "status = 'Bookmarked' "
+                               + "WHERE id_bookamark = '"+id_bookmark+"' ";
+                    Connection conn = (Connection) database.getConn();
+                    PreparedStatement pst = conn.prepareStatement(sql);
+                    pst.execute();
+                    JOptionPane.showMessageDialog(null, "Movie Bookmarked");
+                    new UserBookmark(username).setVisible(true);
+                    this.setVisible(false);
+                } catch (Exception e) {
+                }
+            } else {
+                try {
+                    String sql = "INSERT INTO user_bookmark VALUES "
+                               + "(default,'"+id_movie+"','"+username+"','Bookmarked') ";
+                    Connection conn = (Connection) database.getConn();
+                    PreparedStatement pst = conn.prepareStatement(sql);
+                    pst.execute();
+                    JOptionPane.showMessageDialog(null, "Movie Bookmarked");
+                    new UserBookmark(username).setVisible(true);
+                    this.setVisible(false);
+                } catch (Exception e) {
+                }
+            }
+        }
+        
+        // unBookmark the movie
+        if(!ToggleBmark.isSelected()) {
+            try {
+                String sql = "UPDATE user_bookmark SET "
+                           + "status = 'None' "
+                           + "WHERE user_username = '"+username+"' "
+                           + "AND id_movie = '"+id_movie+"' ";
+                Connection conn = (Connection) database.getConn();
+                PreparedStatement pst = conn.prepareStatement(sql);
+                pst.execute();
+                JOptionPane.showMessageDialog(null, "Movie removed from Library");
+                this.setVisible(false);
+                new UserBookmark(username).setVisible(true);
+            } catch (Exception e) {
+            }
         }
     }//GEN-LAST:event_ToggleBmarkActionPerformed
 

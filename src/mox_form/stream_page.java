@@ -21,6 +21,8 @@ public class stream_page extends javax.swing.JFrame {
      */
     public stream_page() {
         initComponents();
+        setTitle("Stream Movie Trailer");
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**

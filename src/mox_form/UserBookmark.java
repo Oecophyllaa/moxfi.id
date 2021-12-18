@@ -77,9 +77,9 @@ public class UserBookmark extends javax.swing.JFrame {
             
             poster1.setIcon(getPoster(posterArr[0]));
             poster2.setIcon(getPoster(posterArr[1]));
-//            poster3.setIcon(getPoster(posterArr[2]));
-//            poster4.setIcon(getPoster(posterArr[3]));
-//            poster5.setIcon(getPoster(posterArr[4]));
+            poster3.setIcon(getPoster(posterArr[2]));
+            poster4.setIcon(getPoster(posterArr[3]));
+            poster5.setIcon(getPoster(posterArr[4]));
             
             // Title Coming Soon Movie
             
@@ -88,9 +88,9 @@ public class UserBookmark extends javax.swing.JFrame {
             
             title1.setText(titleArr[0]);
             title2.setText(titleArr[1]);
-//            title3.setText(titleArr[2]);
-//            title4.setText(titleArr[3]);
-//            title5.setText(titleArr[4]);
+            title3.setText(titleArr[2]);
+            title4.setText(titleArr[3]);
+            title5.setText(titleArr[4]);
             
         } catch (Exception e) {
         }
@@ -613,6 +613,12 @@ public class UserBookmark extends javax.swing.JFrame {
         panePoster1.setBackground(new java.awt.Color(204, 204, 204));
         panePoster1.setPreferredSize(new java.awt.Dimension(200, 283));
 
+        poster1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panePoster1Layout = new javax.swing.GroupLayout(panePoster1);
         panePoster1.setLayout(panePoster1Layout);
         panePoster1Layout.setHorizontalGroup(
@@ -628,6 +634,15 @@ public class UserBookmark extends javax.swing.JFrame {
 
         panePoster2.setBackground(new java.awt.Color(204, 204, 204));
         panePoster2.setPreferredSize(new java.awt.Dimension(200, 283));
+
+        poster2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                poster2MouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout panePoster2Layout = new javax.swing.GroupLayout(panePoster2);
         panePoster2.setLayout(panePoster2Layout);
@@ -645,6 +660,12 @@ public class UserBookmark extends javax.swing.JFrame {
         panePoster3.setBackground(new java.awt.Color(204, 204, 204));
         panePoster3.setPreferredSize(new java.awt.Dimension(200, 283));
 
+        poster3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panePoster3Layout = new javax.swing.GroupLayout(panePoster3);
         panePoster3.setLayout(panePoster3Layout);
         panePoster3Layout.setHorizontalGroup(
@@ -661,6 +682,12 @@ public class UserBookmark extends javax.swing.JFrame {
         panePoster4.setBackground(new java.awt.Color(204, 204, 204));
         panePoster4.setPreferredSize(new java.awt.Dimension(200, 283));
 
+        poster4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster4MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panePoster4Layout = new javax.swing.GroupLayout(panePoster4);
         panePoster4.setLayout(panePoster4Layout);
         panePoster4Layout.setHorizontalGroup(
@@ -676,6 +703,12 @@ public class UserBookmark extends javax.swing.JFrame {
 
         panePoster5.setBackground(new java.awt.Color(204, 204, 204));
         panePoster5.setPreferredSize(new java.awt.Dimension(200, 283));
+
+        poster5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                poster5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panePoster5Layout = new javax.swing.GroupLayout(panePoster5);
         panePoster5.setLayout(panePoster5Layout);
@@ -782,10 +815,40 @@ public class UserBookmark extends javax.swing.JFrame {
         DasborPane.add(title8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 730, 200, 30));
         DasborPane.add(title7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 730, 200, 30));
         DasborPane.add(title6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 730, 200, 30));
+
+        title5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title5MouseClicked(evt);
+            }
+        });
         DasborPane.add(title5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 350, 200, 30));
+
+        title4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title4MouseClicked(evt);
+            }
+        });
         DasborPane.add(title4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 350, 200, 30));
+
+        title3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title3MouseClicked(evt);
+            }
+        });
         DasborPane.add(title3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 200, 30));
+
+        title2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title2MouseClicked(evt);
+            }
+        });
         DasborPane.add(title2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 200, 30));
+
+        title1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                title1MouseClicked(evt);
+            }
+        });
         DasborPane.add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 200, 30));
 
         Dasbor.setViewportView(DasborPane);
@@ -943,6 +1006,60 @@ public class UserBookmark extends javax.swing.JFrame {
         // TODO add your handling code here:
         changeColor(hLogoutPane, new Color(81, 196, 211));
     }//GEN-LAST:event_hLogoutTextMouseExited
+
+    private void poster1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster1MouseClicked
+        // poster1
+        getDetailMovie(title1.getText());
+    }//GEN-LAST:event_poster1MouseClicked
+
+    private void title1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title1MouseClicked
+        // title1
+        getDetailMovie(title1.getText());
+    }//GEN-LAST:event_title1MouseClicked
+
+    private void poster2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_poster2MouseEntered
+
+    private void poster2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster2MouseClicked
+        // poster2
+        getDetailMovie(title2.getText());
+    }//GEN-LAST:event_poster2MouseClicked
+
+    private void title2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title2MouseClicked
+        // title2
+        getDetailMovie(title2.getText());
+    }//GEN-LAST:event_title2MouseClicked
+
+    private void poster3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster3MouseClicked
+        // poster3
+        getDetailMovie(title3.getText());
+    }//GEN-LAST:event_poster3MouseClicked
+
+    private void title3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title3MouseClicked
+        // title3
+        getDetailMovie(title3.getText());
+    }//GEN-LAST:event_title3MouseClicked
+
+    private void poster4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster4MouseClicked
+        // poster4
+        getDetailMovie(title4.getText());
+    }//GEN-LAST:event_poster4MouseClicked
+
+    private void title4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title4MouseClicked
+        // title4
+        getDetailMovie(title4.getText());
+    }//GEN-LAST:event_title4MouseClicked
+
+    private void poster5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poster5MouseClicked
+        // poster5
+        getDetailMovie(title5.getText());
+    }//GEN-LAST:event_poster5MouseClicked
+
+    private void title5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_title5MouseClicked
+        // title5
+        getDetailMovie(title5.getText());
+    }//GEN-LAST:event_title5MouseClicked
 
     /**
      * @param args the command line arguments
