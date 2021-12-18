@@ -738,27 +738,20 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="PlotPane" min="-2" pref="577" max="-2" attributes="0"/>
-                              <EmptySpace pref="198" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="la_genre" max="32767" attributes="0"/>
-                                  <Component id="la_title" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="PlotPane" alignment="0" pref="577" max="32767" attributes="0"/>
+                          <Component id="la_title" alignment="0" max="32767" attributes="0"/>
+                          <Component id="la_genre" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="101" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="BookmarkPane" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="PhotoVideo" max="32767" attributes="0"/>
                               <Component id="CastCrew" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="BookmarkPane" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="417" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="514" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -767,13 +760,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="PosterPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="BookmarkPane" min="-2" max="-2" attributes="0"/>
                           <Component id="la_title" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="la_genre" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="PhotoVideo" min="-2" max="-2" attributes="0"/>
@@ -904,7 +897,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cb_bookmark" min="-2" max="-2" attributes="0"/>
+                          <Component id="ToggleBmark" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -913,22 +906,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cb_bookmark" min="-2" max="-2" attributes="0"/>
+                          <Component id="ToggleBmark" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="cb_bookmark">
+                <Component class="javax.swing.JToggleButton" name="ToggleBmark">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Bookmark"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb_bookmarkActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ToggleBmarkActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

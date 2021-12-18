@@ -24,8 +24,34 @@ public class DetailMovie extends javax.swing.JFrame {
         setTitle("Detail Movie");
         setExtendedState(MAXIMIZED_BOTH);
         tf_username.setText(username);
+        setBookmarkBtn(title, username);
         la_idMovie.setVisible(false);
         load_detail(title);
+    }
+    
+    public void setBookmarkBtn(String title, String username) {
+        try {
+            String sql = "SELECT movie.title, user_bookmark.status "
+                       + "FROM user_bookmark "
+                       + "INNER JOIN movie "
+                       + "ON user_bookmark.id_movie = movie.id_movie "
+                       + "WHERE user_bookmark.user_username = '"+username+"' "
+                       + "AND user_bookmark.status = 'Bookmarked' "
+                       + "AND movie.title = '"+title+"' ";
+            Connection conn = (Connection) database.getConn();
+            Statement stat = conn.createStatement();
+            ResultSet res = stat.executeQuery(sql);
+            
+            if(res.next()) {
+                ToggleBmark.setText("Bookmarked");
+                ToggleBmark.setSelected(true);
+            } else {
+                ToggleBmark.setText("Bookmark");
+                ToggleBmark.setSelected(false);
+            }
+            
+        } catch (Exception e) {
+        }
     }
     
     public ImageIcon getPoster(String url) {
@@ -124,7 +150,7 @@ public class DetailMovie extends javax.swing.JFrame {
         la_director = new javax.swing.JLabel();
         la_time = new javax.swing.JLabel();
         BookmarkPane = new javax.swing.JPanel();
-        cb_bookmark = new javax.swing.JCheckBox();
+        ToggleBmark = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -629,11 +655,10 @@ public class DetailMovie extends javax.swing.JFrame {
 
         la_time.setText("Time: ");
 
-        cb_bookmark.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        cb_bookmark.setText("Bookmark");
-        cb_bookmark.addActionListener(new java.awt.event.ActionListener() {
+        ToggleBmark.setText("Bookmark");
+        ToggleBmark.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_bookmarkActionPerformed(evt);
+                ToggleBmarkActionPerformed(evt);
             }
         });
 
@@ -643,14 +668,14 @@ public class DetailMovie extends javax.swing.JFrame {
             BookmarkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BookmarkPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cb_bookmark)
+                .addComponent(ToggleBmark)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BookmarkPaneLayout.setVerticalGroup(
             BookmarkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BookmarkPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cb_bookmark)
+                .addComponent(ToggleBmark)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -667,33 +692,29 @@ public class DetailMovie extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VControlPanelLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
+                .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PlotPane, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+                    .addComponent(la_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(la_genre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(VControlPanelLayout.createSequentialGroup()
-                        .addComponent(PlotPane, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE))
-                    .addGroup(VControlPanelLayout.createSequentialGroup()
-                        .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(la_genre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(la_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BookmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(PhotoVideo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CastCrew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(417, 417, 417))
+                        .addComponent(CastCrew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BookmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(514, 514, 514))
         );
         VControlPanelLayout.setVerticalGroup(
             VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(VControlPanelLayout.createSequentialGroup()
                 .addComponent(PosterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BookmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(la_title))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(la_genre)
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(VControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(VControlPanelLayout.createSequentialGroup()
                         .addComponent(PhotoVideo)
@@ -874,24 +895,14 @@ public class DetailMovie extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_NavLogoMouseClicked
 
-    private void cb_bookmarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_bookmarkActionPerformed
-        // checkbox bookmark
-        if(cb_bookmark.isSelected()) {
-            String id_movie = la_idMovie.getText();
-            String username = tf_username.getText();
-            try {
-                String sql = "INSERT INTO user_bookmark VALUES "
-                           + "(default,'"+id_movie+"','"+username+"','Bookmarked'); ";
-                Connection conn = (Connection) database.getConn();
-                PreparedStatement pst = conn.prepareStatement(sql);
-                pst.execute();
-                JOptionPane.showMessageDialog(null, "Movie berhasil dibookmark");
-                new UserBookmark(username).setVisible(true);
-                this.setVisible(false);
-            } catch (Exception e) {
-            }
+    private void ToggleBmarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToggleBmarkActionPerformed
+        // btn bookmark
+        if(ToggleBmark.isSelected()) {
+            ToggleBmark.setText("Bookmarked");
+        } else {
+            ToggleBmark.setText("Bookmark");
         }
-    }//GEN-LAST:event_cb_bookmarkActionPerformed
+    }//GEN-LAST:event_ToggleBmarkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -943,9 +954,9 @@ public class DetailMovie extends javax.swing.JFrame {
     private javax.swing.JScrollPane PlotPane;
     private javax.swing.JPanel PosterPanel;
     private javax.swing.JPanel SideBar;
+    private javax.swing.JToggleButton ToggleBmark;
     private javax.swing.JPanel VControlPanel;
     private javax.swing.JPanel bookmarkPane;
-    private javax.swing.JCheckBox cb_bookmark;
     private javax.swing.JComboBox<String> cbxGenre;
     private javax.swing.JPanel genrePane;
     private javax.swing.JPanel hBmarkPane;
