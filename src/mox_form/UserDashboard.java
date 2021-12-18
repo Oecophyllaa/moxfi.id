@@ -202,7 +202,7 @@ public class UserDashboard extends javax.swing.JFrame {
         genrePane = new javax.swing.JPanel();
         cbx_genre = new javax.swing.JComboBox<>();
         searchForm = new javax.swing.JTextField();
-        sidebarIcon = new javax.swing.JPanel();
+        SideBar = new javax.swing.JPanel();
         homePane = new javax.swing.JPanel();
         HomeIcon = new javax.swing.JLabel();
         streamPane = new javax.swing.JPanel();
@@ -449,8 +449,8 @@ public class UserDashboard extends javax.swing.JFrame {
 
         getContentPane().add(Navbar, java.awt.BorderLayout.PAGE_START);
 
-        sidebarIcon.setBackground(new java.awt.Color(81, 196, 211));
-        sidebarIcon.setPreferredSize(new java.awt.Dimension(60, 708));
+        SideBar.setBackground(new java.awt.Color(81, 196, 211));
+        SideBar.setPreferredSize(new java.awt.Dimension(60, 708));
 
         homePane.setBackground(new java.awt.Color(81, 196, 211));
 
@@ -653,62 +653,62 @@ public class UserDashboard extends javax.swing.JFrame {
             .addComponent(hLogoutText, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout sidebarIconLayout = new javax.swing.GroupLayout(sidebarIcon);
-        sidebarIcon.setLayout(sidebarIconLayout);
-        sidebarIconLayout.setHorizontalGroup(
-            sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidebarIconLayout.createSequentialGroup()
-                .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout SideBarLayout = new javax.swing.GroupLayout(SideBar);
+        SideBar.setLayout(SideBarLayout);
+        SideBarLayout.setHorizontalGroup(
+            SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SideBarLayout.createSequentialGroup()
+                .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(homePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bookmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(hBookPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(hHomePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(sidebarIconLayout.createSequentialGroup()
-                .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sidebarIconLayout.createSequentialGroup()
+            .addGroup(SideBarLayout.createSequentialGroup()
+                .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SideBarLayout.createSequentialGroup()
                         .addComponent(streamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(hStreamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sidebarIconLayout.createSequentialGroup()
+                    .addGroup(SideBarLayout.createSequentialGroup()
                         .addComponent(logoutPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(hLogoutPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        sidebarIconLayout.setVerticalGroup(
-            sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidebarIconLayout.createSequentialGroup()
-                .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        SideBarLayout.setVerticalGroup(
+            SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SideBarLayout.createSequentialGroup()
+                .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(homePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(sidebarIconLayout.createSequentialGroup()
+                    .addGroup(SideBarLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(hHomePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(7, 7, 7)
-                .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bookmarkPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarIconLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideBarLayout.createSequentialGroup()
                         .addComponent(hBookPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)))
-                .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sidebarIconLayout.createSequentialGroup()
+                .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SideBarLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(streamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sidebarIconLayout.createSequentialGroup()
+                    .addGroup(SideBarLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(hStreamPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sidebarIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(logoutPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(sidebarIconLayout.createSequentialGroup()
+                    .addGroup(SideBarLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(hLogoutPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(1046, Short.MAX_VALUE))
         );
 
-        getContentPane().add(sidebarIcon, java.awt.BorderLayout.LINE_START);
+        getContentPane().add(SideBar, java.awt.BorderLayout.LINE_START);
 
         jPanel8.setPreferredSize(new java.awt.Dimension(1260, 1350));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1491,11 +1491,11 @@ public class UserDashboard extends javax.swing.JFrame {
         // HIDE SIDEBAR CLICK
         
         if (a == true){
-            hideshow(sidebarIcon, a);
+            hideshow(SideBar, a);
             SwingUtilities.updateComponentTreeUI(this);
             a = false;
         }else {
-            hideshow(sidebarIcon, a);
+            hideshow(SideBar, a);
             SwingUtilities.updateComponentTreeUI(this);
             a = true;
         }
@@ -2111,6 +2111,7 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane Dasbor;
     private javax.swing.JLabel HomeIcon;
     private javax.swing.JPanel Navbar;
+    private javax.swing.JPanel SideBar;
     private javax.swing.JLabel StreamIcon;
     private javax.swing.JPanel bookmarkPane;
     private javax.swing.JComboBox<String> cbx_genre;
@@ -2169,7 +2170,6 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel poster4;
     private javax.swing.JLabel poster5;
     private javax.swing.JTextField searchForm;
-    private javax.swing.JPanel sidebarIcon;
     private javax.swing.JLabel soon1;
     private javax.swing.JLabel soon2;
     private javax.swing.JLabel soon3;
