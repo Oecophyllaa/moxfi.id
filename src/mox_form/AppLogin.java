@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mox_form;
+
 import db.database;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,10 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-/**
- *
- * @author fatkh
- */
+
 public class AppLogin extends javax.swing.JFrame {
 
     /**
