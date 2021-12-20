@@ -17,6 +17,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 /**
  *
@@ -79,23 +80,21 @@ public class SoonMovies extends javax.swing.JFrame {
             
             String[] posterArr = new String[posters.size()];
             posterArr = posters.toArray(posterArr);
+            JLabel[] posterX = {poster1, poster2, poster3, poster4, poster5, poster6, poster7, poster8, poster9, poster10};
             
-            poster1.setIcon(getPoster(posterArr[0]));
-            poster2.setIcon(getPoster(posterArr[1]));
-            poster3.setIcon(getPoster(posterArr[2]));
-            poster4.setIcon(getPoster(posterArr[3]));
-            poster5.setIcon(getPoster(posterArr[4]));
+            for(int i = 0; i < posterArr.length; i++) {
+                posterX[i].setIcon(getPoster(posterArr[i]));
+            }
             
             // Title Coming Soon Movie
             
             String[] titleArr = new String[titles.size()];
             titleArr = titles.toArray(titleArr);
+            JLabel[] titleX = {title1, title2, title3, title4, title5, title6, title7, title8, title9, title10};
             
-            title1.setText(titleArr[0]);
-            title2.setText(titleArr[1]);
-            title3.setText(titleArr[2]);
-            title4.setText(titleArr[3]);
-            title5.setText(titleArr[4]);
+            for(int i = 0; i < titleArr.length; i++) {
+                titleX[i].setText(titleArr[i]);
+            }
             
         } catch (SQLException e) {
         }
@@ -132,7 +131,7 @@ public class SoonMovies extends javax.swing.JFrame {
         poster3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         poster4 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
+        JPanel6 = new javax.swing.JPanel();
         poster6 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         poster7 = new javax.swing.JLabel();
@@ -417,21 +416,21 @@ public class SoonMovies extends javax.swing.JFrame {
 
         jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, -1, -1));
 
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel9.setPreferredSize(new java.awt.Dimension(200, 283));
+        JPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        JPanel6.setPreferredSize(new java.awt.Dimension(200, 283));
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout JPanel6Layout = new javax.swing.GroupLayout(JPanel6);
+        JPanel6.setLayout(JPanel6Layout);
+        JPanel6Layout.setHorizontalGroup(
+            JPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(poster6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        JPanel6Layout.setVerticalGroup(
+            JPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(poster6, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
+        jPanel2.add(JPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
 
         jPanel10.setBackground(new java.awt.Color(204, 204, 204));
         jPanel10.setPreferredSize(new java.awt.Dimension(200, 283));
@@ -980,6 +979,7 @@ public class SoonMovies extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel JPanel6;
     private javax.swing.JPanel bookmarkPane;
     private javax.swing.JPanel coomingPane;
     private javax.swing.JPanel genrePane;
@@ -1014,7 +1014,6 @@ public class SoonMovies extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel latestPane;

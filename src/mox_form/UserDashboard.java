@@ -74,23 +74,21 @@ public class UserDashboard extends javax.swing.JFrame {
             
             String[] posterArr = new String[posters.size()];
             posterArr = posters.toArray(posterArr);
+            JLabel[] latestPoster = {poster1, poster2, poster3, poster4, poster5};
             
-            poster1.setIcon(getPoster(posterArr[0]));
-            poster2.setIcon(getPoster(posterArr[1]));
-            poster3.setIcon(getPoster(posterArr[2]));
-            poster4.setIcon(getPoster(posterArr[3]));
-            poster5.setIcon(getPoster(posterArr[4]));
+            for(int i = 0; i < posterArr.length; i++) {
+                latestPoster[i].setIcon(getPoster(posterArr[i]));
+            }
             
             // Title Latest Movie
             
             String[] titleArr = new String[titles.size()];
             titleArr = titles.toArray(titleArr);
+            JLabel[] latestTitle = {lt_title1, lt_title2, lt_title3, lt_title4, lt_title5};
             
-            lt_title1.setText(titleArr[0]);
-            lt_title2.setText(titleArr[1]);
-            lt_title3.setText(titleArr[2]);
-            lt_title4.setText(titleArr[3]);
-            lt_title5.setText(titleArr[4]);
+            for(int i = 0; i < titleArr.length; i++) {
+                latestTitle[i].setText(titleArr[i]);
+            }
             
         } catch (SQLException e) {
         }
@@ -115,25 +113,23 @@ public class UserDashboard extends javax.swing.JFrame {
             
             String[] posterArr = new String[posters.size()];
             posterArr = posters.toArray(posterArr);
+            JLabel[] topPoster = {topPoster1, topPoster2, topPoster3, topPoster4, topPoster5};
             
-            topPoster1.setIcon(getPoster(posterArr[0]));
-            topPoster2.setIcon(getPoster(posterArr[1]));
-            topPoster3.setIcon(getPoster(posterArr[2]));
-            topPoster4.setIcon(getPoster(posterArr[3]));
-            topPoster5.setIcon(getPoster(posterArr[4]));
+            for(int i = 0; i < posterArr.length; i++) {
+                topPoster[i].setIcon(getPoster(posterArr[i]));
+            }
             
             // Title Top Movie
             
             String[] titleArr = new String[titles.size()];
             titleArr = titles.toArray(titleArr);
+            JLabel[] topTitle = {topTitle1, topTitle2, topTitle3, topTitle4, topTitle5};
             
-            topTitle1.setText(titleArr[0]);
-            topTitle2.setText(titleArr[1]);
-            topTitle3.setText(titleArr[2]);
-            topTitle4.setText(titleArr[3]);
-            topTitle5.setText(titleArr[4]);
+            for(int i = 0; i < titleArr.length; i++) {
+                topTitle[i].setText(titleArr[i]);
+            }
+            
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
     
@@ -160,23 +156,21 @@ public class UserDashboard extends javax.swing.JFrame {
             
             String[] posterArr = new String[posters.size()];
             posterArr = posters.toArray(posterArr);
+            JLabel[] soonPoster = {soonPoster1, soonPoster2, soonPoster3, soonPoster4, soonPoster5};
             
-            soonPoster1.setIcon(getPoster(posterArr[0]));
-            soonPoster2.setIcon(getPoster(posterArr[1]));
-            soonPoster3.setIcon(getPoster(posterArr[2]));
-            soonPoster4.setIcon(getPoster(posterArr[3]));
-            soonPoster5.setIcon(getPoster(posterArr[4]));
+            for(int i = 0; i < posterArr.length; i++) {
+                soonPoster[i].setIcon(getPoster(posterArr[i]));
+            }
             
             // Title Coming Soon Movie
             
             String[] titleArr = new String[titles.size()];
             titleArr = titles.toArray(titleArr);
+            JLabel[] soonTitle = {soon1, soon2, soon3, soon4, soon5};
             
-            soon1.setText(titleArr[0]);
-            soon2.setText(titleArr[1]);
-            soon3.setText(titleArr[2]);
-            soon4.setText(titleArr[3]);
-            soon5.setText(titleArr[4]);
+            for(int i = 0; i < titleArr.length; i++) {
+                soonTitle[i].setText(titleArr[i]);
+            }
             
         } catch (SQLException e) {
         }

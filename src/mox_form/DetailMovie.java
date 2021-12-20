@@ -900,7 +900,7 @@ public class DetailMovie extends javax.swing.JFrame {
         // btn bookmark
         String id_movie = la_idMovie.getText();
         String username = tf_username.getText();
-        String query = "insert";
+        String query = "";
         String id_bookmark = "";
         //System.out.println(ToggleBmark.isSelected());
         
@@ -918,6 +918,9 @@ public class DetailMovie extends javax.swing.JFrame {
                 if(res.next()) {
                     id_bookmark = res.getString("id_bookmark");
                     query = "update";
+                } else {
+                    //id_bookmark = res.getString("id_bookmark");
+                    query = "create";
                 }
             } catch (Exception e) {
                 
@@ -927,16 +930,16 @@ public class DetailMovie extends javax.swing.JFrame {
                 try {
                     String sql = "UPDATE user_bookmark SET "
                                + "status = 'Bookmarked' "
-                               + "WHERE id_bookamark = '"+id_bookmark+"' ";
+                               + "WHERE id_bookmark = '"+id_bookmark+"' ";
                     Connection conn = (Connection) database.getConn();
                     PreparedStatement pst = conn.prepareStatement(sql);
                     pst.execute();
                     JOptionPane.showMessageDialog(null, "Movie Bookmarked");
+                    this.dispose();
                     new UserBookmark(username).setVisible(true);
-                    this.setVisible(false);
                 } catch (Exception e) {
                 }
-            } else {
+            } else if (query.equals("create")) {
                 try {
                     String sql = "INSERT INTO user_bookmark VALUES "
                                + "(default,'"+id_movie+"','"+username+"','Bookmarked') ";
@@ -944,8 +947,8 @@ public class DetailMovie extends javax.swing.JFrame {
                     PreparedStatement pst = conn.prepareStatement(sql);
                     pst.execute();
                     JOptionPane.showMessageDialog(null, "Movie Bookmarked");
+                    this.dispose();
                     new UserBookmark(username).setVisible(true);
-                    this.setVisible(false);
                 } catch (Exception e) {
                 }
             }
@@ -962,7 +965,7 @@ public class DetailMovie extends javax.swing.JFrame {
                 PreparedStatement pst = conn.prepareStatement(sql);
                 pst.execute();
                 JOptionPane.showMessageDialog(null, "Movie removed from Library");
-                this.setVisible(false);
+                this.dispose();
                 new UserBookmark(username).setVisible(true);
             } catch (Exception e) {
             }

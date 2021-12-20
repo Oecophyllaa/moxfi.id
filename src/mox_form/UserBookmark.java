@@ -74,23 +74,21 @@ public class UserBookmark extends javax.swing.JFrame {
             
             String[] posterArr = new String[posters.size()];
             posterArr = posters.toArray(posterArr);
+            JLabel[] posterX = {poster1, poster2, poster3, poster4, poster5, poster6, poster7, poster8, poster9, poster10};
             
-            poster1.setIcon(getPoster(posterArr[0]));
-            poster2.setIcon(getPoster(posterArr[1]));
-            poster3.setIcon(getPoster(posterArr[2]));
-            poster4.setIcon(getPoster(posterArr[3]));
-            poster5.setIcon(getPoster(posterArr[4]));
+            for(int i = 0; i < posterArr.length; i++) {
+                posterX[i].setIcon(getPoster(posterArr[i]));
+            }
             
             // Title Coming Soon Movie
             
             String[] titleArr = new String[titles.size()];
             titleArr = titles.toArray(titleArr);
+            JLabel[] titleX = {title1, title2, title3, title4, title5, title6, title7, title8, title9, title10};
             
-            title1.setText(titleArr[0]);
-            title2.setText(titleArr[1]);
-            title3.setText(titleArr[2]);
-            title4.setText(titleArr[3]);
-            title5.setText(titleArr[4]);
+            for(int i = 0; i < titleArr.length; i++) {
+                titleX[i].setText(titleArr[i]);
+            }
             
         } catch (Exception e) {
         }
