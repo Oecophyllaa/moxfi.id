@@ -910,7 +910,7 @@ public class SoonMovies extends javax.swing.JFrame {
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
-        stream_page stream = new stream_page();
+        StreamPage stream = new StreamPage();
         stream.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel15MouseClicked
