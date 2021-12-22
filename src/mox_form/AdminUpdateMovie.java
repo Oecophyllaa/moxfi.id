@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -45,7 +46,7 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
             
             while(res.next()) {
                 tf_title.setText(res.getString("title"));
-                tf_date.setText(res.getString("date"));
+                tf_date.setDate(res.getDate("date"));
                 tf_time.setText(res.getString("time"));
                 cbxGenre.setSelectedItem(res.getString("genre_movie"));
                 cbxDirector.setSelectedItem(res.getString("nama_director"));
@@ -126,7 +127,6 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        tf_date = new javax.swing.JTextField();
         tf_time = new javax.swing.JTextField();
         tf_title = new javax.swing.JTextField();
         tf_poster = new javax.swing.JTextField();
@@ -140,6 +140,7 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         cbxStatus = new javax.swing.JComboBox<>();
         tf_idMovie = new javax.swing.JTextField();
+        tf_date = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -427,15 +428,6 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel18.setText("Type");
 
-        tf_date.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        tf_date.setText("yyyy-MM-dd");
-        tf_date.setPreferredSize(new java.awt.Dimension(300, 40));
-        tf_date.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tf_dateMouseClicked(evt);
-            }
-        });
-
         tf_time.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_time.setPreferredSize(new java.awt.Dimension(300, 40));
 
@@ -515,12 +507,11 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
                                 .addGap(67, 67, 67)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tf_idMovie)
-                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tf_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(tf_time, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(tf_title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cbxGenre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cbxDirector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(tf_time, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tf_title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbxGenre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbxDirector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tf_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 408, Short.MAX_VALUE)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel16)
@@ -551,10 +542,13 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel11)
                             .addComponent(tf_title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(tf_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(tf_date, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -684,16 +678,12 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxGenreActionPerformed
 
-    private void tf_dateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_dateMouseClicked
-        // Mouse Clicked
-        tf_date.setText("");
-    }//GEN-LAST:event_tf_dateMouseClicked
-
     private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
         // Update
         String id_movie = tf_idMovie.getText();
         String title = tf_title.getText();
-        String date = tf_date.getText();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String date = sdf.format(tf_date.getDate());
         String time = tf_time.getText();
         int IdGenre = getValueId(cbxGenre.getSelectedItem().toString());
         int IdDirector = getValueId(cbxDirector.getSelectedItem().toString());
@@ -807,7 +797,7 @@ public class AdminUpdateMovie extends javax.swing.JFrame {
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JPanel streamPane;
     private javax.swing.JTextArea ta_plot;
-    private javax.swing.JTextField tf_date;
+    private com.toedter.calendar.JDateChooser tf_date;
     private javax.swing.JTextField tf_idMovie;
     private javax.swing.JTextField tf_poster;
     private javax.swing.JTextField tf_rating;
