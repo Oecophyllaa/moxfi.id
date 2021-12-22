@@ -1,28 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mox_form;
-import javax.swing.JOptionPane;
-import javax.swing.JLabel;
+
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-/**
- *
- * @author fatkh
- */
+import javax.swing.WindowConstants;
+
 public class StreamPage extends javax.swing.JFrame {
 
-    /**
-     * Creates new form stream_page
-     */
     public StreamPage() {
         initComponents();
         setTitle("Stream Movie Trailer");
         setExtendedState(MAXIMIZED_BOTH);
+        load_thumbnails();
+    }
+    
+    public ImageIcon getPoster(String url) {
+        ImageIcon resizedImg = null;
+        try {
+            URL imgUrl = new URL(url);
+            ImageIcon icon = new ImageIcon(imgUrl);
+            Image img = icon.getImage();
+            Image newImg = img.getScaledInstance(370, 200, java.awt.Image.SCALE_SMOOTH);
+            resizedImg = new ImageIcon(newImg);
+        } catch (MalformedURLException e) {
+        }
+        
+        return resizedImg;
+    }
+    
+    public void load_thumbnails() {
+        thumbnail1.setIcon(getPoster("https://cdn.vox-cdn.com/thumbor/nUHZ7gpoF4VXhS99duZPfV9VpEQ=/0x0:600x750/1200x800/filters:focal(163x213:259x309)/cdn.vox-cdn.com/uploads/chorus_image/image/70152383/unnamed__1_.0.jpeg"));
+        thumbnail2.setIcon(getPoster("https://awsimages.detik.net.id/visual/2018/06/17/b27a0492-4938-4cc1-b1a6-77152e5320a4_169.jpeg?w=650"));
+        thumbnail3.setIcon(getPoster("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWF88-YcZmTTge68Gxls4Lp61WI-HwsKs4dcR9SbtPgDJGQslSWMkQTl35-_EN4tDqTKw&usqp=CAU"));
     }
 
     /**
@@ -39,9 +54,9 @@ public class StreamPage extends javax.swing.JFrame {
         hidePane = new javax.swing.JPanel();
         hide = new javax.swing.JLabel();
         SoonNav = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        SoonText = new javax.swing.JLabel();
         LatestNav = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        LatestText = new javax.swing.JLabel();
         GenreNav = new javax.swing.JPanel();
         cbb_genre = new javax.swing.JComboBox<>();
         SearchForm = new javax.swing.JTextField();
@@ -64,7 +79,7 @@ public class StreamPage extends javax.swing.JFrame {
         hLogoutText = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
-        StreamText = new javax.swing.JLabel();
+        TrailerText = new javax.swing.JLabel();
         Trailer1 = new javax.swing.JPanel();
         thumbnail1 = new javax.swing.JLabel();
         Trailer2 = new javax.swing.JPanel();
@@ -108,17 +123,17 @@ public class StreamPage extends javax.swing.JFrame {
 
         SoonNav.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Coming Soon");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        SoonText.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        SoonText.setText("Coming Soon");
+        SoonText.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                SoonTextMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel6MouseEntered(evt);
+                SoonTextMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel6MouseExited(evt);
+                SoonTextMouseExited(evt);
             }
         });
 
@@ -128,30 +143,30 @@ public class StreamPage extends javax.swing.JFrame {
             SoonNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SoonNavLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addComponent(SoonText)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SoonNavLayout.setVerticalGroup(
             SoonNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SoonNavLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SoonText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         LatestNav.setBackground(new java.awt.Color(81, 196, 211));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setText("Latest Movies");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        LatestText.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        LatestText.setText("Latest Movies");
+        LatestText.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                LatestTextMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel8MouseEntered(evt);
+                LatestTextMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel8MouseExited(evt);
+                LatestTextMouseExited(evt);
             }
         });
 
@@ -161,14 +176,14 @@ public class StreamPage extends javax.swing.JFrame {
             LatestNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LatestNavLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8)
+                .addComponent(LatestText)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LatestNavLayout.setVerticalGroup(
             LatestNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LatestNavLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LatestText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -511,16 +526,21 @@ public class StreamPage extends javax.swing.JFrame {
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        StreamText.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        StreamText.setForeground(new java.awt.Color(102, 102, 102));
-        StreamText.setText("Let's Stream");
-        jPanel6.add(StreamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        TrailerText.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        TrailerText.setForeground(new java.awt.Color(102, 102, 102));
+        TrailerText.setText("Trailer");
+        jPanel6.add(TrailerText, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
         Trailer1.setBackground(new java.awt.Color(204, 204, 204));
         Trailer1.setPreferredSize(new java.awt.Dimension(400, 200));
 
         thumbnail1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         thumbnail1.setText("LandscapePoster");
+        thumbnail1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                thumbnail1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Trailer1Layout = new javax.swing.GroupLayout(Trailer1);
         Trailer1.setLayout(Trailer1Layout);
@@ -618,36 +638,36 @@ public class StreamPage extends javax.swing.JFrame {
         changeColor(hidePane, new Color(81, 196, 211));
     }//GEN-LAST:event_hideMouseExited
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void SoonTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SoonTextMouseClicked
         // BUTTON COMING SOON ACTION ANJAY
         
         //this.dispose();
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_SoonTextMouseClicked
 
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
+    private void SoonTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SoonTextMouseEntered
         // BUTTON COMING SOON
         changeColor(SoonNav, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel6MouseEntered
+    }//GEN-LAST:event_SoonTextMouseEntered
 
-    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
+    private void SoonTextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SoonTextMouseExited
         // BUTTON COMING SOON
         changeColor(SoonNav, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel6MouseExited
+    }//GEN-LAST:event_SoonTextMouseExited
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void LatestTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LatestTextMouseClicked
         // BUTTON LATEST ACTION CLICK ANJAY
         
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_LatestTextMouseClicked
 
-    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+    private void LatestTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LatestTextMouseEntered
         // BUTTON LATEST
         changeColor(LatestNav, new Color(216, 227, 231));
-    }//GEN-LAST:event_jLabel8MouseEntered
+    }//GEN-LAST:event_LatestTextMouseEntered
 
-    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+    private void LatestTextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LatestTextMouseExited
         // BUTTON LATEST
         changeColor(LatestNav, new Color(81, 196, 211));
-    }//GEN-LAST:event_jLabel8MouseExited
+    }//GEN-LAST:event_LatestTextMouseExited
 
     private void cbb_genreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbb_genreMouseEntered
         // BUTTON COMBO BOX
@@ -732,6 +752,13 @@ public class StreamPage extends javax.swing.JFrame {
         SearchForm.setText("");
     }//GEN-LAST:event_SearchFormMouseClicked
 
+    private void thumbnail1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_thumbnail1MouseClicked
+        // Play Video Trailer Spoidermon: No Way Home
+        System.out.println("Ok!");
+        this.dispose();
+        //PlayTrailer;
+    }//GEN-LAST:event_thumbnail1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -775,18 +802,20 @@ public class StreamPage extends javax.swing.JFrame {
     private javax.swing.JLabel HomeIcon;
     private javax.swing.JPanel HomePane;
     private javax.swing.JPanel LatestNav;
+    private javax.swing.JLabel LatestText;
     private javax.swing.JLabel LogoutIcon;
     private javax.swing.JPanel LogoutPane;
     private javax.swing.JLabel NavIcon;
     private javax.swing.JPanel Navbar;
     private javax.swing.JTextField SearchForm;
     private javax.swing.JPanel SoonNav;
+    private javax.swing.JLabel SoonText;
     private javax.swing.JLabel StreamIcon;
     private javax.swing.JPanel StreamPane;
-    private javax.swing.JLabel StreamText;
     private javax.swing.JPanel Trailer1;
     private javax.swing.JPanel Trailer2;
     private javax.swing.JPanel Trailer3;
+    private javax.swing.JLabel TrailerText;
     private javax.swing.JComboBox<String> cbb_genre;
     private javax.swing.JPanel hBmarkPane;
     private javax.swing.JLabel hBmarkText;
@@ -798,8 +827,6 @@ public class StreamPage extends javax.swing.JFrame {
     private javax.swing.JLabel hStreamText;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel sidebarIcon;
