@@ -77,8 +77,14 @@ public class UserBookmark extends javax.swing.JFrame {
             posterArr = posters.toArray(posterArr);
             JLabel[] posterX = {poster1, poster2, poster3, poster4, poster5, poster6, poster7, poster8, poster9, poster10};
             
-            for(int i = 0; i < posterArr.length; i++) {
-                posterX[i].setIcon(getPoster(posterArr[i]));
+            if(posterArr.length < 10) {
+                for(int i = 0; i < posterArr.length; i++) {
+                    posterX[i].setIcon(getPoster(posterArr[i]));
+                }
+            } else {
+                for(int i = 0; i < 10; i++) {
+                    posterX[i].setIcon(getPoster(posterArr[i]));
+                }
             }
             
             // Title Coming Soon Movie
@@ -87,8 +93,14 @@ public class UserBookmark extends javax.swing.JFrame {
             titleArr = titles.toArray(titleArr);
             JLabel[] titleX = {title1, title2, title3, title4, title5, title6, title7, title8, title9, title10};
             
-            for(int i = 0; i < titleArr.length; i++) {
-                titleX[i].setText(titleArr[i]);
+            if(titleArr.length < 10) {
+                for(int i = 0; i < titleArr.length; i++) {
+                    titleX[i].setText(titleArr[i]);
+                }
+            } else {
+                for(int i = 0; i < 10; i++) {
+                    titleX[i].setText(titleArr[i]);
+                }
             }
             
         } catch (Exception e) {
