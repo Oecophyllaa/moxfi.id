@@ -956,9 +956,7 @@ public class UserBookmark extends javax.swing.JFrame {
     }//GEN-LAST:event_hHomeTextMouseExited
 
     private void hBmarkTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hBmarkTextMouseClicked
-        // TODO add your handling code here:
-        
-        //this.dispose();
+        // 
     }//GEN-LAST:event_hBmarkTextMouseClicked
 
     private void hBmarkTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hBmarkTextMouseEntered
@@ -972,10 +970,9 @@ public class UserBookmark extends javax.swing.JFrame {
     }//GEN-LAST:event_hBmarkTextMouseExited
 
     private void hStreamTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamTextMouseClicked
-        // TODO add your handling code here:
-        StreamPage stream = new StreamPage();
-        stream.setVisible(true);
+        // to stream page
         this.dispose();
+        new StreamPage(tf_username.getText()).setVisible(true);
     }//GEN-LAST:event_hStreamTextMouseClicked
 
     private void hStreamTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamTextMouseEntered

@@ -857,10 +857,9 @@ public class DetailMovie extends javax.swing.JFrame {
     }//GEN-LAST:event_hBmarkTextMouseExited
 
     private void hStreamTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamTextMouseClicked
-        // TODO add your handling code here:
-        StreamPage stream = new StreamPage();
-        stream.setVisible(true);
+        // To stream page
         this.dispose();
+        new StreamPage(tf_username.getText()).setVisible(true);
     }//GEN-LAST:event_hStreamTextMouseClicked
 
     private void hStreamTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamTextMouseEntered

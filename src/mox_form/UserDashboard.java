@@ -1622,9 +1622,8 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void hStreamTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamTextMouseClicked
         // btn hidden stream
-        StreamPage stream = new StreamPage();
-        stream.setVisible(true);
         this.dispose();
+        new StreamPage(tf_username.getText()).setVisible(true);
     }//GEN-LAST:event_hStreamTextMouseClicked
 
     private void moreLatestMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreLatestMouseClicked

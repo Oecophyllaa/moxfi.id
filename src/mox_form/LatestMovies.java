@@ -952,10 +952,9 @@ public class LatestMovies extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel13MouseExited
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        // TODO add your handling code here:
-        UserBookmark list = new UserBookmark("");
-        list.setVisible(true);
+        // To bookmark page
         this.dispose();
+        new UserBookmark(tf_username.getText()).setVisible(true);
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered
@@ -969,10 +968,9 @@ public class LatestMovies extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel14MouseExited
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
-        // TODO add your handling code here:
-        StreamPage stream = new StreamPage();
-        stream.setVisible(true);
+        // To stream page
         this.dispose();
+        new StreamPage(tf_username.getText()).setVisible(true);
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void jLabel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseEntered

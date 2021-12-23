@@ -13,10 +13,11 @@ import javax.swing.WindowConstants;
 
 public class StreamPage extends javax.swing.JFrame {
 
-    public StreamPage() {
+    public StreamPage(String username) {
         initComponents();
         setTitle("Stream Movie Trailer");
         setExtendedState(MAXIMIZED_BOTH);
+        tf_username.setText(username);
         load_thumbnails();
     }
     
@@ -86,6 +87,10 @@ public class StreamPage extends javax.swing.JFrame {
         thumbnail2 = new javax.swing.JLabel();
         Trailer3 = new javax.swing.JPanel();
         thumbnail3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        tf_username = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -593,6 +598,23 @@ public class StreamPage extends javax.swing.JFrame {
 
         jPanel6.add(Trailer3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 70, 370, -1));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel1.setText("Spiderman: No Way Home");
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 370, 30));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setText("The Avengers: Infinity War");
+        jPanel6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 370, 30));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setText("Venom: Let There Be Carnage");
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 270, 370, 30));
+
+        tf_username.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tf_username.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        tf_username.setText("username");
+        jPanel6.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(1211, 10, 80, 30));
+
         jScrollPane1.setViewportView(jPanel6);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -682,10 +704,9 @@ public class StreamPage extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeIconMouseEntered
 
     private void hHomeTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hHomeTextMouseClicked
-        // TODO add your handling code here:
-        UserDashboard refresh = new UserDashboard("");
-        refresh.setVisible(true);
+        // to dashbord page
         this.dispose();
+        new UserDashboard(tf_username.getText()).setVisible(true);
     }//GEN-LAST:event_hHomeTextMouseClicked
 
     private void hHomeTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hHomeTextMouseEntered
@@ -699,10 +720,9 @@ public class StreamPage extends javax.swing.JFrame {
     }//GEN-LAST:event_hHomeTextMouseExited
 
     private void hBmarkTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hBmarkTextMouseClicked
-        // TODO add your handling code here:
-        UserBookmark list = new UserBookmark("");
-        list.setVisible(true);
+        // to bookmark page
         this.dispose();
+        new UserBookmark(tf_username.getText()).setVisible(true);
     }//GEN-LAST:event_hBmarkTextMouseClicked
 
     private void hBmarkTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hBmarkTextMouseEntered
@@ -716,8 +736,7 @@ public class StreamPage extends javax.swing.JFrame {
     }//GEN-LAST:event_hBmarkTextMouseExited
 
     private void hStreamTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamTextMouseClicked
-        // TODO add your handling code here:
-        
+        // to stream page
     }//GEN-LAST:event_hStreamTextMouseClicked
 
     private void hStreamTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamTextMouseEntered
@@ -790,7 +809,7 @@ public class StreamPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StreamPage().setVisible(true);
+                new AppLogin().setVisible(true);
             }
         });
     }
@@ -827,9 +846,13 @@ public class StreamPage extends javax.swing.JFrame {
     private javax.swing.JLabel hStreamText;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel sidebarIcon;
+    private javax.swing.JLabel tf_username;
     private javax.swing.JLabel thumbnail1;
     private javax.swing.JLabel thumbnail2;
     private javax.swing.JLabel thumbnail3;

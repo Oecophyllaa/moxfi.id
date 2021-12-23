@@ -970,9 +970,8 @@ public class TopMovies extends javax.swing.JFrame {
 
     private void hStreamLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamLabelMouseClicked
         // btn ke stream
-        StreamPage stream = new StreamPage();
-        stream.setVisible(true);
         this.dispose();
+        new StreamPage(tf_username.getText()).setVisible(true);
     }//GEN-LAST:event_hStreamLabelMouseClicked
 
     private void hStreamLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hStreamLabelMouseEntered
