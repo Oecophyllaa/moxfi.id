@@ -8,6 +8,7 @@ import db.database;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Connection;
@@ -310,6 +311,11 @@ public class SoonMovies extends javax.swing.JFrame {
         SearchForm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SearchFormMouseClicked(evt);
+            }
+        });
+        SearchForm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SearchFormKeyPressed(evt);
             }
         });
 
@@ -949,6 +955,15 @@ public class SoonMovies extends javax.swing.JFrame {
         // clear the form
         SearchForm.setText("");
     }//GEN-LAST:event_SearchFormMouseClicked
+
+    private void SearchFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchFormKeyPressed
+        // search movie
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String query = SearchForm.getText();
+            this.dispose();
+            new SearchedMovie(tf_username.getText(), query).setVisible(true);
+        }
+    }//GEN-LAST:event_SearchFormKeyPressed
 
     /**
      * @param args the command line arguments

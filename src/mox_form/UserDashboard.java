@@ -2080,8 +2080,7 @@ public class UserDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_soonPoster5MouseExited
 
     private void searchFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFormActionPerformed
-        // Search a movie
-        
+        // 
     }//GEN-LAST:event_searchFormActionPerformed
 
     private void searchFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFormKeyPressed
@@ -2090,7 +2089,6 @@ public class UserDashboard extends javax.swing.JFrame {
             String query = searchForm.getText();
             this.dispose();
             new SearchedMovie(tf_username.getText(), query).setVisible(true);
-            //System.out.println(query + " OK!");
         }
     }//GEN-LAST:event_searchFormKeyPressed
 

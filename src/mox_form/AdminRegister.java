@@ -35,6 +35,7 @@ public class AdminRegister extends javax.swing.JFrame {
         tf_password = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         btn_register = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,6 +126,16 @@ public class AdminRegister extends javax.swing.JFrame {
         });
         jPanel3.add(btn_register, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 217, 52));
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel3.setText("BACK");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 60, 30));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -170,6 +181,12 @@ public class AdminRegister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_passwordActionPerformed
 
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // back to dasbor
+        this.dispose();
+        new AdminDashboard().setVisible(true);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -212,6 +229,7 @@ public class AdminRegister extends javax.swing.JFrame {
     private javax.swing.JButton btn_register;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Connection;
@@ -118,7 +119,7 @@ public class DetailMovie extends javax.swing.JFrame {
         latestNavbar = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
         cbxGenre = new javax.swing.JComboBox<>();
-        searchForm = new javax.swing.JTextField();
+        SearchForm = new javax.swing.JTextField();
         tf_username = new javax.swing.JLabel();
         SideBar = new javax.swing.JPanel();
         homePane = new javax.swing.JPanel();
@@ -288,9 +289,19 @@ public class DetailMovie extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        searchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        searchForm.setText("Search here");
-        searchForm.setPreferredSize(new java.awt.Dimension(69, 30));
+        SearchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SearchForm.setText("Search here");
+        SearchForm.setPreferredSize(new java.awt.Dimension(69, 30));
+        SearchForm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SearchFormMouseClicked(evt);
+            }
+        });
+        SearchForm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SearchFormKeyPressed(evt);
+            }
+        });
 
         tf_username.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         tf_username.setText("Username");
@@ -304,7 +315,7 @@ public class DetailMovie extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(NavLogo)
                 .addGap(18, 18, 18)
-                .addComponent(searchForm, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SearchForm, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -328,7 +339,7 @@ public class DetailMovie extends javax.swing.JFrame {
                     .addComponent(NavLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(NavbarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(searchForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(SearchForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(NavbarLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
@@ -971,6 +982,20 @@ public class DetailMovie extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ToggleBmarkActionPerformed
 
+    private void SearchFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchFormMouseClicked
+        // cleear the form
+        SearchForm.setText("");
+    }//GEN-LAST:event_SearchFormMouseClicked
+
+    private void SearchFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchFormKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String query = SearchForm.getText();
+            this.dispose();
+            new SearchedMovie(tf_username.getText(), query).setVisible(true);
+        }
+    }//GEN-LAST:event_SearchFormKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -1020,6 +1045,7 @@ public class DetailMovie extends javax.swing.JFrame {
     private javax.swing.JLabel PhotoVideo;
     private javax.swing.JScrollPane PlotPane;
     private javax.swing.JPanel PosterPanel;
+    private javax.swing.JTextField SearchForm;
     private javax.swing.JPanel SideBar;
     private javax.swing.JToggleButton ToggleBmark;
     private javax.swing.JPanel VControlPanel;
@@ -1046,7 +1072,6 @@ public class DetailMovie extends javax.swing.JFrame {
     private javax.swing.JLabel latestNavbar;
     private javax.swing.JPanel latestPaneNav;
     private javax.swing.JPanel logoutPane;
-    private javax.swing.JTextField searchForm;
     private javax.swing.JLabel soonNavbar;
     private javax.swing.JPanel soonPaneNav;
     private javax.swing.JPanel streamPane;

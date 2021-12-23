@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Connection;
@@ -105,7 +106,7 @@ public class TopMovies extends javax.swing.JFrame {
         la_latestmov = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        searchForm = new javax.swing.JTextField();
+        SearchForm = new javax.swing.JTextField();
         sidebarIcon = new javax.swing.JPanel();
         homePane = new javax.swing.JPanel();
         iconHome = new javax.swing.JLabel();
@@ -289,17 +290,17 @@ public class TopMovies extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        searchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        searchForm.setText("Search here");
-        searchForm.setPreferredSize(new java.awt.Dimension(69, 30));
-        searchForm.addMouseListener(new java.awt.event.MouseAdapter() {
+        SearchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SearchForm.setText("Search here");
+        SearchForm.setPreferredSize(new java.awt.Dimension(69, 30));
+        SearchForm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                searchFormMouseClicked(evt);
+                SearchFormMouseClicked(evt);
             }
         });
-        searchForm.addKeyListener(new java.awt.event.KeyAdapter() {
+        SearchForm.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                searchFormKeyPressed(evt);
+                SearchFormKeyPressed(evt);
             }
         });
 
@@ -312,7 +313,7 @@ public class TopMovies extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(navbar)
                 .addGap(18, 18, 18)
-                .addComponent(searchForm, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SearchForm, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -334,7 +335,7 @@ public class TopMovies extends javax.swing.JFrame {
                     .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(NavPaneLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(searchForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(SearchForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1051,14 +1052,19 @@ public class TopMovies extends javax.swing.JFrame {
         getDetailMovie(title5.getText());
     }//GEN-LAST:event_title5MouseClicked
 
-    private void searchFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFormKeyPressed
-       
-    }//GEN-LAST:event_searchFormKeyPressed
+    private void SearchFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchFormKeyPressed
+        // search movie
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String query = SearchForm.getText();
+            this.dispose();
+            new SearchedMovie(tf_username.getText(), query).setVisible(true);
+        }
+    }//GEN-LAST:event_SearchFormKeyPressed
 
-    private void searchFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchFormMouseClicked
+    private void SearchFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchFormMouseClicked
         // clear the form
-        searchForm.setText("");
-    }//GEN-LAST:event_searchFormMouseClicked
+        SearchForm.setText("");
+    }//GEN-LAST:event_SearchFormMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1102,6 +1108,7 @@ public class TopMovies extends javax.swing.JFrame {
     private javax.swing.JPanel BmarkPane;
     private javax.swing.JScrollPane DasborPane;
     private javax.swing.JPanel NavPane;
+    private javax.swing.JTextField SearchForm;
     private javax.swing.JPanel coomingPane;
     private javax.swing.JPanel genrePane;
     private javax.swing.JPanel hBmarkPane;
@@ -1148,7 +1155,6 @@ public class TopMovies extends javax.swing.JFrame {
     private javax.swing.JLabel poster7;
     private javax.swing.JLabel poster8;
     private javax.swing.JLabel poster9;
-    private javax.swing.JTextField searchForm;
     private javax.swing.JPanel sidebarIcon;
     private javax.swing.JPanel streampane;
     private javax.swing.JLabel tf_username;

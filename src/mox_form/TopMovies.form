@@ -46,7 +46,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="navbar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="searchForm" min="-2" pref="350" max="-2" attributes="0"/>
+                  <Component id="SearchForm" min="-2" pref="350" max="-2" attributes="0"/>
                   <EmptySpace pref="179" max="32767" attributes="0"/>
                   <Component id="genrePane" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -71,7 +71,7 @@
                       <Component id="navbar" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="searchForm" max="32767" attributes="0"/>
+                          <Component id="SearchForm" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -261,7 +261,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="searchForm">
+        <Component class="javax.swing.JTextField" name="SearchForm">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -272,8 +272,8 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchFormMouseClicked"/>
-            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="searchFormKeyPressed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SearchFormMouseClicked"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SearchFormKeyPressed"/>
           </Events>
         </Component>
       </SubComponents>

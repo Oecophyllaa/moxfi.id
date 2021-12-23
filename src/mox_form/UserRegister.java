@@ -47,6 +47,7 @@ public class UserRegister extends javax.swing.JFrame {
         tf_password = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         btn_register = new javax.swing.JButton();
+        BackText = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,6 +138,16 @@ public class UserRegister extends javax.swing.JFrame {
         });
         jPanel3.add(btn_register, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 217, 52));
 
+        BackText.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        BackText.setForeground(new java.awt.Color(255, 0, 0));
+        BackText.setText("BACK");
+        BackText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackTextMouseClicked(evt);
+            }
+        });
+        jPanel3.add(BackText, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 40, 30));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -182,6 +193,12 @@ public class UserRegister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_passwordActionPerformed
 
+    private void BackTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackTextMouseClicked
+        // back to login
+        this.dispose();
+        new AppLogin().setVisible(true);
+    }//GEN-LAST:event_BackTextMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -219,6 +236,7 @@ public class UserRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackText;
     private javax.swing.JButton btn_register;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
