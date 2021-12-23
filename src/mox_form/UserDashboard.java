@@ -2089,6 +2089,8 @@ public class UserDashboard extends javax.swing.JFrame {
         // Hit Enter = Search Movie
         if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
             String query = searchForm.getText();
+            this.dispose();
+            new SearchedMovie(tf_username.getText(), query).setVisible(true);
             //System.out.println(query + " OK!");
         }
     }//GEN-LAST:event_searchFormKeyPressed
