@@ -781,7 +781,7 @@ public class StreamPage extends javax.swing.JFrame {
         // Play Video Trailer Spoidermon: No Way Home
         System.out.println("Ok!");
         this.dispose();
-        //PlayTrailer;
+        //PlayTrailer.main(null);
     }//GEN-LAST:event_thumbnail1MouseClicked
 
     private void SearchFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchFormKeyPressed
