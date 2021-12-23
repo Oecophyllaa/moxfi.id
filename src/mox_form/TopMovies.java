@@ -68,7 +68,7 @@ public class TopMovies extends javax.swing.JFrame {
             posterArr = posters.toArray(posterArr);
             JLabel[] posterX = {poster1, poster2, poster3, poster4, poster5, poster6, poster7, poster8, poster9, poster10};
             
-            for(int i = 0; i < posterArr.length; i++) {
+            for(int i = 0; i < 10; i++) {
                 posterX[i].setIcon(getPoster(posterArr[i]));
             }
             
@@ -78,7 +78,7 @@ public class TopMovies extends javax.swing.JFrame {
             titleArr = titles.toArray(titleArr);
             JLabel[] titleX = {title1, title2, title3, title4, title5, title6, title7, title8, title9, title10};
             
-            for(int i = 0; i < titleArr.length; i++) {
+            for(int i = 0; i < 10; i++) {
                 titleX[i].setText(titleArr[i]);
             }
             
@@ -292,6 +292,16 @@ public class TopMovies extends javax.swing.JFrame {
         searchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         searchForm.setText("Search here");
         searchForm.setPreferredSize(new java.awt.Dimension(69, 30));
+        searchForm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchFormMouseClicked(evt);
+            }
+        });
+        searchForm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchFormKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout NavPaneLayout = new javax.swing.GroupLayout(NavPane);
         NavPane.setLayout(NavPaneLayout);
@@ -1041,6 +1051,15 @@ public class TopMovies extends javax.swing.JFrame {
         // TODO add your handling code here:
         getDetailMovie(title5.getText());
     }//GEN-LAST:event_title5MouseClicked
+
+    private void searchFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFormKeyPressed
+       
+    }//GEN-LAST:event_searchFormKeyPressed
+
+    private void searchFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchFormMouseClicked
+        // clear the form
+        searchForm.setText("");
+    }//GEN-LAST:event_searchFormMouseClicked
 
     /**
      * @param args the command line arguments

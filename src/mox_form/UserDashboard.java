@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Connection;
@@ -76,7 +77,7 @@ public class UserDashboard extends javax.swing.JFrame {
             posterArr = posters.toArray(posterArr);
             JLabel[] latestPoster = {poster1, poster2, poster3, poster4, poster5};
             
-            for(int i = 0; i < posterArr.length; i++) {
+            for(int i = 0; i < 5; i++) {
                 latestPoster[i].setIcon(getPoster(posterArr[i]));
             }
             
@@ -86,7 +87,7 @@ public class UserDashboard extends javax.swing.JFrame {
             titleArr = titles.toArray(titleArr);
             JLabel[] latestTitle = {lt_title1, lt_title2, lt_title3, lt_title4, lt_title5};
             
-            for(int i = 0; i < titleArr.length; i++) {
+            for(int i = 0; i < 5; i++) {
                 latestTitle[i].setText(titleArr[i]);
             }
             
@@ -115,7 +116,7 @@ public class UserDashboard extends javax.swing.JFrame {
             posterArr = posters.toArray(posterArr);
             JLabel[] topPoster = {topPoster1, topPoster2, topPoster3, topPoster4, topPoster5};
             
-            for(int i = 0; i < posterArr.length; i++) {
+            for(int i = 0; i < 5; i++) {
                 topPoster[i].setIcon(getPoster(posterArr[i]));
             }
             
@@ -125,7 +126,7 @@ public class UserDashboard extends javax.swing.JFrame {
             titleArr = titles.toArray(titleArr);
             JLabel[] topTitle = {topTitle1, topTitle2, topTitle3, topTitle4, topTitle5};
             
-            for(int i = 0; i < titleArr.length; i++) {
+            for(int i = 0; i < 5; i++) {
                 topTitle[i].setText(titleArr[i]);
             }
             
@@ -158,7 +159,7 @@ public class UserDashboard extends javax.swing.JFrame {
             posterArr = posters.toArray(posterArr);
             JLabel[] soonPoster = {soonPoster1, soonPoster2, soonPoster3, soonPoster4, soonPoster5};
             
-            for(int i = 0; i < posterArr.length; i++) {
+            for(int i = 0; i < 5; i++) {
                 soonPoster[i].setIcon(getPoster(posterArr[i]));
             }
             
@@ -168,7 +169,7 @@ public class UserDashboard extends javax.swing.JFrame {
             titleArr = titles.toArray(titleArr);
             JLabel[] soonTitle = {soon1, soon2, soon3, soon4, soon5};
             
-            for(int i = 0; i < titleArr.length; i++) {
+            for(int i = 0; i < 5; i++) {
                 soonTitle[i].setText(titleArr[i]);
             }
             
@@ -391,7 +392,7 @@ public class UserDashboard extends javax.swing.JFrame {
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(genrePaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cbx_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbx_genre, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         genrePaneLayout.setVerticalGroup(
@@ -405,6 +406,21 @@ public class UserDashboard extends javax.swing.JFrame {
         searchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         searchForm.setText("Search here");
         searchForm.setPreferredSize(new java.awt.Dimension(69, 30));
+        searchForm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchFormMouseClicked(evt);
+            }
+        });
+        searchForm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchFormActionPerformed(evt);
+            }
+        });
+        searchForm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchFormKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout NavbarLayout = new javax.swing.GroupLayout(Navbar);
         Navbar.setLayout(NavbarLayout);
@@ -416,7 +432,7 @@ public class UserDashboard extends javax.swing.JFrame {
                 .addComponent(navTitle)
                 .addGap(18, 18, 18)
                 .addComponent(searchForm, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(latestPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2063,6 +2079,24 @@ public class UserDashboard extends javax.swing.JFrame {
     private void soonPoster5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soonPoster5MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_soonPoster5MouseExited
+
+    private void searchFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFormActionPerformed
+        // Search a movie
+        
+    }//GEN-LAST:event_searchFormActionPerformed
+
+    private void searchFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFormKeyPressed
+        // Hit Enter = Search Movie
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String query = searchForm.getText();
+            //System.out.println(query + " OK!");
+        }
+    }//GEN-LAST:event_searchFormKeyPressed
+
+    private void searchFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchFormMouseClicked
+        // Clear The Form
+        searchForm.setText("");
+    }//GEN-LAST:event_searchFormMouseClicked
     int x = 175;
     /**
      * @param args the command line arguments

@@ -72,7 +72,7 @@ public class LatestMovies extends javax.swing.JFrame {
             posterArr = posters.toArray(posterArr);
             JLabel[] posterX = {poster1, poster2, poster3, poster4, poster5, poster6, poster7, poster8, poster9, poster10};
             
-            for(int i = 0; i < posterArr.length; i++) {
+            for(int i = 0; i < 10; i++) {
                 posterX[i].setIcon(getPoster(posterArr[i]));
             }
             
@@ -82,7 +82,7 @@ public class LatestMovies extends javax.swing.JFrame {
             titleArr = titles.toArray(titleArr);
             JLabel[] titleX = {title1, title2, title3, title4, title5, title6, title7, title8, title9, title10};
             
-            for(int i = 0; i < titleArr.length; i++) {
+            for(int i = 0; i < 10; i++) {
                 titleX[i].setText(titleArr[i]);
             }
             
@@ -109,7 +109,7 @@ public class LatestMovies extends javax.swing.JFrame {
         NavLatestMov = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        SearchForm = new javax.swing.JTextField();
         sidebarIcon = new javax.swing.JPanel();
         bookmarkPane = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -282,7 +282,7 @@ public class LatestMovies extends javax.swing.JFrame {
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(genrePaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         genrePaneLayout.setVerticalGroup(
@@ -293,9 +293,14 @@ public class LatestMovies extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setText("Search here");
-        jTextField1.setPreferredSize(new java.awt.Dimension(69, 30));
+        SearchForm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SearchForm.setText("Search here");
+        SearchForm.setPreferredSize(new java.awt.Dimension(69, 30));
+        SearchForm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SearchFormMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -306,8 +311,8 @@ public class LatestMovies extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addComponent(SearchForm, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addComponent(genrePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(latestPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -328,7 +333,7 @@ public class LatestMovies extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(SearchForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1047,6 +1052,11 @@ public class LatestMovies extends javax.swing.JFrame {
         getDetailMovie(title5.getText());
     }//GEN-LAST:event_title5MouseClicked
 
+    private void SearchFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchFormMouseClicked
+        // clear the form
+        SearchForm.setText("");
+    }//GEN-LAST:event_SearchFormMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1085,6 +1095,7 @@ public class LatestMovies extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel NavLatestMov;
+    private javax.swing.JTextField SearchForm;
     private javax.swing.JPanel bookmarkPane;
     private javax.swing.JPanel coomingPane;
     private javax.swing.JPanel genrePane;
@@ -1120,7 +1131,6 @@ public class LatestMovies extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel latestPane;
     private javax.swing.JPanel loginPane;
     private javax.swing.JPanel loginPane1;

@@ -11,24 +11,17 @@ import javax.swing.WindowConstants;
 public class PlayTrailer {
     public static void main(String[] args) {
         NativeInterface.open();
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                JFrame frame = new JFrame("Pidio Yutub");
-                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                frame.getContentPane().add(getURL("https://www.youtube.com/watch?v=JfVOs4VSpmA"), BorderLayout.CENTER);
-                frame.setSize(800, 600);
-                frame.setLocationByPlatform(true);
-                frame.setVisible(true);
-            }
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Movie Trailer");
+            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            frame.getContentPane().add(getURL("https://www.youtube.com/watch?v=JfVOs4VSpmA"), BorderLayout.CENTER);
+            frame.setSize(800, 600);
+            frame.setLocationByPlatform(true);
+            frame.setVisible(true);
         });
         NativeInterface.runEventPump();
         // don't forget to properly close native components
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() {
-                NativeInterface.close();
-            }
-        }));
+        Runtime.getRuntime().addShutdownHook(new Thread(NativeInterface::close));
     }
     
     public static JPanel getURL(String url) {
