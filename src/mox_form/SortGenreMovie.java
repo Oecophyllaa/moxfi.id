@@ -35,9 +35,9 @@ public class SortGenreMovie extends javax.swing.JFrame {
         setTitle("Search Movie");
         setExtendedState(MAXIMIZED_BOTH);
         tf_username.setText(username);
-        cbb_genre.setSelectedItem(genre);
+        //cbb_genre.setSelectedItem(genre.toString());
         SearchText.setText("You Searched '"+genre+"' Movie");
-        if(genre == "All Genre") {
+        if("All Genre".equals(genre)) {
             load_all_genre();
         } else {
             load_data(genre);
