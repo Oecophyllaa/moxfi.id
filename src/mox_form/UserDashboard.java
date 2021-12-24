@@ -376,7 +376,7 @@ public class UserDashboard extends javax.swing.JFrame {
         genrePane.setBackground(new java.awt.Color(81, 196, 211));
 
         cbb_genre.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        cbb_genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Action", "Comedy", "Mystery", "Fantasy", "Drama", "Adventure" }));
+        cbb_genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Comedy", "Mystery", "Fantasy", "Drama", "Adventure" }));
         cbb_genre.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbb_genreItemStateChanged(evt);
@@ -2105,22 +2105,25 @@ public class UserDashboard extends javax.swing.JFrame {
         // Sort Movie by Genre
         if(evt.getItem() == "Action" && evt.getStateChange() == 1) {
             this.dispose();
-            new SortGenreMovie(tf_username.getText(), "Action");
+            new SortGenreMovie(tf_username.getText(), "Action").setVisible(true);
         } else if(evt.getItem() == "Comedy" && evt.getStateChange() == 1) {
             this.dispose();
-            new SortGenreMovie(tf_username.getText(), "Comedy");
+            new SortGenreMovie(tf_username.getText(), "Comedy").setVisible(true);
         } else if(evt.getItem() == "Mystery" && evt.getStateChange() == 1) {
             this.dispose();
-            new SortGenreMovie(tf_username.getText(), "Mystery");
+            new SortGenreMovie(tf_username.getText(), "Mystery").setVisible(true);
         } else if(evt.getItem() == "Fantasy" && evt.getStateChange() == 1) {
             this.dispose();
-            new SortGenreMovie(tf_username.getText(), "Fantasy");
+            new SortGenreMovie(tf_username.getText(), "Fantasy").setVisible(true);
         } else if(evt.getItem() == "Drama" && evt.getStateChange() == 1) {
             this.dispose();
-            new SortGenreMovie(tf_username.getText(), "Drama");
+            new SortGenreMovie(tf_username.getText(), "Drama").setVisible(true);
         } else if(evt.getItem() == "Adventure" && evt.getStateChange() == 1) {
             this.dispose();
-            new SortGenreMovie(tf_username.getText(), "Adventure");
+            new SortGenreMovie(tf_username.getText(), "Adventure").setVisible(true);
+        } else if(evt.getItem() == "All Genre" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "All Genre").setVisible(true);
         }
     }//GEN-LAST:event_cbb_genreItemStateChanged
     int x = 175;

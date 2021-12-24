@@ -35,8 +35,13 @@ public class SortGenreMovie extends javax.swing.JFrame {
         setTitle("Search Movie");
         setExtendedState(MAXIMIZED_BOTH);
         tf_username.setText(username);
+        cbb_genre.setSelectedItem(genre);
         SearchText.setText("You Searched '"+genre+"' Movie");
-        load_data(genre);
+        if(genre == "All Genre") {
+            load_all_genre();
+        } else {
+            load_data(genre);
+        }
     }
     
     public ImageIcon getPoster(String url) {
@@ -57,6 +62,60 @@ public class SortGenreMovie extends javax.swing.JFrame {
         String username = tf_username.getText();
         new DetailMovie(title, username).setVisible(true);
         this.setVisible(false);
+    }
+    
+    public void load_all_genre() {
+        try {
+            String sql = "SELECT movie.title, movie.poster "
+                       + "FROM movie "
+                       + "ORDER BY movie.genre ASC ";
+            //System.out.println(sql);
+            Connection conn = (Connection) database.getConn();
+            Statement stat = conn.createStatement();
+            ResultSet res = stat.executeQuery(sql);
+            
+            ArrayList<String> posters = new ArrayList<>();
+            ArrayList<String> titles = new ArrayList<>();
+            
+            while(res.next()) {
+                posters.add(res.getString("poster"));
+                titles.add(res.getString("title"));
+            }
+            
+            // Poster Searched Movies
+            
+            String[] posterArr = new String[posters.size()];
+            posterArr = posters.toArray(posterArr);
+            JLabel[] posterX = {poster1, poster2, poster3, poster4, poster5, poster6, poster7, poster8, poster9, poster10};
+            
+            if(posterArr.length < 10) {
+                for(int i = 0; i < posterArr.length; i++) {
+                    posterX[i].setIcon(getPoster(posterArr[i]));
+                }
+            } else {
+                for(int i = 0; i < 10; i++) {
+                    posterX[i].setIcon(getPoster(posterArr[i]));
+                }
+            }
+            
+            // Title Searched Movie
+            
+            String[] titleArr = new String[titles.size()];
+            titleArr = titles.toArray(titleArr);
+            JLabel[] titleX = {title1, title2, title3, title4, title5, title6, title7, title8, title9, title10};
+            
+            if(titleArr.length < 10) {
+                for(int i = 0; i < titleArr.length; i++) {
+                    titleX[i].setText(titleArr[i]);
+                }
+            } else {
+                for(int i = 0; i < 10; i++) {
+                    titleX[i].setText(titleArr[i]);
+                }
+            }
+            
+        } catch (SQLException e) {
+        }
     }
     
     public void load_data(String genre) {
@@ -133,7 +192,7 @@ public class SortGenreMovie extends javax.swing.JFrame {
         latestPane = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbb_genre = new javax.swing.JComboBox<>();
         SearchForm = new javax.swing.JTextField();
         DasborScroll = new javax.swing.JScrollPane();
         DasborPane = new javax.swing.JPanel();
@@ -290,14 +349,19 @@ public class SortGenreMovie extends javax.swing.JFrame {
 
         genrePane.setBackground(new java.awt.Color(81, 196, 211));
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Horror", "Romance", "Thriller" }));
-        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
+        cbb_genre.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cbb_genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Comedy", "Mystery", "Fantasy", "Drama", "Adventure" }));
+        cbb_genre.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbb_genreItemStateChanged(evt);
+            }
+        });
+        cbb_genre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jComboBox1MouseEntered(evt);
+                cbb_genreMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jComboBox1MouseExited(evt);
+                cbb_genreMouseExited(evt);
             }
         });
 
@@ -307,14 +371,14 @@ public class SortGenreMovie extends javax.swing.JFrame {
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(genrePaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbb_genre, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         genrePaneLayout.setVerticalGroup(
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, genrePaneLayout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbb_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -947,13 +1011,13 @@ public class SortGenreMovie extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_hideMouseClicked
 
-    private void jComboBox1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseEntered
+    private void cbb_genreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbb_genreMouseEntered
         // BUTTON COMBO BOX
-    }//GEN-LAST:event_jComboBox1MouseEntered
+    }//GEN-LAST:event_cbb_genreMouseEntered
 
-    private void jComboBox1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseExited
+    private void cbb_genreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbb_genreMouseExited
         // BUTTON COMBO BOX
-    }//GEN-LAST:event_jComboBox1MouseExited
+    }//GEN-LAST:event_cbb_genreMouseExited
 
     private void HomeIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeIconMouseEntered
 
@@ -1088,6 +1152,32 @@ public class SortGenreMovie extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SearchFormKeyPressed
 
+    private void cbb_genreItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbb_genreItemStateChanged
+        // Sort Movie by Genre
+        if(evt.getItem() == "Action" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Action").setVisible(true);
+        } else if(evt.getItem() == "Comedy" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Comedy").setVisible(true);
+        } else if(evt.getItem() == "Mystery" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Mystery").setVisible(true);
+        } else if(evt.getItem() == "Fantasy" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Fantasy").setVisible(true);
+        } else if(evt.getItem() == "Drama" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Drama").setVisible(true);
+        } else if(evt.getItem() == "Adventure" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Adventure").setVisible(true);
+        } else if(evt.getItem() == "All Genre" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "All Genre").setVisible(true);
+        }
+    }//GEN-LAST:event_cbb_genreItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -1155,6 +1245,7 @@ public class SortGenreMovie extends javax.swing.JFrame {
     private javax.swing.JLabel SearchText;
     private javax.swing.JLabel StreamIcon;
     private javax.swing.JPanel StreamPane;
+    private javax.swing.JComboBox<String> cbb_genre;
     private javax.swing.JPanel coomingPane;
     private javax.swing.JPanel genrePane;
     private javax.swing.JPanel hBmarkPane;
@@ -1167,7 +1258,6 @@ public class SortGenreMovie extends javax.swing.JFrame {
     private javax.swing.JLabel hStreamText;
     private javax.swing.JLabel hide;
     private javax.swing.JPanel hidePane;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;

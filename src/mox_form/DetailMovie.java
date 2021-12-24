@@ -118,7 +118,7 @@ public class DetailMovie extends javax.swing.JFrame {
         latestPaneNav = new javax.swing.JPanel();
         latestNavbar = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
-        cbxGenre = new javax.swing.JComboBox<>();
+        cbb_genre = new javax.swing.JComboBox<>();
         SearchForm = new javax.swing.JTextField();
         tf_username = new javax.swing.JLabel();
         SideBar = new javax.swing.JPanel();
@@ -261,14 +261,19 @@ public class DetailMovie extends javax.swing.JFrame {
 
         genrePane.setBackground(new java.awt.Color(81, 196, 211));
 
-        cbxGenre.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        cbxGenre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Horror", "Romance", "Thriller" }));
-        cbxGenre.addMouseListener(new java.awt.event.MouseAdapter() {
+        cbb_genre.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cbb_genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Comedy", "Mystery", "Fantasy", "Drama", "Adventure" }));
+        cbb_genre.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbb_genreItemStateChanged(evt);
+            }
+        });
+        cbb_genre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cbxGenreMouseEntered(evt);
+                cbb_genreMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                cbxGenreMouseExited(evt);
+                cbb_genreMouseExited(evt);
             }
         });
 
@@ -278,14 +283,13 @@ public class DetailMovie extends javax.swing.JFrame {
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(genrePaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cbxGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(cbb_genre, 0, 115, Short.MAX_VALUE))
         );
         genrePaneLayout.setVerticalGroup(
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, genrePaneLayout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(cbxGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbb_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -823,13 +827,13 @@ public class DetailMovie extends javax.swing.JFrame {
        changeColor(latestPaneNav, new Color(81, 196, 211));
     }//GEN-LAST:event_latestNavbarMouseExited
 
-    private void cbxGenreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxGenreMouseEntered
+    private void cbb_genreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbb_genreMouseEntered
         // BUTTON COMBO BOX
-    }//GEN-LAST:event_cbxGenreMouseEntered
+    }//GEN-LAST:event_cbb_genreMouseEntered
 
-    private void cbxGenreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxGenreMouseExited
+    private void cbb_genreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbb_genreMouseExited
         // BUTTON COMBO BOX
-    }//GEN-LAST:event_cbxGenreMouseExited
+    }//GEN-LAST:event_cbb_genreMouseExited
 
     private void IconHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconHomeMouseEntered
 
@@ -996,6 +1000,32 @@ public class DetailMovie extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SearchFormKeyPressed
 
+    private void cbb_genreItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbb_genreItemStateChanged
+        // Sort Movie by Genre
+        if(evt.getItem() == "Action" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Action").setVisible(true);
+        } else if(evt.getItem() == "Comedy" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Comedy").setVisible(true);
+        } else if(evt.getItem() == "Mystery" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Mystery").setVisible(true);
+        } else if(evt.getItem() == "Fantasy" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Fantasy").setVisible(true);
+        } else if(evt.getItem() == "Drama" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Drama").setVisible(true);
+        } else if(evt.getItem() == "Adventure" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Adventure").setVisible(true);
+        } else if(evt.getItem() == "All Genre" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "All Genre").setVisible(true);
+        }
+    }//GEN-LAST:event_cbb_genreItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -1050,7 +1080,7 @@ public class DetailMovie extends javax.swing.JFrame {
     private javax.swing.JToggleButton ToggleBmark;
     private javax.swing.JPanel VControlPanel;
     private javax.swing.JPanel bookmarkPane;
-    private javax.swing.JComboBox<String> cbxGenre;
+    private javax.swing.JComboBox<String> cbb_genre;
     private javax.swing.JPanel genrePane;
     private javax.swing.JPanel hBmarkPane;
     private javax.swing.JLabel hBmarkText;
