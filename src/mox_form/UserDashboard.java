@@ -195,7 +195,7 @@ public class UserDashboard extends javax.swing.JFrame {
         latestPane = new javax.swing.JPanel();
         la_latestMov = new javax.swing.JLabel();
         genrePane = new javax.swing.JPanel();
-        cbx_genre = new javax.swing.JComboBox<>();
+        cbb_genre = new javax.swing.JComboBox<>();
         searchForm = new javax.swing.JTextField();
         SideBar = new javax.swing.JPanel();
         homePane = new javax.swing.JPanel();
@@ -375,14 +375,19 @@ public class UserDashboard extends javax.swing.JFrame {
 
         genrePane.setBackground(new java.awt.Color(81, 196, 211));
 
-        cbx_genre.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        cbx_genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Genre", "Action", "Horror", "Romance", "Thriller" }));
-        cbx_genre.addMouseListener(new java.awt.event.MouseAdapter() {
+        cbb_genre.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cbb_genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Action", "Comedy", "Mystery", "Fantasy", "Drama", "Adventure" }));
+        cbb_genre.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbb_genreItemStateChanged(evt);
+            }
+        });
+        cbb_genre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cbx_genreMouseEntered(evt);
+                cbb_genreMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                cbx_genreMouseExited(evt);
+                cbb_genreMouseExited(evt);
             }
         });
 
@@ -391,15 +396,14 @@ public class UserDashboard extends javax.swing.JFrame {
         genrePaneLayout.setHorizontalGroup(
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(genrePaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cbx_genre, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(cbb_genre, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         genrePaneLayout.setVerticalGroup(
             genrePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, genrePaneLayout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(cbx_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbb_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -1556,15 +1560,15 @@ public class UserDashboard extends javax.swing.JFrame {
         changeColor(latestPane, new Color(81, 196, 211));
     }//GEN-LAST:event_la_latestMovMouseExited
 
-    private void cbx_genreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_genreMouseExited
+    private void cbb_genreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbb_genreMouseExited
         // BUTTON COMBO BOX
 
-    }//GEN-LAST:event_cbx_genreMouseExited
+    }//GEN-LAST:event_cbb_genreMouseExited
 
-    private void cbx_genreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_genreMouseEntered
+    private void cbb_genreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbb_genreMouseEntered
         // BUTTON COMBO BOX
 
-    }//GEN-LAST:event_cbx_genreMouseEntered
+    }//GEN-LAST:event_cbb_genreMouseEntered
 
     private void moreSoonMovMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreSoonMovMouseEntered
         // BUTTON MORE
@@ -2096,6 +2100,29 @@ public class UserDashboard extends javax.swing.JFrame {
         // Clear The Form
         searchForm.setText("");
     }//GEN-LAST:event_searchFormMouseClicked
+
+    private void cbb_genreItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbb_genreItemStateChanged
+        // Sort Movie by Genre
+        if(evt.getItem() == "Action" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Action");
+        } else if(evt.getItem() == "Comedy" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Comedy");
+        } else if(evt.getItem() == "Mystery" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Mystery");
+        } else if(evt.getItem() == "Fantasy" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Fantasy");
+        } else if(evt.getItem() == "Drama" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Drama");
+        } else if(evt.getItem() == "Adventure" && evt.getStateChange() == 1) {
+            this.dispose();
+            new SortGenreMovie(tf_username.getText(), "Adventure");
+        }
+    }//GEN-LAST:event_cbb_genreItemStateChanged
     int x = 175;
     /**
      * @param args the command line arguments
@@ -2141,7 +2168,7 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel SideBar;
     private javax.swing.JLabel StreamIcon;
     private javax.swing.JPanel bookmarkPane;
-    private javax.swing.JComboBox<String> cbx_genre;
+    private javax.swing.JComboBox<String> cbb_genre;
     private javax.swing.JPanel genrePane;
     private javax.swing.JLabel hBmarkText;
     private javax.swing.JPanel hBookPane;
